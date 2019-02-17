@@ -1,10 +1,10 @@
-setwd("~/GoogleDrive/1UT/0_Research/3_Switch/FCe_R_Development")
+setwd("~/GoogleDrive/1UT/0_Research/3_Switch/FCe_R_Development/R/")
 load("./.RData")
 
 # This code was written to help transferring PLEXOS FCe Data to .tab format for SWITCH
 # List of switch core modules' required input files and required columns is in 'modules.txt'
 gen_info <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/generation_projects_info.tab", header = T, sep = "\t")
-fce_file = 'FCe_data_2015.csv' # Import FCe Plexos Data from /Users/trins/Box/Energy Storage/Archive/FCe dispatch modeling/Reports/
+fce_file = '../FCe_data_2015.csv' # Import FCe Plexos Data from /Users/trins/Box/Energy Storage/Archive/FCe dispatch modeling/Reports/
 fce_data <- read.csv(file = fce_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
 dot <- gen_info[dim(gen_info)[1],dim(gen_info)[2]]
 
