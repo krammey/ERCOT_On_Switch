@@ -1,0 +1,398 @@
+﻿Generator,County,Load Zone,Online,Fuel,Prime Mover,Butler PPC Category,AURORA Fuel Category,Net Capacity MW,Average Heat Rate Btu per kWh,Fixed OM Charge USD per kWyr,Variable O&M Charge USD per MWh,Minimum Stable Level frac,Maximum Ramp Rate frac per min,Minimum Down Time HRS,Minimum Up Time HRS,Start Cost USD per MWstart,Minimum Time to Repair HRS,Mean Time to Repair HRS,Maximum Time to Repair HRS,Forced Outage Rate percent,Source
+Austin Area LFG,Travis,AEN,2007,Biogas,IC,,OT,6.4,9800.00,47.07,2.49,0.20,0.25000,1,1,20.0000,0,0,0,0,CDR 12/15
+Dallas-Fort Worth Area LFG,Dallas,North,2015,Biogas,IC,,OT,35.8,9800.00,47.07,2.49,0.20,0.25000,1,1,20.0000,0,0,0,0,CDR 12/15
+Houston Area LFG,Harris,Houston,2002,Biogas,IC,,OT,24.5,9800.00,47.07,2.49,0.20,0.25000,1,1,20.0000,0,0,0,0,CDR 12/15
+San Antonio Area LFG,Bexar,CPS,2013,Biogas,IC,,OT,26.8,9800.00,47.07,2.49,0.20,0.25000,1,1,20.0000,0,0,0,0,CDR 12/15
+Lufkin Biomass,Angelina,North,2012,Biomass,ST,,OT,45.0,9894.00,47.07,2.49,0.25,0.00540,6,8,0.0000,0,0,0,0,CDR 12/15
+Nacogdoches Power,Nacogdoches,North,2012,Biomass,ST,,OT,105.0,9894.00,47.07,2.49,0.25,0.00540,6,8,0.0000,0,0,0,0,CDR 12/15
+Limestone 2,Limestone,North,1986,Coal-Lig,ST,Advanced,CoalERCT,858.0,9578.04,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Oak Grove SES Unit 1,Robertson,North,2010,Coal-Lig,ST,Advanced,CoalERCT,840.0,9344.14,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Oak Grove SES Unit 2,Robertson,North,2011,Coal-Lig,ST,Advanced,CoalERCT,825.0,9305.12,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Sandow U4,Milam,South,1981,Coal-Lig,ST,Advanced,CoalERCT,570.0,9322.99,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Big Brown 1,Freestone,North,1971,Coal-Lig,ST,,CoalERCT,606.0,10743.78,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Martin Lake 1,Rusk,North,1977,Coal-Lig,ST,,CoalERCT,800.0,11129.24,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Martin Lake 2,Rusk,North,1978,Coal-Lig,ST,,CoalERCT,805.0,11063.49,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Monticello U2,Titus,North,1975,Coal-Lig,ST,,CoalERCT,535.0,10949.01,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+San Miguel 1,Atascosa,South,1982,Coal-Lig,ST,,CoalERCT,391.0,12179.06,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Sandow U5,Milam,South,2010,Coal-Lig,ST,,CoalERCT,600.0,11118.04,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Twin Oaks 1,Robertson,North,1990,Coal-Lig,ST,,CoalERCT,156.0,10887.31,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Twin Oaks 2,Robertson,North,1991,Coal-Lig,ST,,CoalERCT,156.0,10838.38,43.56,6.33,0.48,0.00264,12,24,42.0000,24,72,168,10,CDR 12/15
+Big Brown 2,Freestone,North,1972,Coal-Sub,ST,Advanced,CoalERCT,602.0,10684.11,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Coleto Creek,Goliad,South,1980,Coal-Sub,ST,Advanced,CoalERCT,660.0,10163.29,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Fayette Power Project 1,Fayette,AEN,1979,Coal-Sub,ST,Advanced,CoalERCT,604.0,10692.12,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Fayette Power Project 2,Fayette,LCRA,1980,Coal-Sub,ST,Advanced,CoalERCT,599.0,10710.10,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Fayette Power Project 3,Fayette,LCRA,1988,Coal-Sub,ST,Advanced,CoalERCT,437.0,10672.73,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Gibbons Creek 1,Grimes,North,1983,Coal-Sub,ST,Advanced,CoalERCT,470.0,9989.98,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+J K Spruce 1,Bexar,CPS,1992,Coal-Sub,ST,Advanced,CoalERCT,560.0,10821.79,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+J K Spruce 2,Bexar,CPS,2010,Coal-Sub,ST,Advanced,CoalERCT,775.0,10800.46,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Limestone 1,Limestone,North,1985,Coal-Sub,ST,Advanced,CoalERCT,831.0,9643.05,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Oklaunion 1,Wilbarger,West,1986,Coal-Sub,ST,Advanced,CoalERCT,650.0,10634.10,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+W A Parish 5,Fort Bend,Houston,1977,Coal-Sub,ST,Advanced,CoalERCT,659.0,10413.40,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+W A Parish 6,Fort Bend,Houston,1978,Coal-Sub,ST,Advanced,CoalERCT,658.0,10349.11,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+W A Parish 7,Fort Bend,Houston,1980,Coal-Sub,ST,Advanced,CoalERCT,577.0,10353.50,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+W A Parish 8,Fort Bend,Houston,1982,Coal-Sub,ST,Advanced,CoalERCT,610.0,10348.59,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+J T Deely 1,Bexar,CPS,1977,Coal-Sub,ST,,CoalERCT,420.0,14055.85,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+J T Deely 2,Bexar,CPS,1978,Coal-Sub,ST,,CoalERCT,420.0,14092.91,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Martin Lake 3,Rusk,North,1979,Coal-Sub,ST,,CoalERCT,805.0,11076.90,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Monticello U1,Titus,North,1974,Coal-Sub,ST,,CoalERCT,535.0,10926.04,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Monticello U3,Titus,North,1978,Coal-Sub,ST,,CoalERCT,795.0,10935.77,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Sandy Creek 1,McLennan,North,2013,Coal-Sub,ST,,CoalERCT,970.0,9334.84,43.56,6.33,0.48,0.00264,12,24,29.0000,24,72,168,10,CDR 12/15
+Hydro LCRA LZ,Travis,LCRA,1951,Hydro,HYDRO,,WAT,280.0,-,19.69,1.74,0.00,0.25000,0,0,0.0000,0,24,168,50,CDR 12/15
+Hydro North LZ,Bosque,North,2014,Hydro,HYDRO,,WAT,51.6,-,19.69,1.74,0.00,0.25000,0,0,0.0000,0,24,168,50,CDR 12/15
+Hydro RCEC LZ,Grayson,RCEC,1948,Hydro,HYDRO,,WAT,80.0,-,19.69,1.74,0.00,0.25000,0,0,0.0000,0,24,168,50,CDR 12/15
+Hydro South LZ,Starr,South,2005,Hydro,HYDRO,,WAT,67.7,-,19.69,1.74,0.00,0.25000,0,0,0.0000,0,24,168,50,CDR 12/15
+Hydro West LZ,Val Verde,West,1983,Hydro,HYDRO,,WAT,75.8,-,19.69,1.74,0.00,0.25000,0,0,0.0000,0,24,168,50,CDR 12/15
+Arthur Von Rosenberg 1,Bexar,South,2000,NG,CCGT,Conventional,NGERSOU,458.0,8017.05,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+B M Davis 3,Nueces,South,2010,NG,CCGT,Conventional,NGERSOU,633.0,8318.13,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Bastrop Energy Center 1,Bastrop,South,2002,NG,CCGT,Conventional,NGERSOU,533.0,8066.23,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Bosque County CC 1,Bosque,North,2009,NG,CCGT,Conventional,NGERNOR,514.0,7500.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Bosque County CC 2,Bosque,North,2001,NG,CCGT,Advanced,NGERNOR,230.3,7412.80,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Brazos Valley 1,Fort Bend,Houston,2003,NG,CCGT,Conventional,NGERHOU,602.0,7823.28,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Cedar Bayou 4,Chambers,Houston,2009,NG,CCGT,Advanced,NGERHOU,504.0,7040.92,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Colorado Bend Energy Center 1,Wharton,Houston,2007,NG,CCGT,Advanced,NGERHOU,233.0,7415.65,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Colorado Bend Energy Center 2,Wharton,Houston,2008,NG,CCGT,Advanced,NGERHOU,235.0,7349.30,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Ennis Power Station 1,Ellis,North,2002,NG,CCGT,Advanced,NGERNOR,312.0,6678.27,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Ferguson Replacement,Llano,LCRA,2014,NG,CCGT,Advanced,NGERSOU,509.8,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Forney Energy Center 1,Kaufman,North,2003,NG,CCGT,Advanced,NGERNOR,911.0,7365.48,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Forney Energy Center 2,Kaufman,North,2003,NG,CCGT,Advanced,NGERNOR,911.0,7357.85,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Freestone Energy Center 1,Freestone,North,2002,NG,CCGT,Conventional,NGERNOR,957.3,7520.16,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Frontera 1,Hidalgo,South,1999,NG,CCGT,Advanced,NGERSOU,524.0,6839.89,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Guadalupe Generating Station 1,Guadalupe,South,2000,NG,CCGT,Advanced,NGERSOU,986.0,7433.30,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Hays Energy Facility 1,Hays,South,2002,NG,CCGT,Conventional,NGERSOU,882.0,7750.28,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Hidalgo 1,Hidalgo,South,2000,NG,CCGT,Advanced,NGERSOU,458.0,7167.30,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Jack County Generation Facility 1,Jack,North,2005,NG,CCGT,Conventional,NGERNOR,595.0,8751.62,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Jack County Generation Facility 2,Jack,North,2011,NG,CCGT,Advanced,NGERNOR,595.0,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Johnson County,Johnson,North,1997,NG,CCGT,Conventional,NGERNOR,269.0,8367.67,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Lamar Power Project 1,Lamar,North,2000,NG,CCGT,Advanced,NGERNOR,1040.0,7240.02,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Lost Pines 1,Bastrop,LCRA,2001,NG,CCGT,Conventional,NGERSOU,528.0,7650.59,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Magic Valley Station,Hidalgo,South,2001,NG,CCGT,Advanced,NGERSOU,670.2,7326.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Midlothian 1,Ellis,North,2001,NG,CCGT,Conventional,NGERNOR,940.0,8073.57,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Midlothian 2,Ellis,North,2002,NG,CCGT,Conventional,NGERNOR,504.0,7639.13,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Nueces Bay 8,Nueces,South,2010,NG,CCGT,Conventional,NGERSOU,633.0,8230.55,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Odessa Ector Generating Station 1,Ector,West,2001,NG,CCGT,Advanced,NGERWES,998.5,6826.16,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Panda Sherman,Grayson,North,2014,NG,CCGT,Advanced,NGERNOR,717.0,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Panda Temple 1,Bell,North,2014,NG,CCGT,Advanced,NGERNOR,702.0,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Panda Temple II CTG1,Bell,North,2015,NG,CCGT,Advanced,NGERNOR,191.2,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Panda Temple II CTG2,Bell,North,2015,NG,CCGT,Advanced,NGERNOR,191.2,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Panda Temple II STG,Bell,North,2015,NG,CCGT,Advanced,NGERNOR,334.7,7050.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Paris Energy Center 1,Lamar,North,1990,NG,CCGT,Advanced,NGERNOR,239.0,7395.50,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Quail Run Energy 1,Ector,West,2008,NG,CCGT,Advanced,NG1ERWES,488.0,6500.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Rio Nogales 1,Guadalupe,South,2002,NG,CCGT,Conventional,NGERSOU,785.0,8050.07,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Sam Rayburn 10,Victoria,South,2003,NG,CCGT,Conventional,NGERSOU,190.0,7590.55,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Sand Hill Energy Center 5a,Travis,AEN,2004,NG,CCGT,Conventional,NGERSOU,295.0,8068.99,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Silas Ray 9,Cameron,South,1996,NG,CCGT,Conventional,NGERSOU,58.0,10075.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+T H Wharton 3,Harris,Houston,1974,NG,CCGT,Conventional,NG1ERHOU,332.0,9440.50,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+T H Wharton 4,Harris,Houston,1974,NG,CCGT,Conventional,NG1ERHOU,332.0,8922.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Tenaska Frontier Station,Grimes,Houston,2000,NG,CCGT,Advanced,NGERHOU,880.0,7307.17,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Tenaska Gateway Station,Rusk,North,2001,NG,CCGT,Advanced,NGERNOR,846.0,7200.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Tenaska Kiamichi Station 1,Fannin,North,2003,NG,CCGT,Advanced,NGERNOR,623.0,7344.89,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Tenaska Kiamichi Station 2,Fannin,North,2003,NG,CCGT,Advanced,NGERNOR,623.0,7344.89,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Victoria Power Station,Victoria,South,2009,NG,CCGT,Conventional,NGERSOU,285.0,8844.18,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Wise County Power LP,Wise,North,2004,NG,CCGT,Conventional,NGERNOR,665.0,7595.91,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Wolf Hollow Power Proj 1,Hood,North,2002,NG,CCGT,Conventional,NGERNOR,705.0,7910.53,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,CDR 12/15
+Baytown Energy Center,Chambers,Houston,2002,NG,CCGT-CHP,Conventional,NGERHOU,794.8,9347.13,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+C R Wing Cogen Plant,Howard,West,1988,NG,CCGT-CHP,Conventional,NG1ERWES,207.7,8033.71,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Channel Energy Center,Harris,Houston,2001,NG,CCGT-CHP,Conventional,NGERHOU,686.6,9227.66,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Channelview Cogen Plant,Harris,Houston,2008,NG,CCGT-CHP,Advanced,NGERHOU,861.0,6613.55,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Clear Lake Cogeneration Ltd,Harris,Houston,1985,NG,CCGT-CHP,Conventional,NGERHOU,384.9,8096.13,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Corpus Christi Energy Center,Nueces,South,2002,NG,CCGT-CHP,Advanced,NGERSOU,460.5,7263.42,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Deer Park Energy Center 1,Harris,Houston,2014,NG,CCGT-CHP,Advanced,NGERHOU,1152.0,6043.22,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Freeport Energy Center,Brazoria,Houston,2007,NG,CCGT-CHP,Conventional,NGERHOU,63.4,8017.05,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Green Power 2,Galveston,Houston,2009,NG,CCGT-CHP,Conventional,NG2ERHOU,287.2,12251.00,16.95,13.41,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Gregory Power Facility,San Patricio,South,2000,NG,CCGT-CHP,Advanced,NGERSOU,388.5,7261.76,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Houston Chemical Complex Battleground,Harris,Houston,2005,NG,CCGT-CHP,Conventional,NGERHOU,52.6,9500.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Ingleside Cogeneration,San Patricio,South,1999,NG,CCGT-CHP,Conventional,NGERSOU,478.4,8000.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Optim Energy Altura Cogen,Harris,Houston,1995,NG,CCGT-CHP,Conventional,NGERHOU,478.8,11783.03,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Oyster Creek Unit VIII,Brazoria,Houston,1994,NG,CCGT-CHP,Conventional,NGERHOU,404.5,10753.00,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Pasadena Cogeneration,Harris,Houston,2000,NG,CCGT-CHP,Conventional,NGERHOU,743.6,7554.25,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Texas City 1,Galveston,Houston,2000,NG,CCGT-CHP,Conventional,NGERHOU,458.5,14484.74,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Wichita Falls Cogeneration Plant,Wichita,West,1987,NG,CCGT-CHP,Advanced,NGERWES,78.0,7240.96,25.28,4.73,0.25,0.00420,6,14,34.6300,0,0,0,0,
+Greenville Powerlane IC1,Hunt,North,2010,NG,IC,Advanced,NGERNOR,8.4,9832.86,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Greenville Powerlane IC2,Hunt,North,2010,NG,IC,Advanced,NGERNOR,8.4,9761.25,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Greenville Powerlane IC3,Hunt,North,2010,NG,IC,Advanced,NGERNOR,8.4,9828.47,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Pearsall IC Engine Plant A,Frio,South,2012,NG,IC,Advanced,NGERSOU,50.6,9784.10,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Pearsall IC Engine Plant B,Frio,South,2012,NG,IC,Advanced,NGERSOU,50.6,9789.15,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Pearsall IC Engine Plant C,Frio,South,2012,NG,IC,Advanced,NGERSOU,50.6,9794.21,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Pearsall IC Engine Plant D,Frio,South,2012,NG,IC,Advanced,NGERSOU,50.6,9787.71,25.28,4.73,0.20,0.25000,1,1,19.3680,0,0,0,0,CDR 12/15
+Bryan Atkins 7,Brazos,North,1973,NG,OCGT,Conventional,NG2ERNOR,18.0,14451.37,16.95,13.41,0.25,0.20000,1,1,19.1743,0,0,0,0,CDR 12/15
+Dansby 2,Brazos,North,2004,NG,OCGT,Conventional,NG2ERNOR,45.0,10584.32,16.95,13.41,0.24,0.44000,1,1,18.9806,0,0,0,0,CDR 12/15
+Dansby 3,Brazos,North,2010,NG,OCGT,Advanced,NG2ERNOR,47.0,9469.91,16.95,13.41,0.24,0.44000,1,1,18.9806,0,0,0,0,CDR 12/15
+Decker Creek G1,Travis,AEN,1989,NG,OCGT,Advanced,NG3ERSOU,48.0,9500.00,19.49,15.43,0.24,0.44000,1,1,20.0971,0,0,0,0,CDR 12/15
+Decker Creek G2,Travis,AEN,1989,NG,OCGT,Advanced,NG3ERSOU,48.0,9500.00,19.49,15.43,0.24,0.44000,1,1,20.0971,0,0,0,0,CDR 12/15
+Decker Creek G3,Travis,AEN,1989,NG,OCGT,Advanced,NG3ERSOU,48.0,9500.00,19.49,15.43,0.24,0.44000,1,1,20.0971,0,0,0,0,CDR 12/15
+Decker Creek G4,Travis,AEN,1989,NG,OCGT,Advanced,NG3ERSOU,48.0,9500.00,19.49,15.43,0.24,0.44000,1,1,20.0971,0,0,0,0,CDR 12/15
+DeCordova 1,Hood,North,1990,NG,OCGT,Advanced,NG2ERNOR,71.0,9850.00,16.95,13.41,0.25,0.14000,1,1,36.9557,0,0,0,0,CDR 12/15
+DeCordova 2,Hood,North,1990,NG,OCGT,Advanced,NG3ERNOR,70.0,9850.00,19.49,15.43,0.25,0.14000,1,1,37.4517,0,0,0,0,CDR 12/15
+DeCordova 3,Hood,North,1990,NG,OCGT,Advanced,NG3ERNOR,69.0,9850.00,19.49,15.43,0.25,0.14000,1,1,37.9613,0,0,0,0,CDR 12/15
+DeCordova 4,Hood,North,1990,NG,OCGT,Advanced,NG3ERNOR,68.0,9850.00,19.49,15.43,0.25,0.14000,1,1,38.4849,0,0,0,0,CDR 12/15
+Ector County Energy,Ector,West,2015,NG,OCGT,Advanced,NGERWES,294.0,9983.00,25.28,4.73,0.25,0.14000,1,1,35.0000,0,0,0,0,CDR 12/15
+ExTex La Porte Power Station AirPro 1,Harris,Houston,2009,NG,OCGT,Advanced,NG2ERHOU,38.0,9250.00,16.95,13.41,0.24,0.44000,1,1,18.7520,0,0,0,0,CDR 12/15
+ExTex La Porte Power Station AirPro 2,Harris,Houston,2009,NG,OCGT,Advanced,NG2ERHOU,38.0,9250.00,16.95,13.41,0.24,0.44000,1,1,18.7520,0,0,0,0,CDR 12/15
+ExTex La Porte Power Station AirPro 3,Harris,Houston,2009,NG,OCGT,Advanced,NG2ERHOU,38.0,9250.00,16.95,13.41,0.24,0.44000,1,1,18.7520,0,0,0,0,CDR 12/15
+ExTex La Porte Power Station AirPro 4,Harris,Houston,2009,NG,OCGT,Advanced,NG2ERHOU,38.0,9250.00,16.95,13.41,0.24,0.44000,1,1,18.7520,0,0,0,0,CDR 12/15
+Greens Bayou 73,Harris,Houston,1976,NG,OCGT,Conventional,NG2ERHOU,46.0,10268.00,16.95,13.41,0.25,0.21000,1,1,20.7083,0,0,0,0,CDR 12/15
+Greens Bayou 74,Harris,Houston,1976,NG,OCGT,Conventional,NG2ERHOU,46.0,10268.00,16.95,13.41,0.25,0.21000,1,1,20.7083,0,0,0,0,CDR 12/15
+Greens Bayou 81,Harris,Houston,1976,NG,OCGT,Conventional,NG2ERHOU,46.0,10268.00,16.95,13.41,0.25,0.21000,1,1,20.7083,0,0,0,0,CDR 12/15
+Greens Bayou 82,Harris,Houston,1976,NG,OCGT,Conventional,NG2ERHOU,58.0,10268.00,16.95,13.41,0.25,0.21000,1,1,20.4500,0,0,0,0,CDR 12/15
+Greens Bayou 83,Harris,Houston,1976,NG,OCGT,Conventional,NG2ERHOU,56.0,10268.00,16.95,13.41,0.25,0.21000,1,1,20.4526,0,0,0,0,CDR 12/15
+Greens Bayou 84,Harris,Houston,1976,NG,OCGT,Conventional,NG2ERHOU,46.0,10268.00,16.95,13.41,0.25,0.21000,1,1,21.1579,0,0,0,0,CDR 12/15
+Laredo Peaking 4,Webb,South,2008,NG,OCGT,Conventional,NG1ERSOU,90.1,10056.00,25.28,4.73,0.50,0.21000,1,1,19.3680,0,0,0,0,CDR 12/15
+Laredo Peaking 5,Webb,South,2008,NG,OCGT,Conventional,NG1ERSOU,87.3,10056.00,25.28,4.73,0.50,0.21000,1,1,20.0000,0,0,0,0,CDR 12/15
+Leon Creek Peaking 1,Bexar,South,2004,NG,OCGT,Advanced,NG2ERSOU,46.0,9888.00,16.95,13.41,0.24,0.44000,1,1,19.3845,0,0,0,0,CDR 12/15
+Leon Creek Peaking 2,Bexar,South,2004,NG,OCGT,Advanced,NG2ERSOU,46.0,9888.00,16.95,13.41,0.24,0.44000,1,1,19.3845,0,0,0,0,CDR 12/15
+Leon Creek Peaking 3,Bexar,South,2004,NG,OCGT,Advanced,NG1ERSOU,46.0,9888.00,25.28,4.73,0.24,0.44000,1,1,19.3845,0,0,0,0,CDR 12/15
+Leon Creek Peaking 4,Bexar,South,2004,NG,OCGT,Advanced,NG1ERSOU,46.0,9888.00,25.28,4.73,0.24,0.44000,1,1,19.3845,0,0,0,0,CDR 12/15
+Morgan Creek 1,Mitchell,West,1988,NG,OCGT,Conventional,NG2ERWES,68.0,10173.00,16.95,13.41,0.25,0.14000,1,1,36.1142,0,0,0,0,CDR 12/15
+Morgan Creek 2,Mitchell,West,1988,NG,OCGT,Conventional,NG2ERWES,68.0,10173.00,16.95,13.41,0.25,0.14000,1,1,36.1142,0,0,0,0,CDR 12/15
+Morgan Creek 3,Mitchell,West,1988,NG,OCGT,Conventional,NG2ERWES,68.0,10173.00,16.95,13.41,0.25,0.14000,1,1,36.1142,0,0,0,0,CDR 12/15
+Morgan Creek 4,Mitchell,West,1988,NG,OCGT,Conventional,NG2ERWES,68.0,10173.00,16.95,13.41,0.25,0.14000,1,1,36.1142,0,0,0,0,CDR 12/15
+Morgan Creek 5,Mitchell,West,1988,NG,OCGT,Conventional,NG2ERWES,68.0,10173.00,16.95,13.41,0.25,0.14000,1,1,36.1142,0,0,0,0,CDR 12/15
+Morgan Creek 6,Mitchell,West,1988,NG,OCGT,Conventional,NG2ERWES,67.0,10173.00,16.95,13.41,0.25,0.14000,1,1,36.1142,0,0,0,0,CDR 12/15
+Permian Basin 1,Ward,West,1988,NG,OCGT,Conventional,NGERWES,68.0,10173.00,25.28,4.73,0.25,0.14000,1,1,32.9772,0,0,0,0,CDR 12/15
+Permian Basin 2,Ward,West,1988,NG,OCGT,Conventional,NG1ERWES,65.0,10173.00,25.28,4.73,0.25,0.14000,1,1,34.6815,0,0,0,0,CDR 12/15
+Permian Basin 3,Ward,West,1988,NG,OCGT,Conventional,NG1ERWES,68.0,10173.00,25.28,4.73,0.25,0.14000,1,1,34.6196,0,0,0,0,CDR 12/15
+Permian Basin 4,Ward,West,1990,NG,OCGT,Conventional,NG1ERWES,69.0,10078.00,25.28,4.73,0.25,0.14000,1,1,34.1388,0,0,0,0,CDR 12/15
+Permian Basin 5,Ward,West,1990,NG,OCGT,Conventional,NG1ERWES,70.0,10078.00,25.28,4.73,0.25,0.14000,1,1,34.3615,0,0,0,0,CDR 12/15
+R W Miller 4,Palo Pinto,North,1994,NG,OCGT,Conventional,NG2ERNOR,104.0,13400.00,16.95,13.41,0.25,0.14000,1,1,34.8845,0,0,0,0,CDR 12/15
+R W Miller 5,Palo Pinto,North,1994,NG,OCGT,Conventional,NG2ERNOR,104.0,12873.49,16.95,13.41,0.25,0.14000,1,1,34.8845,0,0,0,0,CDR 12/15
+Ray Olinger 4,Collin,North,2001,NG,OCGT,Advanced,NG3ERNOR,75.0,13892.00,19.49,15.43,0.25,0.14000,1,1,35.0963,0,0,0,0,CDR 12/15
+Sam Rayburn GT 1,Victoria,South,1963,NG,OCGT,Conventional,NG3ERSOU,11.0,14571.54,19.49,15.43,0.25,0.21000,1,1,20.3483,0,0,0,0,CDR 12/15
+Sam Rayburn GT 2,Victoria,South,1963,NG,OCGT,Conventional,NG3ERSOU,11.0,14502.67,19.49,15.43,0.25,0.21000,1,1,20.3483,0,0,0,0,CDR 12/15
+San Jacinto SES CTG 1,Harris,Houston,1995,NG,OCGT,Conventional,NGERHOU,81.0,13488.25,25.28,4.73,0.25,0.14000,4,4,37.0370,0,0,0,0,CDR 12/15
+San Jacinto SES CTG 2,Harris,Houston,1995,NG,OCGT,Conventional,NGERHOU,81.0,13566.87,25.28,4.73,0.25,0.14000,4,4,37.0370,0,0,0,0,CDR 12/15
+Sand Hill Energy Center GT 1,Travis,AEN,2001,NG,OCGT,Advanced,NG1ERSOU,47.0,9888.00,25.28,4.73,0.24,0.44000,1,1,18.7765,0,0,0,0,CDR 12/15
+Sand Hill Energy Center GT 2,Travis,AEN,2001,NG,OCGT,Advanced,NG1ERSOU,47.0,9888.00,25.28,4.73,0.24,0.44000,1,1,18.3684,0,0,0,0,CDR 12/15
+Sand Hill Energy Center GT 3,Travis,AEN,2001,NG,OCGT,Advanced,NG1ERSOU,47.0,9888.00,25.28,4.73,0.24,0.44000,1,1,19.1847,0,0,0,0,CDR 12/15
+Sand Hill Energy Center GT 4,Travis,AEN,2001,NG,OCGT,Advanced,NG1ERSOU,47.0,9888.00,25.28,4.73,0.24,0.44000,1,1,20.0011,0,0,0,0,CDR 12/15
+Sand Hill Energy Center GT 6,Travis,AEN,2010,NG,OCGT,Advanced,NG1ERSOU,47.0,9888.00,25.28,4.73,0.24,0.44000,1,1,18.7765,0,0,0,0,CDR 12/15
+Sand Hill Energy Center GT 7,Travis,AEN,2010,NG,OCGT,Advanced,NG1ERSOU,47.0,9888.00,25.28,4.73,0.24,0.44000,1,1,18.7765,0,0,0,0,CDR 12/15
+Silas Ray 10,Cameron,South,2004,NG,OCGT,Advanced,NG1ERSOU,46.0,9888.00,25.28,4.73,0.24,0.44000,1,1,18.9806,0,0,0,0,CDR 12/15
+T H Wharton G 1,Harris,Houston,1967,NG,OCGT,Conventional,NG2ERHOU,13.0,10268.00,16.95,13.41,0.25,0.20000,1,1,19.3680,0,0,0,0,CDR 12/15
+T H Wharton GT 51,Harris,Houston,1975,NG,OCGT,Advanced,NG2ERHOU,57.0,9983.00,16.95,13.41,0.25,0.14000,1,1,33.8940,0,0,0,0,CDR 12/15
+T H Wharton GT 52,Harris,Houston,1975,NG,OCGT,Advanced,NG2ERHOU,57.0,9983.00,16.95,13.41,0.25,0.14000,1,1,33.7989,0,0,0,0,CDR 12/15
+T H Wharton GT 53,Harris,Houston,1975,NG,OCGT,Advanced,NG2ERHOU,57.0,9983.00,16.95,13.41,0.25,0.14000,1,1,33.7989,0,0,0,0,CDR 12/15
+T H Wharton GT 54,Harris,Houston,1975,NG,OCGT,Advanced,NG2ERHOU,57.0,9983.00,16.95,13.41,0.25,0.14000,1,1,33.7989,0,0,0,0,CDR 12/15
+T H Wharton GT 55,Harris,Houston,1975,NG,OCGT,Advanced,NG2ERHOU,57.0,9983.00,16.95,13.41,0.25,0.14000,1,1,33.7989,0,0,0,0,CDR 12/15
+T H Wharton GT 56,Harris,Houston,1975,NG,OCGT,Advanced,NG2ERHOU,57.0,9983.00,16.95,13.41,0.25,0.14000,1,1,33.7989,0,0,0,0,CDR 12/15
+V H Braunig 5,Bexar,South,2009,NG,OCGT,Advanced,NG1ERSOU,48.0,9894.00,25.28,4.73,0.24,0.44000,1,1,18.7829,0,0,0,0,CDR 12/15
+V H Braunig 6,Bexar,South,2009,NG,OCGT,Advanced,NG1ERSOU,48.0,9894.00,25.28,4.73,0.24,0.44000,1,1,18.7829,0,0,0,0,CDR 12/15
+V H Braunig 7,Bexar,South,2009,NG,OCGT,Advanced,NG1ERSOU,48.0,9894.00,25.28,4.73,0.24,0.44000,1,1,18.7829,0,0,0,0,CDR 12/15
+V H Braunig 8,Bexar,South,2009,NG,OCGT,Advanced,NG1ERSOU,47.0,9894.00,25.28,4.73,0.24,0.44000,1,1,18.7829,0,0,0,0,CDR 12/15
+W A Parish Petra Nova,Fort Bend,Houston,2013,NG,OCGT,Advanced,NG1ERHOU,74.0,9983.00,25.28,4.73,0.25,0.14000,1,1,35.0000,0,0,0,0,CDR 12/15
+W A Parish T1,Fort Bend,Houston,1967,NG,OCGT,Conventional,NG3ERHOU,13.0,14466.60,19.49,15.43,0.25,0.20000,1,1,19.1743,0,0,0,0,CDR 12/15
+Winchester Power Park 1,Fayette,LCRA,2009,NG,OCGT,Advanced,NG2ERSOU,44.0,9474.61,16.95,13.41,0.24,0.44000,1,1,19.0867,0,0,0,0,CDR 12/15
+Winchester Power Park 2,Fayette,LCRA,2009,NG,OCGT,Advanced,NG2ERSOU,44.0,9453.78,16.95,13.41,0.24,0.44000,1,1,19.0867,0,0,0,0,CDR 12/15
+Winchester Power Park 3,Fayette,LCRA,2009,NG,OCGT,Advanced,NG2ERSOU,44.0,9465.90,16.95,13.41,0.24,0.44000,1,1,19.0867,0,0,0,0,CDR 12/15
+Winchester Power Park 4,Fayette,LCRA,2009,NG,OCGT,Advanced,NG2ERSOU,44.0,9508.26,16.95,13.41,0.24,0.44000,1,1,19.0867,0,0,0,0,CDR 12/15
+Bayou Cogen Plant,Harris,Houston,1985,NG,OCGT-CHP,Conventional,NGERHOU,165.6,9926.71,25.28,4.73,0.25,0.14002,1,1,33.8947,0,0,0,0,
+BP Chemicals Green Lake Plant,Calhoun,South,1997,NG,OCGT-CHP,Conventional,NGERSOU,8.0,11500.00,25.28,4.73,0.25,0.13989,1,1,33.8827,0,0,0,0,
+Equistar Corpus Christi,Nueces,South,1989,NG,OCGT-CHP,Advanced,NGERSOU,12.0,8500.00,25.28,4.73,0.25,0.13983,1,1,33.8865,0,0,0,0,
+ExxonMobil Baytown Refinery,Harris,Houston,1989,NG,OCGT-CHP,Conventional,NGERHOU,4.3,14451.37,25.28,4.73,0.25,0.14012,1,1,33.9019,0,0,0,0,
+Sweeny Cogen Facility,Brazoria,Houston,2001,NG,OCGT-CHP,Advanced,NGERHOU,430.7,9000.00,25.28,4.73,0.25,0.14000,1,1,33.8939,0,0,0,0,
+Texas Gulf Sulphur (New Gulf),Wharton,Houston,1985,NG,OCGT-CHP,Conventional,NG3ERHOU,58.9,14553.24,19.49,15.43,0.25,0.14000,1,1,33.9000,0,0,0,0,
+Victoria Texas Plant,Victoria,South,1987,NG,OCGT-CHP,Advanced,NGERSOU,8.9,9000.00,25.28,4.73,0.24,0.43998,1,1,19.3690,0,0,0,0,
+B M Davis 1,Nueces,South,1974,NG,ST,,NGERSOU,330.0,10500.00,25.28,4.73,0.38,0.00537,2,2,47.9358,0,0,0,0,CDR 12/15
+Cedar Bayou 1,Chambers,Houston,1970,NG,ST,,NGERHOU,745.0,10264.57,25.28,4.73,0.28,0.00537,2,2,47.9358,0,0,0,0,CDR 12/15
+Cedar Bayou 2,Chambers,Houston,1972,NG,ST,,NGERHOU,749.0,10271.00,25.28,4.73,0.28,0.00537,2,2,47.9358,0,0,0,0,CDR 12/15
+Dansby 1,Brazos,North,1978,NG,ST,,NGERNOR,107.0,11435.04,25.28,4.73,0.38,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+Decker Creek 1,Travis,AEN,1971,NG,ST,,NGERSOU,315.0,10406.35,25.28,4.73,0.38,0.00542,2,2,48.3132,0,0,0,0,CDR 12/15
+Decker Creek 2,Travis,AEN,1978,NG,ST,,NGERSOU,420.0,10725.23,25.28,4.73,0.38,0.00542,2,2,48.3880,0,0,0,0,CDR 12/15
+Graham 1,Young,West,1960,NG,ST,,NG1ERWES,234.0,11941.59,25.28,4.73,0.38,0.00538,2,2,47.9358,0,0,0,0,CDR 12/15
+Graham 2,Young,West,1969,NG,ST,,NG1ERWES,390.0,11937.17,25.28,4.73,0.38,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+Greens Bayou 5,Harris,Houston,1973,NG,ST,,NG1ERHOU,371.0,13460.00,25.28,4.73,0.38,0.00540,2,2,50.0000,0,0,0,0,CDR 12/15
+Handley 3,Tarrant,North,1963,NG,ST,,NGERNOR,395.0,13692.00,25.28,4.73,0.38,0.00537,2,2,47.9358,0,0,0,0,CDR 12/15
+Handley 4,Tarrant,North,1976,NG,ST,,NG1ERNOR,435.0,13692.00,25.28,4.73,0.38,0.00541,2,2,48.4200,0,0,0,0,CDR 12/15
+Handley 5,Tarrant,North,1977,NG,ST,,NG1ERNOR,435.0,13692.00,25.28,4.73,0.38,0.00538,2,2,48.0460,0,0,0,0,CDR 12/15
+Lake Hubbard 1,Dallas,North,1970,NG,ST,,NG1ERNOR,392.0,12162.02,25.28,4.73,0.38,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+Lake Hubbard 2,Dallas,North,1973,NG,ST,,NGERNOR,523.0,12104.71,25.28,4.73,0.38,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+Mountain Creek 6,Dallas,North,1956,NG,ST,,NG1ERNOR,122.0,10825.83,25.28,4.73,0.43,0.00545,2,2,48.3320,0,0,0,0,CDR 12/15
+Mountain Creek 7,Dallas,North,1958,NG,ST,,NG1ERNOR,118.0,11518.96,25.28,4.73,0.43,0.00541,2,2,48.5530,0,0,0,0,CDR 12/15
+Mountain Creek 8,Dallas,North,1967,NG,ST,,NGERNOR,568.0,10000.00,25.28,4.73,0.28,0.00538,2,2,48.0627,0,0,0,0,CDR 12/15
+O W Sommers 1,Bexar,South,1972,NG,ST,,NGERSOU,420.0,12057.50,25.28,4.73,0.38,0.00540,2,2,46.7945,0,0,0,0,CDR 12/15
+O W Sommers 2,Bexar,South,1974,NG,ST,,NGERSOU,410.0,10476.92,25.28,4.73,0.38,0.00540,2,2,45.6531,0,0,0,0,CDR 12/15
+Pearsall 1,Frio,South,1961,NG,ST,,NGERSOU,19.0,14500.00,25.28,4.73,0.43,0.00520,2,2,47.9358,0,0,0,0,CDR 12/15
+Pearsall 2,Frio,South,1961,NG,ST,,NGERSOU,22.0,14500.00,25.28,4.73,0.43,0.00540,2,2,50.0000,0,0,0,0,CDR 12/15
+Pearsall 3,Frio,South,1961,NG,ST,,NGERSOU,20.0,14500.00,25.28,4.73,0.43,0.00540,2,2,50.0000,0,0,0,0,CDR 12/15
+Powerlane Plant 1,Hunt,North,1966,NG,ST,,NGERNOR,20.0,14500.00,25.28,4.73,0.43,0.00550,2,2,47.9358,0,0,0,0,CDR 12/15
+Powerlane Plant 2,Hunt,North,1967,NG,ST,,NG1ERNOR,26.0,14500.00,25.28,4.73,0.43,0.00538,2,2,48.8576,0,0,0,0,CDR 12/15
+Powerlane Plant 3,Hunt,North,1978,NG,ST,,NG1ERNOR,41.0,14500.00,25.28,4.73,0.44,0.00561,2,2,48.9880,0,0,0,0,CDR 12/15
+R W Miller 1,Palo Pinto,North,1968,NG,ST,,NG2ERNOR,75.0,10947.14,16.95,13.41,0.43,0.00533,2,2,47.9358,0,0,0,0,CDR 12/15
+R W Miller 2,Palo Pinto,North,1972,NG,ST,,NG1ERNOR,120.0,11380.74,25.28,4.73,0.38,0.00533,2,2,47.9358,0,0,0,0,CDR 12/15
+R W Miller 3,Palo Pinto,North,1925,NG,ST,,NGERNOR,208.0,10334.59,25.28,4.73,0.38,0.00538,2,2,47.9358,0,0,0,0,CDR 12/15
+Ray Olinger 1,Collin,North,1967,NG,ST,,NG2ERNOR,78.0,12290.00,16.95,13.41,0.43,0.00538,2,2,47.9358,0,0,0,0,CDR 12/15
+Ray Olinger 2,Collin,North,1971,NG,ST,,NG1ERNOR,107.0,11351.00,25.28,4.73,0.38,0.00533,2,2,47.9358,0,0,0,0,CDR 12/15
+Ray Olinger 3,Collin,North,1975,NG,ST,,NG1ERNOR,146.0,11350.00,25.28,4.73,0.38,0.00534,2,2,47.9358,0,0,0,0,CDR 12/15
+Sim Gideon 1,Bastrop,LCRA,1965,NG,ST,,NGERSOU,130.0,10961.10,25.28,4.73,0.38,0.00540,2,2,51.6232,0,0,0,0,CDR 12/15
+Sim Gideon 2,Bastrop,LCRA,1968,NG,ST,,NG1ERSOU,135.0,10801.22,25.28,4.73,0.39,0.00556,2,2,49.7112,0,0,0,0,CDR 12/15
+Sim Gideon 3,Bastrop,LCRA,1972,NG,ST,,NGERSOU,336.0,11507.43,25.28,4.73,0.38,0.00541,2,2,48.4344,0,0,0,0,CDR 12/15
+Spencer 4,Denton,North,1966,NG,ST,,NG2ERNOR,61.0,14500.00,16.95,13.41,0.55,0.00540,2,2,50.0000,0,0,0,0,CDR 12/15
+Spencer 5,Denton,North,1973,NG,ST,,NG2ERNOR,61.0,14195.00,16.95,13.41,0.55,0.00540,2,2,50.0000,0,0,0,0,CDR 12/15
+Stryker Creek 1,Cherokee,North,1958,NG,ST,,NG2ERNOR,167.0,13849.56,16.95,13.41,0.39,0.00551,2,2,49.0840,0,0,0,0,CDR 12/15
+Stryker Creek 2,Cherokee,North,1965,NG,ST,,NG1ERNOR,502.0,13908.00,25.28,4.73,0.38,0.00536,2,2,50.0000,0,0,0,0,CDR 12/15
+Trinidad 6,Henderson,North,1965,NG,ST,,NG2ERNOR,235.0,13510.43,16.95,13.41,0.38,0.00535,2,2,47.9358,0,0,0,0,CDR 12/15
+V H Braunig 1,Bexar,South,1966,NG,ST,,NG1ERSOU,220.0,10735.64,25.28,4.73,0.38,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+V H Braunig 2,Bexar,South,1968,NG,ST,,NG1ERSOU,230.0,10277.50,25.28,4.73,0.38,0.00535,2,2,47.9358,0,0,0,0,CDR 12/15
+V H Braunig 3,Bexar,South,1970,NG,ST,,NGERSOU,412.0,11637.64,25.28,4.73,0.38,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+W A Parish 1,Fort Bend,Houston,1958,NG,ST,,NG1ERHOU,169.0,10962.88,25.28,4.73,0.39,0.00550,2,2,49.3540,0,0,0,0,CDR 12/15
+W A Parish 2,Fort Bend,Houston,1958,NG,ST,,NG1ERHOU,169.0,11513.48,25.28,4.73,0.39,0.00550,2,2,49.3540,0,0,0,0,CDR 12/15
+W A Parish 3,Fort Bend,Houston,1961,NG,ST,,NG1ERHOU,246.0,12080.35,25.28,4.73,0.38,0.00540,2,2,51.6518,0,0,0,0,CDR 12/15
+W A Parish 4,Fort Bend,Houston,1968,NG,ST,,NGERHOU,536.0,11002.29,25.28,4.73,0.28,0.00536,2,2,47.9358,0,0,0,0,CDR 12/15
+Acacia Solar,Presidio,West,2012,Solar,PV,,SUN,10.0,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+"Barilla Solar (FS, Pecos)",Pecos,West,2014,Solar,PV,,SUN,22.0,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+Blue Wing 1 Solar,Bexar,South,2010,Solar,PV,,SUN,7.6,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+Blue Wing 2 Solar,Bexar,South,2010,Solar,PV,,SUN,7.3,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+Downie Ranch Solar (OCI Alamo 5),Uvalde,South,2015,Solar,PV,,SUN,95.0,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+OCI Alamo 1 Solar,Bexar,South,2013,Solar,PV,,SUN,39.2,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+OCI Alamo 2-St. Hedwig Solar,Bexar,South,2014,Solar,PV,,SUN,4.4,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+OCI Alamo 3-Walzem Solar,Bexar,South,2014,Solar,PV,,SUN,5.5,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+OCI Alamo 4 Solar (Bracketville),Kinney,South,2014,Solar,PV,,SUN,37.6,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+Renewable Energy Alternatives CCS1,Denton,North,2015,Solar,PV,,SUN,2.0,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+SunEdison CPS3 Somerset 1 Solar,Bexar,South,2012,Solar,PV,,SUN,5.6,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+SunEdison Rabel Road Solar,Bexar,South,2012,Solar,PV,,SUN,9.9,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+SunEdison Somerset 2 Solar,Bexar,South,2012,Solar,PV,,SUN,5.0,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+SunEdison Valley Road Solar,Bexar,South,2012,Solar,PV,,SUN,9.9,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+Webberville Solar,Travis,AEN,2011,Solar,PV,,SUN,26.7,-,22.13,0.36,-,-,-,-,-,0,0,0,0,CDR 12/15
+Notrees Battery Facility,Winkler,West,2012,Storage,BATT,,,36.0,-,,,-,-,-,-,-,0,0,0,0,CDR 12/15
+Comanche Peak U1,Somervell,North,1990,Uranium,ST,,UR,1205.0,10501.00,58.62,1.33,0.30,0.00260,24,168,96.8400,24,72,168,8,CDR 12/15
+Comanche Peak U2,Somervell,North,1993,Uranium,ST,,UR,1195.0,10499.00,58.62,1.33,0.30,0.00260,24,168,96.8400,24,72,168,7,CDR 12/15
+South Texas U1,Matagorda,South,1988,Uranium,ST,,UR,1286.0,10502.00,58.62,1.33,0.30,0.00260,24,168,96.8400,24,72,168,10,CDR 12/15
+South Texas U2,Matagorda,South,1989,Uranium,ST,,UR,1295.0,10498.00,58.62,1.33,0.30,0.00260,24,168,96.8400,24,72,168,15,CDR 12/15
+Anacacho Wind,Kinney,South,2012,Wind,WT,,WND,99.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Barton Chapel Wind,Jack,North,2007,Wind,WT,,WND,120.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Blue Summit Wind 5,Wilbarger,West,2013,Wind,WT,,WND,9.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Blue Summit Wind 6,Wilbarger,West,2013,Wind,WT,,WND,126.4,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Bobcat Bluff Wind,Archer,North,2012,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Briscoe Wind Farm,Briscoe,West,2015,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Buffalo Gap Wind Farm 1,Taylor,West,2006,Wind,WT,,WND,120.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Buffalo Gap Wind Farm 2_1,Taylor,West,2007,Wind,WT,,WND,115.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Buffalo Gap Wind Farm 2_2,Taylor,West,2007,Wind,WT,,WND,117.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Buffalo Gap Wind Farm 3,Taylor,West,2008,Wind,WT,,WND,170.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Bull Creek Wind Plant U1,Borden,West,2009,Wind,WT,,WND,88.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Bull Creek Wind Plant U2,Borden,West,2009,Wind,WT,,WND,90.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Callahan Wind,Callahan,West,2004,Wind,WT,,WND,114.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Camp Springs Wind 1,Scurry,West,2007,Wind,WT,,WND,130.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Camp Springs Wind 2,Scurry,West,2007,Wind,WT,,WND,120.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Capricorn Ridge Wind 1,Sterling,West,2007,Wind,WT,,WND,214.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Capricorn Ridge Wind 2,Sterling,West,2008,Wind,WT,,WND,186.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Capricorn Ridge Wind 3,Sterling,West,2007,Wind,WT,,WND,149.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Capricorn Ridge Wind 4,Coke,West,2008,Wind,WT,,WND,112.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Cedro Hill Wind 1,Webb,South,2010,Wind,WT,,WND,75.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Cedro Hill Wind 2,Webb,South,2010,Wind,WT,,WND,75.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Champion Wind Farm,Nolan,West,2008,Wind,WT,,WND,126.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Desert Sky Wind Farm 1,Pecos,West,2002,Wind,WT,,WND,84.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Desert Sky Wind Farm 2,Pecos,West,2002,Wind,WT,,WND,76.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Elbow Creek Wind,Howard,West,2008,Wind,WT,,WND,118.7,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Forest Creek Wind Farm,Glasscock,West,2007,Wind,WT,,WND,124.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Goat Wind,Sterling,West,2008,Wind,WT,,WND,80.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Goat Wind 2,Sterling,West,2010,Wind,WT,,WND,69.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Goldthwaite Wind 1,Mills,North,2014,Wind,WT,,WND,148.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Grandview 1 (Conway) GV1A,Carson,West,2014,Wind,WT,,WND,107.4,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Grandview 1 (Conway) GV1B,Carson,West,2014,Wind,WT,,WND,103.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Green Mountain Wind (Brazos) U1,Scurry,West,2003,Wind,WT,,WND,99.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Green Mountain Wind (Brazos) U2,Scurry,West,2003,Wind,WT,,WND,61.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Green Pastures Wind 1,Knox,West,2015,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Green Pastures Wind 2,Knox,West,2015,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Hackberry Wind Farm,Shackelford,West,2008,Wind,WT,,WND,163.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Hereford Wind G,Deaf Smith,West,2015,Wind,WT,,WND,99.9,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Hereford Wind V,Deaf Smith,West,2015,Wind,WT,,WND,100.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Horse Hollow Wind 1,Taylor,West,2005,Wind,WT,,WND,206.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Horse Hollow Wind 2,Taylor,West,2006,Wind,WT,,WND,158.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Horse Hollow Wind 3,Taylor,West,2006,Wind,WT,,WND,208.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Horse Hollow Wind 4,Taylor,West,2006,Wind,WT,,WND,108.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Inadale Wind,Nolan,West,2008,Wind,WT,,WND,196.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Indian Mesa Wind Farm,Pecos,West,2001,Wind,WT,,WND,82.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Javelina Wind Energy,Zapata,South,2015,Wind,WT,,WND,250.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Jumbo Road Wind 1,Deaf Smith,West,2015,Wind,WT,,WND,146.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Jumbo Road Wind 2,Deaf Smith,West,2015,Wind,WT,,WND,153.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Keechi Wind 138 KV Joplin,Jack,North,2014,Wind,WT,,WND,110.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+King Mountain Wind NE,Upton,West,2001,Wind,WT,,WND,79.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+King Mountain Wind NW,Upton,West,2001,Wind,WT,,WND,79.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+King Mountain Wind SE,Upton,West,2001,Wind,WT,,WND,40.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+King Mountain Wind SW,Upton,West,2001,Wind,WT,,WND,79.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Langford Wind Power,Tom Green,West,2009,Wind,WT,,WND,155.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Logan's Gap Wind I U1,Comanche,North,2015,Wind,WT,,WND,103.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Logan's Gap Wind I U2,Comanche,North,2015,Wind,WT,,WND,106.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Lone Star Wind 1 (Mesquite),Shackelford,North,2006,Wind,WT,,WND,200.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Lone Star Wind 2 (Post Oak) U1,Shackelford,North,2007,Wind,WT,,WND,100.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Lone Star Wind 2 (Post Oak) U2,Shackelford,North,2007,Wind,WT,,WND,100.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Longhorn Wind North U1,Floyd,West,2015,Wind,WT,,WND,100.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Longhorn Wind North U2,Floyd,West,2015,Wind,WT,,WND,100.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Loraine Windpark I,Mitchell,West,2009,Wind,WT,,WND,49.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Loraine Windpark II,Mitchell,West,2009,Wind,WT,,WND,51.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Loraine Windpark III,Mitchell,West,2011,Wind,WT,,WND,25.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Loraine Windpark IV,Mitchell,West,2011,Wind,WT,,WND,24.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Los Vientos Wind III,Starr,South,2015,Wind,WT,,WND,200.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+McAdoo Wind Farm,Dickens,West,2008,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Mesquite Creek Wind 1,Dawson,West,2015,Wind,WT,,WND,105.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Mesquite Creek Wind 2,Dawson,West,2015,Wind,WT,,WND,105.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Miami Wind G1,Gray,West,2014,Wind,WT,,WND,144.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Miami Wind G2,Gray,West,2014,Wind,WT,,WND,144.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Notrees Wind Farm 1,Winkler,West,2009,Wind,WT,,WND,92.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Notrees Wind Farm 2,Winkler,West,2009,Wind,WT,,WND,60.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Ocotillo Wind Farm,Howard,West,2008,Wind,WT,,WND,58.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panhandle Wind 1 U1,Carson,West,2014,Wind,WT,,WND,109.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panhandle Wind 1 U2,Carson,West,2014,Wind,WT,,WND,109.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panhandle Wind 2 U1,Carson,West,2014,Wind,WT,,WND,94.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panhandle Wind 2 U2,Carson,West,2014,Wind,WT,,WND,96.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panther Creek 1,Howard,West,2008,Wind,WT,,WND,142.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panther Creek 2,Howard,West,2008,Wind,WT,,WND,115.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Panther Creek 3,Howard,West,2009,Wind,WT,,WND,199.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Pecos Wind (Woodward 1),Pecos,West,2001,Wind,WT,,WND,82.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Pecos Wind (Woodward 2),Pecos,West,2001,Wind,WT,,WND,77.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Pyron Wind Farm,Scurry,West,2008,Wind,WT,,WND,249.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Rattlesnake Den Wind 1 G1,Glasscock,West,2015,Wind,WT,,WND,104.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Rattlesnake Den Wind 1 G2,Glasscock,West,2015,Wind,WT,,WND,103.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Red Canyon Wind,Borden,West,2006,Wind,WT,,WND,84.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Roscoe Wind Farm,Nolan,West,2008,Wind,WT,,WND,209.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Route 66 Wind,Carson,West,2015,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sand Bluff Wind Farm,Glasscock,West,2008,Wind,WT,,WND,90.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Senate Wind,Jack,North,2012,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Shannon Wind,Clay,West,2015,Wind,WT,,WND,200.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sherbino 1 Wind,Pecos,West,2008,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sherbino 2 Wind,Pecos,West,2011,Wind,WT,,WND,147.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Silver Star Wind,Eastland,North,2008,Wind,WT,,WND,60.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Snyder Wind Farm,Scurry,West,2007,Wind,WT,,WND,63.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+South Plains Wind 1,Floyd,West,2015,Wind,WT,,WND,102.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+South Plains Wind 2,Floyd,West,2015,Wind,WT,,WND,98.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+South Trent Wind Farm,Nolan,West,2008,Wind,WT,,WND,98.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Spinning Spur 3 Wind 1,Oldham,West,2015,Wind,WT,,WND,96.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Spinning Spur 3 Wind 2,Oldham,West,2015,Wind,WT,,WND,98.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Spinning Spur Wind Two,Oldham,West,2014,Wind,WT,,WND,161.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Stanton Wind Energy,Martin,West,2008,Wind,WT,,WND,120.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Stephens Ranch Wind 1,Borden,West,2014,Wind,WT,,WND,211.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Stephens Ranch Wind 2,Borden,West,2015,Wind,WT,,WND,165.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 1,Nolan,West,2003,Wind,WT,,WND,36.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 2A,Nolan,West,2006,Wind,WT,,WND,15.9,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 2B,Nolan,West,2004,Wind,WT,,WND,97.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 3A,Nolan,West,2011,Wind,WT,,WND,28.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 3B,Nolan,West,2011,Wind,WT,,WND,100.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 4-4A,Nolan,West,2007,Wind,WT,,WND,117.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 4-4B,Nolan,West,2007,Wind,WT,,WND,103.7,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Sweetwater Wind 4-5,Nolan,West,2007,Wind,WT,,WND,79.2,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Texas Big Spring Wind A,Howard,West,1999,Wind,WT,,WND,27.7,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Texas Big Spring Wind B,Howard,West,1999,Wind,WT,,WND,6.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Trent Wind Farm,Nolan,West,2001,Wind,WT,,WND,150.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Trinity Hills Wind 1,Young,North,2012,Wind,WT,,WND,117.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Trinity Hills Wind 2,Young,North,2012,Wind,WT,,WND,107.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+TSTC West Texas Wind,Nolan,West,2008,Wind,WT,,WND,2.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Turkey Track Wind Energy Center,Nolan,West,2008,Wind,WT,,WND,169.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+West Texas Wind Energy,Upton,West,1999,Wind,WT,,WND,80.3,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Whirlwind Energy,Floyd,West,2007,Wind,WT,,WND,57.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Whitetail Wind Energy,Webb,South,2012,Wind,WT,,WND,91.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Windthorst 2,Archer,North,2014,Wind,WT,,WND,67.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+WKN Mozart Wind,Kent,West,2012,Wind,WT,,WND,30.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Wolf Flats Wind (Wind Mgt),Hall,West,2007,Wind,WT,,WND,1.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Wolf Ridge Wind,Cooke,North,2008,Wind,WT,,WND,112.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Cameron Wind,Cameron,South,2015,Wind-C,WT,,WND,165.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Gulf Wind I,Kenedy,South,2010,Wind-C,WT,,WND,141.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Gulf Wind II,Kenedy,South,2010,Wind-C,WT,,WND,141.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Harbor Wind,Nueces,South,2012,Wind-C,WT,,WND,9.0,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Los Vientos Wind I,Willacy,South,2013,Wind-C,WT,,WND,200.1,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Los Vientos Wind II,Willacy,South,2013,Wind-C,WT,,WND,201.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Magic Valley Wind (Redfish) 1A,Willacy,South,2012,Wind-C,WT,,WND,99.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Magic Valley Wind (Redfish) 1B,Willacy,South,2012,Wind-C,WT,,WND,103.5,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Papalote Creek Wind Farm,San Patricio,South,2009,Wind-C,WT,,WND,179.9,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Papalote Creek Wind Farm II,San Patricio,South,2010,Wind-C,WT,,WND,200.1,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Penascal Wind 1,Kenedy,South,2009,Wind-C,WT,,WND,160.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Penascal Wind 2,Kenedy,South,2009,Wind-C,WT,,WND,141.6,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15
+Penascal Wind 3,Kenedy,South,2011,Wind-C,WT,,WND,100.8,-,26.22,0.00,-,-,-,-,-,0,0,0,0,CDR 12/15

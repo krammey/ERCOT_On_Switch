@@ -1,0 +1,50 @@
+################################
+#        Core Modules 
+################################
+
+switch_model
+# Requires the core modules
+#--------------------------------------------------------------
+switch_model.timescales 
+# Requires 
+# periods.tab (INVESTMENT_PERIOD, period_start, period_end), 
+# timeseries.tab (TIMESERIES, period, ts_duration_of_tp, ts_num_tps, ts_scale_to_period)
+# timepoints.tab (timepoint_id, timestamp, timeseries)
+#--------------------------------------------------------------
+switch_model.financials
+# Requires 
+# financials.dat (base_financial_year, interest_rate, discount_rate*)
+#--------------------------------------------------------------
+switch_model.balancing.load_zones
+# Requires 
+# load_zones.tab (LOAD_ZONE, zone_ccs_distance_km*, zone_dbid*)
+# loads.tab (LOAD_ZONE, TIMEPOINT, zone_demand_mw)
+# zone_coincident_peak_demand.tab* (LOAD_ZONE, PERIOD, zone_expected_coincident_peak_demand)
+#--------------------------------------------------------------
+switch_model.energy_sources.properties
+# Requires
+# non_fuel_energy_sources.tab (energy_source)      		NOTE: Checks for data entry errors. Classifies mispelled or unlisted fuels as free renewable source
+# fuels.tab (fuel, co2_intensity, upstream_co2_intensity)
+#--------------------------------------------------------------
+switch_model.generators.core.build
+# Requires 
+# generation_projects_info.tab (GENERATION_PROJECT, gen_tech, gen_energy_source, gen_load_zone, gen_max_age, gen_is_variable, gen_is_baseload, gen_full_load_heat_rate, gen_variable_om, gen_connect_cost_per_mw)
+# gen_build_predetermined.tab (GENERATION_PROJECT, build_year, gen_predetermined_cap)
+# gen_build_costs.tab (GENERATION_PROJECT, build_year, gen_overnight_cost, gen_fixed_om)
+#--------------------------------------------------------------
+switch_model.generators.core.dispatch
+# Requires
+# variable_capacity_factors.tab (GENERATION_PROJECT, timepoint, gen_max_capacity_factor)  NOTE: can be skipped if no variable renewable projects considered
+#--------------------------------------------------------------
+switch_model.reporting 
+
+
+################################
+#        Custom Modules
+################################
+
+# switch_model.transmission.local_td
+# switch_model.generators.core.no_commit
+# switch_model.energy_sources.fuel_costs.markets
+# switch_model.transmission.transport.build
+# switch_model.transmission.transport.dispatch
