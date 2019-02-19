@@ -117,8 +117,10 @@ fce_load_zones <- fce_data[1:length(unique(fce_data$Load.Zone)),1:length(load_zo
 names(fce_load_zones) <- names(load_zones)
 fce_load_zones$LOAD_ZONE <- unique(fce_data$Load.Zone)
 fce_load_zones[,2:length(fce_load_zones)] <- dot
+fce_load_zones2 <- as.data.frame(fce_load_zones$LOAD_ZONE)
+names(fce_load_zones2) <- names(load_zones)[1]
 # Export .tab
-# write.table(fce_load_zones,"./FCe_Model/inputs/load_zones.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_load_zones2,"../FCe_Model/inputs/load_zones.tab",sep="\t",row.names = F, quote = F)
 
 
 # loads.tab ---------------------------------------------------------------DONE
