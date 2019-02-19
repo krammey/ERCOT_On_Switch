@@ -1,9 +1,9 @@
-LOAD_ZONE	dbid	existing_local_td	local_td_annual_cost_per_mw
-AEN	.	.	.
-North	.	.	.
-Houston	.	.	.
-CPS	.	.	.
-South	.	.	.
-LCRA	.	.	.
-West	.	.	.
-RCEC	.	.	.
+LOAD_ZONE
+AEN
+North
+Houston
+CPS
+South
+LCRA
+West
+RCEC
