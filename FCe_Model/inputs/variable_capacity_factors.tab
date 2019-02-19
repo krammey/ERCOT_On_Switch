@@ -1,795 +1,795 @@
 GENERATION_PROJECT	timepoint	gen_max_capacity_factor
-Austin Area LFG	1	1
-Austin Area LFG	2	1
-Dallas-Fort Worth Area LFG	1	1
-Dallas-Fort Worth Area LFG	2	1
-Houston Area LFG	1	1
-Houston Area LFG	2	1
-San Antonio Area LFG	1	1
-San Antonio Area LFG	2	1
-Lufkin Biomass	1	1
-Lufkin Biomass	2	1
-Nacogdoches Power	1	1
-Nacogdoches Power	2	1
-Limestone 2	1	1
-Limestone 2	2	1
-Oak Grove SES Unit 1	1	1
-Oak Grove SES Unit 1	2	1
-Oak Grove SES Unit 2	1	1
-Oak Grove SES Unit 2	2	1
-Sandow U4	1	1
-Sandow U4	2	1
-Big Brown 1	1	1
-Big Brown 1	2	1
-Martin Lake 1	1	1
-Martin Lake 1	2	1
-Martin Lake 2	1	1
-Martin Lake 2	2	1
-Monticello U2	1	1
-Monticello U2	2	1
-San Miguel 1	1	1
-San Miguel 1	2	1
-Sandow U5	1	1
-Sandow U5	2	1
-Twin Oaks 1	1	1
-Twin Oaks 1	2	1
-Twin Oaks 2	1	1
-Twin Oaks 2	2	1
-Big Brown 2	1	1
-Big Brown 2	2	1
-Coleto Creek	1	1
-Coleto Creek	2	1
-Fayette Power Project 1	1	1
-Fayette Power Project 1	2	1
-Fayette Power Project 2	1	1
-Fayette Power Project 2	2	1
-Fayette Power Project 3	1	1
-Fayette Power Project 3	2	1
-Gibbons Creek 1	1	1
-Gibbons Creek 1	2	1
-J K Spruce 1	1	1
-J K Spruce 1	2	1
-J K Spruce 2	1	1
-J K Spruce 2	2	1
-Limestone 1	1	1
-Limestone 1	2	1
-Oklaunion 1	1	1
-Oklaunion 1	2	1
-W A Parish 5	1	1
-W A Parish 5	2	1
-W A Parish 6	1	1
-W A Parish 6	2	1
-W A Parish 7	1	1
-W A Parish 7	2	1
-W A Parish 8	1	1
-W A Parish 8	2	1
-J T Deely 1	1	1
-J T Deely 1	2	1
-J T Deely 2	1	1
-J T Deely 2	2	1
-Martin Lake 3	1	1
-Martin Lake 3	2	1
-Monticello U1	1	1
-Monticello U1	2	1
-Monticello U3	1	1
-Monticello U3	2	1
-Sandy Creek 1	1	1
-Sandy Creek 1	2	1
-Hydro LCRA LZ	1	1
-Hydro LCRA LZ	2	1
-Hydro North LZ	1	1
-Hydro North LZ	2	1
-Hydro RCEC LZ	1	1
-Hydro RCEC LZ	2	1
-Hydro South LZ	1	1
-Hydro South LZ	2	1
-Hydro West LZ	1	1
-Hydro West LZ	2	1
-Arthur Von Rosenberg 1	1	1
-Arthur Von Rosenberg 1	2	1
-B M Davis 3	1	1
-B M Davis 3	2	1
-Bastrop Energy Center 1	1	1
-Bastrop Energy Center 1	2	1
-Bosque County CC 1	1	1
-Bosque County CC 1	2	1
-Bosque County CC 2	1	1
-Bosque County CC 2	2	1
-Brazos Valley 1	1	1
-Brazos Valley 1	2	1
-Cedar Bayou 4	1	1
-Cedar Bayou 4	2	1
-Colorado Bend Energy Center 1	1	1
-Colorado Bend Energy Center 1	2	1
-Colorado Bend Energy Center 2	1	1
-Colorado Bend Energy Center 2	2	1
-Ennis Power Station 1	1	1
-Ennis Power Station 1	2	1
-Ferguson Replacement	1	1
-Ferguson Replacement	2	1
-Forney Energy Center 1	1	1
-Forney Energy Center 1	2	1
-Forney Energy Center 2	1	1
-Forney Energy Center 2	2	1
-Freestone Energy Center 1	1	1
-Freestone Energy Center 1	2	1
-Frontera 1	1	1
-Frontera 1	2	1
-Guadalupe Generating Station 1	1	1
-Guadalupe Generating Station 1	2	1
-Hays Energy Facility 1	1	1
-Hays Energy Facility 1	2	1
-Hidalgo 1	1	1
-Hidalgo 1	2	1
-Jack County Generation Facility 1	1	1
-Jack County Generation Facility 1	2	1
-Jack County Generation Facility 2	1	1
-Jack County Generation Facility 2	2	1
-Johnson County	1	1
-Johnson County	2	1
-Lamar Power Project 1	1	1
-Lamar Power Project 1	2	1
-Lost Pines 1	1	1
-Lost Pines 1	2	1
-Magic Valley Station	1	1
-Magic Valley Station	2	1
-Midlothian 1	1	1
-Midlothian 1	2	1
-Midlothian 2	1	1
-Midlothian 2	2	1
-Nueces Bay 8	1	1
-Nueces Bay 8	2	1
-Odessa Ector Generating Station 1	1	1
-Odessa Ector Generating Station 1	2	1
-Panda Sherman	1	1
-Panda Sherman	2	1
-Panda Temple 1	1	1
-Panda Temple 1	2	1
-Panda Temple II CTG1	1	1
-Panda Temple II CTG1	2	1
-Panda Temple II CTG2	1	1
-Panda Temple II CTG2	2	1
-Panda Temple II STG	1	1
-Panda Temple II STG	2	1
-Paris Energy Center 1	1	1
-Paris Energy Center 1	2	1
-Quail Run Energy 1	1	1
-Quail Run Energy 1	2	1
-Rio Nogales 1	1	1
-Rio Nogales 1	2	1
-Sam Rayburn 10	1	1
-Sam Rayburn 10	2	1
-Sand Hill Energy Center 5a	1	1
-Sand Hill Energy Center 5a	2	1
-Silas Ray 9	1	1
-Silas Ray 9	2	1
-T H Wharton 3	1	1
-T H Wharton 3	2	1
-T H Wharton 4	1	1
-T H Wharton 4	2	1
-Tenaska Frontier Station	1	1
-Tenaska Frontier Station	2	1
-Tenaska Gateway Station	1	1
-Tenaska Gateway Station	2	1
-Tenaska Kiamichi Station 1	1	1
-Tenaska Kiamichi Station 1	2	1
-Tenaska Kiamichi Station 2	1	1
-Tenaska Kiamichi Station 2	2	1
-Victoria Power Station	1	1
-Victoria Power Station	2	1
-Wise County Power LP	1	1
-Wise County Power LP	2	1
-Wolf Hollow Power Proj 1	1	1
-Wolf Hollow Power Proj 1	2	1
-Baytown Energy Center	1	1
-Baytown Energy Center	2	1
-C R Wing Cogen Plant	1	1
-C R Wing Cogen Plant	2	1
-Channel Energy Center	1	1
-Channel Energy Center	2	1
-Channelview Cogen Plant	1	1
-Channelview Cogen Plant	2	1
-Clear Lake Cogeneration Ltd	1	1
-Clear Lake Cogeneration Ltd	2	1
-Corpus Christi Energy Center	1	1
-Corpus Christi Energy Center	2	1
-Deer Park Energy Center 1	1	1
-Deer Park Energy Center 1	2	1
-Freeport Energy Center	1	1
-Freeport Energy Center	2	1
-Green Power 2	1	1
-Green Power 2	2	1
-Gregory Power Facility	1	1
-Gregory Power Facility	2	1
-Houston Chemical Complex Battleground	1	1
-Houston Chemical Complex Battleground	2	1
-Ingleside Cogeneration	1	1
-Ingleside Cogeneration	2	1
-Optim Energy Altura Cogen	1	1
-Optim Energy Altura Cogen	2	1
-Oyster Creek Unit VIII	1	1
-Oyster Creek Unit VIII	2	1
-Pasadena Cogeneration	1	1
-Pasadena Cogeneration	2	1
-Texas City 1	1	1
-Texas City 1	2	1
-Wichita Falls Cogeneration Plant	1	1
-Wichita Falls Cogeneration Plant	2	1
-Greenville Powerlane IC1	1	1
-Greenville Powerlane IC1	2	1
-Greenville Powerlane IC2	1	1
-Greenville Powerlane IC2	2	1
-Greenville Powerlane IC3	1	1
-Greenville Powerlane IC3	2	1
-Pearsall IC Engine Plant A	1	1
-Pearsall IC Engine Plant A	2	1
-Pearsall IC Engine Plant B	1	1
-Pearsall IC Engine Plant B	2	1
-Pearsall IC Engine Plant C	1	1
-Pearsall IC Engine Plant C	2	1
-Pearsall IC Engine Plant D	1	1
-Pearsall IC Engine Plant D	2	1
-Bryan Atkins 7	1	1
-Bryan Atkins 7	2	1
-Dansby 2	1	1
-Dansby 2	2	1
-Dansby 3	1	1
-Dansby 3	2	1
-Decker Creek G1	1	1
-Decker Creek G1	2	1
-Decker Creek G2	1	1
-Decker Creek G2	2	1
-Decker Creek G3	1	1
-Decker Creek G3	2	1
-Decker Creek G4	1	1
-Decker Creek G4	2	1
-DeCordova 1	1	1
-DeCordova 1	2	1
-DeCordova 2	1	1
-DeCordova 2	2	1
-DeCordova 3	1	1
-DeCordova 3	2	1
-DeCordova 4	1	1
-DeCordova 4	2	1
-Ector County Energy	1	1
-Ector County Energy	2	1
-ExTex La Porte Power Station AirPro 1	1	1
-ExTex La Porte Power Station AirPro 1	2	1
-ExTex La Porte Power Station AirPro 2	1	1
-ExTex La Porte Power Station AirPro 2	2	1
-ExTex La Porte Power Station AirPro 3	1	1
-ExTex La Porte Power Station AirPro 3	2	1
-ExTex La Porte Power Station AirPro 4	1	1
-ExTex La Porte Power Station AirPro 4	2	1
-Greens Bayou 73	1	1
-Greens Bayou 73	2	1
-Greens Bayou 74	1	1
-Greens Bayou 74	2	1
-Greens Bayou 81	1	1
-Greens Bayou 81	2	1
-Greens Bayou 82	1	1
-Greens Bayou 82	2	1
-Greens Bayou 83	1	1
-Greens Bayou 83	2	1
-Greens Bayou 84	1	1
-Greens Bayou 84	2	1
-Laredo Peaking 4	1	1
-Laredo Peaking 4	2	1
-Laredo Peaking 5	1	1
-Laredo Peaking 5	2	1
-Leon Creek Peaking 1	1	1
-Leon Creek Peaking 1	2	1
-Leon Creek Peaking 2	1	1
-Leon Creek Peaking 2	2	1
-Leon Creek Peaking 3	1	1
-Leon Creek Peaking 3	2	1
-Leon Creek Peaking 4	1	1
-Leon Creek Peaking 4	2	1
-Morgan Creek 1	1	1
-Morgan Creek 1	2	1
-Morgan Creek 2	1	1
-Morgan Creek 2	2	1
-Morgan Creek 3	1	1
-Morgan Creek 3	2	1
-Morgan Creek 4	1	1
-Morgan Creek 4	2	1
-Morgan Creek 5	1	1
-Morgan Creek 5	2	1
-Morgan Creek 6	1	1
-Morgan Creek 6	2	1
-Permian Basin 1	1	1
-Permian Basin 1	2	1
-Permian Basin 2	1	1
-Permian Basin 2	2	1
-Permian Basin 3	1	1
-Permian Basin 3	2	1
-Permian Basin 4	1	1
-Permian Basin 4	2	1
-Permian Basin 5	1	1
-Permian Basin 5	2	1
-R W Miller 4	1	1
-R W Miller 4	2	1
-R W Miller 5	1	1
-R W Miller 5	2	1
-Ray Olinger 4	1	1
-Ray Olinger 4	2	1
-Sam Rayburn GT 1	1	1
-Sam Rayburn GT 1	2	1
-Sam Rayburn GT 2	1	1
-Sam Rayburn GT 2	2	1
-San Jacinto SES CTG 1	1	1
-San Jacinto SES CTG 1	2	1
-San Jacinto SES CTG 2	1	1
-San Jacinto SES CTG 2	2	1
-Sand Hill Energy Center GT 1	1	1
-Sand Hill Energy Center GT 1	2	1
-Sand Hill Energy Center GT 2	1	1
-Sand Hill Energy Center GT 2	2	1
-Sand Hill Energy Center GT 3	1	1
-Sand Hill Energy Center GT 3	2	1
-Sand Hill Energy Center GT 4	1	1
-Sand Hill Energy Center GT 4	2	1
-Sand Hill Energy Center GT 6	1	1
-Sand Hill Energy Center GT 6	2	1
-Sand Hill Energy Center GT 7	1	1
-Sand Hill Energy Center GT 7	2	1
-Silas Ray 10	1	1
-Silas Ray 10	2	1
-T H Wharton G 1	1	1
-T H Wharton G 1	2	1
-T H Wharton GT 51	1	1
-T H Wharton GT 51	2	1
-T H Wharton GT 52	1	1
-T H Wharton GT 52	2	1
-T H Wharton GT 53	1	1
-T H Wharton GT 53	2	1
-T H Wharton GT 54	1	1
-T H Wharton GT 54	2	1
-T H Wharton GT 55	1	1
-T H Wharton GT 55	2	1
-T H Wharton GT 56	1	1
-T H Wharton GT 56	2	1
-V H Braunig 5	1	1
-V H Braunig 5	2	1
-V H Braunig 6	1	1
-V H Braunig 6	2	1
-V H Braunig 7	1	1
-V H Braunig 7	2	1
-V H Braunig 8	1	1
-V H Braunig 8	2	1
-W A Parish Petra Nova	1	1
-W A Parish Petra Nova	2	1
-W A Parish T1	1	1
-W A Parish T1	2	1
-Winchester Power Park 1	1	1
-Winchester Power Park 1	2	1
-Winchester Power Park 2	1	1
-Winchester Power Park 2	2	1
-Winchester Power Park 3	1	1
-Winchester Power Park 3	2	1
-Winchester Power Park 4	1	1
-Winchester Power Park 4	2	1
-Bayou Cogen Plant	1	1
-Bayou Cogen Plant	2	1
-BP Chemicals Green Lake Plant	1	1
-BP Chemicals Green Lake Plant	2	1
-Equistar Corpus Christi	1	1
-Equistar Corpus Christi	2	1
-ExxonMobil Baytown Refinery	1	1
-ExxonMobil Baytown Refinery	2	1
-Sweeny Cogen Facility	1	1
-Sweeny Cogen Facility	2	1
-Texas Gulf Sulphur (New Gulf)	1	1
-Texas Gulf Sulphur (New Gulf)	2	1
-Victoria Texas Plant	1	1
-Victoria Texas Plant	2	1
-B M Davis 1	1	1
-B M Davis 1	2	1
-Cedar Bayou 1	1	1
-Cedar Bayou 1	2	1
-Cedar Bayou 2	1	1
-Cedar Bayou 2	2	1
-Dansby 1	1	1
-Dansby 1	2	1
-Decker Creek 1	1	1
-Decker Creek 1	2	1
-Decker Creek 2	1	1
-Decker Creek 2	2	1
-Graham 1	1	1
-Graham 1	2	1
-Graham 2	1	1
-Graham 2	2	1
-Greens Bayou 5	1	1
-Greens Bayou 5	2	1
-Handley 3	1	1
-Handley 3	2	1
-Handley 4	1	1
-Handley 4	2	1
-Handley 5	1	1
-Handley 5	2	1
-Lake Hubbard 1	1	1
-Lake Hubbard 1	2	1
-Lake Hubbard 2	1	1
-Lake Hubbard 2	2	1
-Mountain Creek 6	1	1
-Mountain Creek 6	2	1
-Mountain Creek 7	1	1
-Mountain Creek 7	2	1
-Mountain Creek 8	1	1
-Mountain Creek 8	2	1
-O W Sommers 1	1	1
-O W Sommers 1	2	1
-O W Sommers 2	1	1
-O W Sommers 2	2	1
-Pearsall 1	1	1
-Pearsall 1	2	1
-Pearsall 2	1	1
-Pearsall 2	2	1
-Pearsall 3	1	1
-Pearsall 3	2	1
-Powerlane Plant 1	1	1
-Powerlane Plant 1	2	1
-Powerlane Plant 2	1	1
-Powerlane Plant 2	2	1
-Powerlane Plant 3	1	1
-Powerlane Plant 3	2	1
-R W Miller 1	1	1
-R W Miller 1	2	1
-R W Miller 2	1	1
-R W Miller 2	2	1
-R W Miller 3	1	1
-R W Miller 3	2	1
-Ray Olinger 1	1	1
-Ray Olinger 1	2	1
-Ray Olinger 2	1	1
-Ray Olinger 2	2	1
-Ray Olinger 3	1	1
-Ray Olinger 3	2	1
-Sim Gideon 1	1	1
-Sim Gideon 1	2	1
-Sim Gideon 2	1	1
-Sim Gideon 2	2	1
-Sim Gideon 3	1	1
-Sim Gideon 3	2	1
-Spencer 4	1	1
-Spencer 4	2	1
-Spencer 5	1	1
-Spencer 5	2	1
-Stryker Creek 1	1	1
-Stryker Creek 1	2	1
-Stryker Creek 2	1	1
-Stryker Creek 2	2	1
-Trinidad 6	1	1
-Trinidad 6	2	1
-V H Braunig 1	1	1
-V H Braunig 1	2	1
-V H Braunig 2	1	1
-V H Braunig 2	2	1
-V H Braunig 3	1	1
-V H Braunig 3	2	1
-W A Parish 1	1	1
-W A Parish 1	2	1
-W A Parish 2	1	1
-W A Parish 2	2	1
-W A Parish 3	1	1
-W A Parish 3	2	1
-W A Parish 4	1	1
-W A Parish 4	2	1
-Acacia Solar	1	1
-Acacia Solar	2	1
-Barilla Solar (FS, Pecos)	1	1
-Barilla Solar (FS, Pecos)	2	1
-Blue Wing 1 Solar	1	1
-Blue Wing 1 Solar	2	1
-Blue Wing 2 Solar	1	1
-Blue Wing 2 Solar	2	1
-Downie Ranch Solar (OCI Alamo 5)	1	1
-Downie Ranch Solar (OCI Alamo 5)	2	1
-OCI Alamo 1 Solar	1	1
-OCI Alamo 1 Solar	2	1
-OCI Alamo 2-St. Hedwig Solar	1	1
-OCI Alamo 2-St. Hedwig Solar	2	1
-OCI Alamo 3-Walzem Solar	1	1
-OCI Alamo 3-Walzem Solar	2	1
-OCI Alamo 4 Solar (Bracketville)	1	1
-OCI Alamo 4 Solar (Bracketville)	2	1
-Renewable Energy Alternatives CCS1	1	1
-Renewable Energy Alternatives CCS1	2	1
-SunEdison CPS3 Somerset 1 Solar	1	1
-SunEdison CPS3 Somerset 1 Solar	2	1
-SunEdison Rabel Road Solar	1	1
-SunEdison Rabel Road Solar	2	1
-SunEdison Somerset 2 Solar	1	1
-SunEdison Somerset 2 Solar	2	1
-SunEdison Valley Road Solar	1	1
-SunEdison Valley Road Solar	2	1
-Webberville Solar	1	1
-Webberville Solar	2	1
-Notrees Battery Facility	1	1
-Notrees Battery Facility	2	1
-Comanche Peak U1	1	1
-Comanche Peak U1	2	1
-Comanche Peak U2	1	1
-Comanche Peak U2	2	1
-South Texas U1	1	1
-South Texas U1	2	1
-South Texas U2	1	1
-South Texas U2	2	1
-Anacacho Wind	1	1
-Anacacho Wind	2	1
-Barton Chapel Wind	1	1
-Barton Chapel Wind	2	1
-Blue Summit Wind 5	1	1
-Blue Summit Wind 5	2	1
-Blue Summit Wind 6	1	1
-Blue Summit Wind 6	2	1
-Bobcat Bluff Wind	1	1
-Bobcat Bluff Wind	2	1
-Briscoe Wind Farm	1	1
-Briscoe Wind Farm	2	1
-Buffalo Gap Wind Farm 1	1	1
-Buffalo Gap Wind Farm 1	2	1
-Buffalo Gap Wind Farm 2_1	1	1
-Buffalo Gap Wind Farm 2_1	2	1
-Buffalo Gap Wind Farm 2_2	1	1
-Buffalo Gap Wind Farm 2_2	2	1
-Buffalo Gap Wind Farm 3	1	1
-Buffalo Gap Wind Farm 3	2	1
-Bull Creek Wind Plant U1	1	1
-Bull Creek Wind Plant U1	2	1
-Bull Creek Wind Plant U2	1	1
-Bull Creek Wind Plant U2	2	1
-Callahan Wind	1	1
-Callahan Wind	2	1
-Camp Springs Wind 1	1	1
-Camp Springs Wind 1	2	1
-Camp Springs Wind 2	1	1
-Camp Springs Wind 2	2	1
-Capricorn Ridge Wind 1	1	1
-Capricorn Ridge Wind 1	2	1
-Capricorn Ridge Wind 2	1	1
-Capricorn Ridge Wind 2	2	1
-Capricorn Ridge Wind 3	1	1
-Capricorn Ridge Wind 3	2	1
-Capricorn Ridge Wind 4	1	1
-Capricorn Ridge Wind 4	2	1
-Cedro Hill Wind 1	1	1
-Cedro Hill Wind 1	2	1
-Cedro Hill Wind 2	1	1
-Cedro Hill Wind 2	2	1
-Champion Wind Farm	1	1
-Champion Wind Farm	2	1
-Desert Sky Wind Farm 1	1	1
-Desert Sky Wind Farm 1	2	1
-Desert Sky Wind Farm 2	1	1
-Desert Sky Wind Farm 2	2	1
-Elbow Creek Wind	1	1
-Elbow Creek Wind	2	1
-Forest Creek Wind Farm	1	1
-Forest Creek Wind Farm	2	1
-Goat Wind	1	1
-Goat Wind	2	1
-Goat Wind 2	1	1
-Goat Wind 2	2	1
-Goldthwaite Wind 1	1	1
-Goldthwaite Wind 1	2	1
-Grandview 1 (Conway) GV1A	1	1
-Grandview 1 (Conway) GV1A	2	1
-Grandview 1 (Conway) GV1B	1	1
-Grandview 1 (Conway) GV1B	2	1
-Green Mountain Wind (Brazos) U1	1	1
-Green Mountain Wind (Brazos) U1	2	1
-Green Mountain Wind (Brazos) U2	1	1
-Green Mountain Wind (Brazos) U2	2	1
-Green Pastures Wind 1	1	1
-Green Pastures Wind 1	2	1
-Green Pastures Wind 2	1	1
-Green Pastures Wind 2	2	1
-Hackberry Wind Farm	1	1
-Hackberry Wind Farm	2	1
-Hereford Wind G	1	1
-Hereford Wind G	2	1
-Hereford Wind V	1	1
-Hereford Wind V	2	1
-Horse Hollow Wind 1	1	1
-Horse Hollow Wind 1	2	1
-Horse Hollow Wind 2	1	1
-Horse Hollow Wind 2	2	1
-Horse Hollow Wind 3	1	1
-Horse Hollow Wind 3	2	1
-Horse Hollow Wind 4	1	1
-Horse Hollow Wind 4	2	1
-Inadale Wind	1	1
-Inadale Wind	2	1
-Indian Mesa Wind Farm	1	1
-Indian Mesa Wind Farm	2	1
-Javelina Wind Energy	1	1
-Javelina Wind Energy	2	1
-Jumbo Road Wind 1	1	1
-Jumbo Road Wind 1	2	1
-Jumbo Road Wind 2	1	1
-Jumbo Road Wind 2	2	1
-Keechi Wind 138 KV Joplin	1	1
-Keechi Wind 138 KV Joplin	2	1
-King Mountain Wind NE	1	1
-King Mountain Wind NE	2	1
-King Mountain Wind NW	1	1
-King Mountain Wind NW	2	1
-King Mountain Wind SE	1	1
-King Mountain Wind SE	2	1
-King Mountain Wind SW	1	1
-King Mountain Wind SW	2	1
-Langford Wind Power	1	1
-Langford Wind Power	2	1
-Logan's Gap Wind I U1	1	1
-Logan's Gap Wind I U1	2	1
-Logan's Gap Wind I U2	1	1
-Logan's Gap Wind I U2	2	1
-Lone Star Wind 1 (Mesquite)	1	1
-Lone Star Wind 1 (Mesquite)	2	1
-Lone Star Wind 2 (Post Oak) U1	1	1
-Lone Star Wind 2 (Post Oak) U1	2	1
-Lone Star Wind 2 (Post Oak) U2	1	1
-Lone Star Wind 2 (Post Oak) U2	2	1
-Longhorn Wind North U1	1	1
-Longhorn Wind North U1	2	1
-Longhorn Wind North U2	1	1
-Longhorn Wind North U2	2	1
-Loraine Windpark I	1	1
-Loraine Windpark I	2	1
-Loraine Windpark II	1	1
-Loraine Windpark II	2	1
-Loraine Windpark III	1	1
-Loraine Windpark III	2	1
-Loraine Windpark IV	1	1
-Loraine Windpark IV	2	1
-Los Vientos Wind III	1	1
-Los Vientos Wind III	2	1
-McAdoo Wind Farm	1	1
-McAdoo Wind Farm	2	1
-Mesquite Creek Wind 1	1	1
-Mesquite Creek Wind 1	2	1
-Mesquite Creek Wind 2	1	1
-Mesquite Creek Wind 2	2	1
-Miami Wind G1	1	1
-Miami Wind G1	2	1
-Miami Wind G2	1	1
-Miami Wind G2	2	1
-Notrees Wind Farm 1	1	1
-Notrees Wind Farm 1	2	1
-Notrees Wind Farm 2	1	1
-Notrees Wind Farm 2	2	1
-Ocotillo Wind Farm	1	1
-Ocotillo Wind Farm	2	1
-Panhandle Wind 1 U1	1	1
-Panhandle Wind 1 U1	2	1
-Panhandle Wind 1 U2	1	1
-Panhandle Wind 1 U2	2	1
-Panhandle Wind 2 U1	1	1
-Panhandle Wind 2 U1	2	1
-Panhandle Wind 2 U2	1	1
-Panhandle Wind 2 U2	2	1
-Panther Creek 1	1	1
-Panther Creek 1	2	1
-Panther Creek 2	1	1
-Panther Creek 2	2	1
-Panther Creek 3	1	1
-Panther Creek 3	2	1
-Pecos Wind (Woodward 1)	1	1
-Pecos Wind (Woodward 1)	2	1
-Pecos Wind (Woodward 2)	1	1
-Pecos Wind (Woodward 2)	2	1
-Pyron Wind Farm	1	1
-Pyron Wind Farm	2	1
-Rattlesnake Den Wind 1 G1	1	1
-Rattlesnake Den Wind 1 G1	2	1
-Rattlesnake Den Wind 1 G2	1	1
-Rattlesnake Den Wind 1 G2	2	1
-Red Canyon Wind	1	1
-Red Canyon Wind	2	1
-Roscoe Wind Farm	1	1
-Roscoe Wind Farm	2	1
-Route 66 Wind	1	1
-Route 66 Wind	2	1
-Sand Bluff Wind Farm	1	1
-Sand Bluff Wind Farm	2	1
-Senate Wind	1	1
-Senate Wind	2	1
-Shannon Wind	1	1
-Shannon Wind	2	1
-Sherbino 1 Wind	1	1
-Sherbino 1 Wind	2	1
-Sherbino 2 Wind	1	1
-Sherbino 2 Wind	2	1
-Silver Star Wind	1	1
-Silver Star Wind	2	1
-Snyder Wind Farm	1	1
-Snyder Wind Farm	2	1
-South Plains Wind 1	1	1
-South Plains Wind 1	2	1
-South Plains Wind 2	1	1
-South Plains Wind 2	2	1
-South Trent Wind Farm	1	1
-South Trent Wind Farm	2	1
-Spinning Spur 3 Wind 1	1	1
-Spinning Spur 3 Wind 1	2	1
-Spinning Spur 3 Wind 2	1	1
-Spinning Spur 3 Wind 2	2	1
-Spinning Spur Wind Two	1	1
-Spinning Spur Wind Two	2	1
-Stanton Wind Energy	1	1
-Stanton Wind Energy	2	1
-Stephens Ranch Wind 1	1	1
-Stephens Ranch Wind 1	2	1
-Stephens Ranch Wind 2	1	1
-Stephens Ranch Wind 2	2	1
-Sweetwater Wind 1	1	1
-Sweetwater Wind 1	2	1
-Sweetwater Wind 2A	1	1
-Sweetwater Wind 2A	2	1
-Sweetwater Wind 2B	1	1
-Sweetwater Wind 2B	2	1
-Sweetwater Wind 3A	1	1
-Sweetwater Wind 3A	2	1
-Sweetwater Wind 3B	1	1
-Sweetwater Wind 3B	2	1
-Sweetwater Wind 4-4A	1	1
-Sweetwater Wind 4-4A	2	1
-Sweetwater Wind 4-4B	1	1
-Sweetwater Wind 4-4B	2	1
-Sweetwater Wind 4-5	1	1
-Sweetwater Wind 4-5	2	1
-Texas Big Spring Wind A	1	1
-Texas Big Spring Wind A	2	1
-Texas Big Spring Wind B	1	1
-Texas Big Spring Wind B	2	1
-Trent Wind Farm	1	1
-Trent Wind Farm	2	1
-Trinity Hills Wind 1	1	1
-Trinity Hills Wind 1	2	1
-Trinity Hills Wind 2	1	1
-Trinity Hills Wind 2	2	1
-TSTC West Texas Wind	1	1
-TSTC West Texas Wind	2	1
-Turkey Track Wind Energy Center	1	1
-Turkey Track Wind Energy Center	2	1
-West Texas Wind Energy	1	1
-West Texas Wind Energy	2	1
-Whirlwind Energy	1	1
-Whirlwind Energy	2	1
-Whitetail Wind Energy	1	1
-Whitetail Wind Energy	2	1
-Windthorst 2	1	1
-Windthorst 2	2	1
-WKN Mozart Wind	1	1
-WKN Mozart Wind	2	1
-Wolf Flats Wind (Wind Mgt)	1	1
-Wolf Flats Wind (Wind Mgt)	2	1
-Wolf Ridge Wind	1	1
-Wolf Ridge Wind	2	1
-Cameron Wind	1	1
-Cameron Wind	2	1
-Gulf Wind I	1	1
-Gulf Wind I	2	1
-Gulf Wind II	1	1
-Gulf Wind II	2	1
-Harbor Wind	1	1
-Harbor Wind	2	1
-Los Vientos Wind I	1	1
-Los Vientos Wind I	2	1
-Los Vientos Wind II	1	1
-Los Vientos Wind II	2	1
-Magic Valley Wind (Redfish) 1A	1	1
-Magic Valley Wind (Redfish) 1A	2	1
-Magic Valley Wind (Redfish) 1B	1	1
-Magic Valley Wind (Redfish) 1B	2	1
-Papalote Creek Wind Farm	1	1
-Papalote Creek Wind Farm	2	1
-Papalote Creek Wind Farm II	1	1
-Papalote Creek Wind Farm II	2	1
-Penascal Wind 1	1	1
-Penascal Wind 1	2	1
-Penascal Wind 2	1	1
-Penascal Wind 2	2	1
-Penascal Wind 3	1	1
-Penascal Wind 3	2	1
+Austin_Area_LFG	1	1
+Austin_Area_LFG	2	1
+Dallas-Fort_Worth_Area_LFG	1	1
+Dallas-Fort_Worth_Area_LFG	2	1
+Houston_Area_LFG	1	1
+Houston_Area_LFG	2	1
+San_Antonio_Area_LFG	1	1
+San_Antonio_Area_LFG	2	1
+Lufkin_Biomass	1	1
+Lufkin_Biomass	2	1
+Nacogdoches_Power	1	1
+Nacogdoches_Power	2	1
+Limestone_2	1	1
+Limestone_2	2	1
+Oak_Grove_SES_Unit_1	1	1
+Oak_Grove_SES_Unit_1	2	1
+Oak_Grove_SES_Unit_2	1	1
+Oak_Grove_SES_Unit_2	2	1
+Sandow_U4	1	1
+Sandow_U4	2	1
+Big_Brown_1	1	1
+Big_Brown_1	2	1
+Martin_Lake_1	1	1
+Martin_Lake_1	2	1
+Martin_Lake_2	1	1
+Martin_Lake_2	2	1
+Monticello_U2	1	1
+Monticello_U2	2	1
+San_Miguel_1	1	1
+San_Miguel_1	2	1
+Sandow_U5	1	1
+Sandow_U5	2	1
+Twin_Oaks_1	1	1
+Twin_Oaks_1	2	1
+Twin_Oaks_2	1	1
+Twin_Oaks_2	2	1
+Big_Brown_2	1	1
+Big_Brown_2	2	1
+Coleto_Creek	1	1
+Coleto_Creek	2	1
+Fayette_Power_Project_1	1	1
+Fayette_Power_Project_1	2	1
+Fayette_Power_Project_2	1	1
+Fayette_Power_Project_2	2	1
+Fayette_Power_Project_3	1	1
+Fayette_Power_Project_3	2	1
+Gibbons_Creek_1	1	1
+Gibbons_Creek_1	2	1
+J_K_Spruce_1	1	1
+J_K_Spruce_1	2	1
+J_K_Spruce_2	1	1
+J_K_Spruce_2	2	1
+Limestone_1	1	1
+Limestone_1	2	1
+Oklaunion_1	1	1
+Oklaunion_1	2	1
+W_A_Parish_5	1	1
+W_A_Parish_5	2	1
+W_A_Parish_6	1	1
+W_A_Parish_6	2	1
+W_A_Parish_7	1	1
+W_A_Parish_7	2	1
+W_A_Parish_8	1	1
+W_A_Parish_8	2	1
+J_T_Deely_1	1	1
+J_T_Deely_1	2	1
+J_T_Deely_2	1	1
+J_T_Deely_2	2	1
+Martin_Lake_3	1	1
+Martin_Lake_3	2	1
+Monticello_U1	1	1
+Monticello_U1	2	1
+Monticello_U3	1	1
+Monticello_U3	2	1
+Sandy_Creek_1	1	1
+Sandy_Creek_1	2	1
+Hydro_LCRA_LZ	1	1
+Hydro_LCRA_LZ	2	1
+Hydro_North_LZ	1	1
+Hydro_North_LZ	2	1
+Hydro_RCEC_LZ	1	1
+Hydro_RCEC_LZ	2	1
+Hydro_South_LZ	1	1
+Hydro_South_LZ	2	1
+Hydro_West_LZ	1	1
+Hydro_West_LZ	2	1
+Arthur_Von_Rosenberg_1	1	1
+Arthur_Von_Rosenberg_1	2	1
+B_M_Davis_3	1	1
+B_M_Davis_3	2	1
+Bastrop_Energy_Center_1	1	1
+Bastrop_Energy_Center_1	2	1
+Bosque_County_CC_1	1	1
+Bosque_County_CC_1	2	1
+Bosque_County_CC_2	1	1
+Bosque_County_CC_2	2	1
+Brazos_Valley_1	1	1
+Brazos_Valley_1	2	1
+Cedar_Bayou_4	1	1
+Cedar_Bayou_4	2	1
+Colorado_Bend_Energy_Center_1	1	1
+Colorado_Bend_Energy_Center_1	2	1
+Colorado_Bend_Energy_Center_2	1	1
+Colorado_Bend_Energy_Center_2	2	1
+Ennis_Power_Station_1	1	1
+Ennis_Power_Station_1	2	1
+Ferguson_Replacement	1	1
+Ferguson_Replacement	2	1
+Forney_Energy_Center_1	1	1
+Forney_Energy_Center_1	2	1
+Forney_Energy_Center_2	1	1
+Forney_Energy_Center_2	2	1
+Freestone_Energy_Center_1	1	1
+Freestone_Energy_Center_1	2	1
+Frontera_1	1	1
+Frontera_1	2	1
+Guadalupe_Generating_Station_1	1	1
+Guadalupe_Generating_Station_1	2	1
+Hays_Energy_Facility_1	1	1
+Hays_Energy_Facility_1	2	1
+Hidalgo_1	1	1
+Hidalgo_1	2	1
+Jack_County_Generation_Facility_1	1	1
+Jack_County_Generation_Facility_1	2	1
+Jack_County_Generation_Facility_2	1	1
+Jack_County_Generation_Facility_2	2	1
+Johnson_County	1	1
+Johnson_County	2	1
+Lamar_Power_Project_1	1	1
+Lamar_Power_Project_1	2	1
+Lost_Pines_1	1	1
+Lost_Pines_1	2	1
+Magic_Valley_Station	1	1
+Magic_Valley_Station	2	1
+Midlothian_1	1	1
+Midlothian_1	2	1
+Midlothian_2	1	1
+Midlothian_2	2	1
+Nueces_Bay_8	1	1
+Nueces_Bay_8	2	1
+Odessa_Ector_Generating_Station_1	1	1
+Odessa_Ector_Generating_Station_1	2	1
+Panda_Sherman	1	1
+Panda_Sherman	2	1
+Panda_Temple_1	1	1
+Panda_Temple_1	2	1
+Panda_Temple_II_CTG1	1	1
+Panda_Temple_II_CTG1	2	1
+Panda_Temple_II_CTG2	1	1
+Panda_Temple_II_CTG2	2	1
+Panda_Temple_II_STG	1	1
+Panda_Temple_II_STG	2	1
+Paris_Energy_Center_1	1	1
+Paris_Energy_Center_1	2	1
+Quail_Run_Energy_1	1	1
+Quail_Run_Energy_1	2	1
+Rio_Nogales_1	1	1
+Rio_Nogales_1	2	1
+Sam_Rayburn_10	1	1
+Sam_Rayburn_10	2	1
+Sand_Hill_Energy_Center_5a	1	1
+Sand_Hill_Energy_Center_5a	2	1
+Silas_Ray_9	1	1
+Silas_Ray_9	2	1
+T_H_Wharton_3	1	1
+T_H_Wharton_3	2	1
+T_H_Wharton_4	1	1
+T_H_Wharton_4	2	1
+Tenaska_Frontier_Station	1	1
+Tenaska_Frontier_Station	2	1
+Tenaska_Gateway_Station	1	1
+Tenaska_Gateway_Station	2	1
+Tenaska_Kiamichi_Station_1	1	1
+Tenaska_Kiamichi_Station_1	2	1
+Tenaska_Kiamichi_Station_2	1	1
+Tenaska_Kiamichi_Station_2	2	1
+Victoria_Power_Station	1	1
+Victoria_Power_Station	2	1
+Wise_County_Power_LP	1	1
+Wise_County_Power_LP	2	1
+Wolf_Hollow_Power_Proj_1	1	1
+Wolf_Hollow_Power_Proj_1	2	1
+Baytown_Energy_Center	1	1
+Baytown_Energy_Center	2	1
+C_R_Wing_Cogen_Plant	1	1
+C_R_Wing_Cogen_Plant	2	1
+Channel_Energy_Center	1	1
+Channel_Energy_Center	2	1
+Channelview_Cogen_Plant	1	1
+Channelview_Cogen_Plant	2	1
+Clear_Lake_Cogeneration_Ltd	1	1
+Clear_Lake_Cogeneration_Ltd	2	1
+Corpus_Christi_Energy_Center	1	1
+Corpus_Christi_Energy_Center	2	1
+Deer_Park_Energy_Center_1	1	1
+Deer_Park_Energy_Center_1	2	1
+Freeport_Energy_Center	1	1
+Freeport_Energy_Center	2	1
+Green_Power_2	1	1
+Green_Power_2	2	1
+Gregory_Power_Facility	1	1
+Gregory_Power_Facility	2	1
+Houston_Chemical_Complex_Battleground	1	1
+Houston_Chemical_Complex_Battleground	2	1
+Ingleside_Cogeneration	1	1
+Ingleside_Cogeneration	2	1
+Optim_Energy_Altura_Cogen	1	1
+Optim_Energy_Altura_Cogen	2	1
+Oyster_Creek_Unit_VIII	1	1
+Oyster_Creek_Unit_VIII	2	1
+Pasadena_Cogeneration	1	1
+Pasadena_Cogeneration	2	1
+Texas_City_1	1	1
+Texas_City_1	2	1
+Wichita_Falls_Cogeneration_Plant	1	1
+Wichita_Falls_Cogeneration_Plant	2	1
+Greenville_Powerlane_IC1	1	1
+Greenville_Powerlane_IC1	2	1
+Greenville_Powerlane_IC2	1	1
+Greenville_Powerlane_IC2	2	1
+Greenville_Powerlane_IC3	1	1
+Greenville_Powerlane_IC3	2	1
+Pearsall_IC_Engine_Plant_A	1	1
+Pearsall_IC_Engine_Plant_A	2	1
+Pearsall_IC_Engine_Plant_B	1	1
+Pearsall_IC_Engine_Plant_B	2	1
+Pearsall_IC_Engine_Plant_C	1	1
+Pearsall_IC_Engine_Plant_C	2	1
+Pearsall_IC_Engine_Plant_D	1	1
+Pearsall_IC_Engine_Plant_D	2	1
+Bryan_Atkins_7	1	1
+Bryan_Atkins_7	2	1
+Dansby_2	1	1
+Dansby_2	2	1
+Dansby_3	1	1
+Dansby_3	2	1
+Decker_Creek_G1	1	1
+Decker_Creek_G1	2	1
+Decker_Creek_G2	1	1
+Decker_Creek_G2	2	1
+Decker_Creek_G3	1	1
+Decker_Creek_G3	2	1
+Decker_Creek_G4	1	1
+Decker_Creek_G4	2	1
+DeCordova_1	1	1
+DeCordova_1	2	1
+DeCordova_2	1	1
+DeCordova_2	2	1
+DeCordova_3	1	1
+DeCordova_3	2	1
+DeCordova_4	1	1
+DeCordova_4	2	1
+Ector_County_Energy	1	1
+Ector_County_Energy	2	1
+ExTex_La_Porte_Power_Station_AirPro_1	1	1
+ExTex_La_Porte_Power_Station_AirPro_1	2	1
+ExTex_La_Porte_Power_Station_AirPro_2	1	1
+ExTex_La_Porte_Power_Station_AirPro_2	2	1
+ExTex_La_Porte_Power_Station_AirPro_3	1	1
+ExTex_La_Porte_Power_Station_AirPro_3	2	1
+ExTex_La_Porte_Power_Station_AirPro_4	1	1
+ExTex_La_Porte_Power_Station_AirPro_4	2	1
+Greens_Bayou_73	1	1
+Greens_Bayou_73	2	1
+Greens_Bayou_74	1	1
+Greens_Bayou_74	2	1
+Greens_Bayou_81	1	1
+Greens_Bayou_81	2	1
+Greens_Bayou_82	1	1
+Greens_Bayou_82	2	1
+Greens_Bayou_83	1	1
+Greens_Bayou_83	2	1
+Greens_Bayou_84	1	1
+Greens_Bayou_84	2	1
+Laredo_Peaking_4	1	1
+Laredo_Peaking_4	2	1
+Laredo_Peaking_5	1	1
+Laredo_Peaking_5	2	1
+Leon_Creek_Peaking_1	1	1
+Leon_Creek_Peaking_1	2	1
+Leon_Creek_Peaking_2	1	1
+Leon_Creek_Peaking_2	2	1
+Leon_Creek_Peaking_3	1	1
+Leon_Creek_Peaking_3	2	1
+Leon_Creek_Peaking_4	1	1
+Leon_Creek_Peaking_4	2	1
+Morgan_Creek_1	1	1
+Morgan_Creek_1	2	1
+Morgan_Creek_2	1	1
+Morgan_Creek_2	2	1
+Morgan_Creek_3	1	1
+Morgan_Creek_3	2	1
+Morgan_Creek_4	1	1
+Morgan_Creek_4	2	1
+Morgan_Creek_5	1	1
+Morgan_Creek_5	2	1
+Morgan_Creek_6	1	1
+Morgan_Creek_6	2	1
+Permian_Basin_1	1	1
+Permian_Basin_1	2	1
+Permian_Basin_2	1	1
+Permian_Basin_2	2	1
+Permian_Basin_3	1	1
+Permian_Basin_3	2	1
+Permian_Basin_4	1	1
+Permian_Basin_4	2	1
+Permian_Basin_5	1	1
+Permian_Basin_5	2	1
+R_W_Miller_4	1	1
+R_W_Miller_4	2	1
+R_W_Miller_5	1	1
+R_W_Miller_5	2	1
+Ray_Olinger_4	1	1
+Ray_Olinger_4	2	1
+Sam_Rayburn_GT_1	1	1
+Sam_Rayburn_GT_1	2	1
+Sam_Rayburn_GT_2	1	1
+Sam_Rayburn_GT_2	2	1
+San_Jacinto_SES_CTG_1	1	1
+San_Jacinto_SES_CTG_1	2	1
+San_Jacinto_SES_CTG_2	1	1
+San_Jacinto_SES_CTG_2	2	1
+Sand_Hill_Energy_Center_GT_1	1	1
+Sand_Hill_Energy_Center_GT_1	2	1
+Sand_Hill_Energy_Center_GT_2	1	1
+Sand_Hill_Energy_Center_GT_2	2	1
+Sand_Hill_Energy_Center_GT_3	1	1
+Sand_Hill_Energy_Center_GT_3	2	1
+Sand_Hill_Energy_Center_GT_4	1	1
+Sand_Hill_Energy_Center_GT_4	2	1
+Sand_Hill_Energy_Center_GT_6	1	1
+Sand_Hill_Energy_Center_GT_6	2	1
+Sand_Hill_Energy_Center_GT_7	1	1
+Sand_Hill_Energy_Center_GT_7	2	1
+Silas_Ray_10	1	1
+Silas_Ray_10	2	1
+T_H_Wharton_G_1	1	1
+T_H_Wharton_G_1	2	1
+T_H_Wharton_GT_51	1	1
+T_H_Wharton_GT_51	2	1
+T_H_Wharton_GT_52	1	1
+T_H_Wharton_GT_52	2	1
+T_H_Wharton_GT_53	1	1
+T_H_Wharton_GT_53	2	1
+T_H_Wharton_GT_54	1	1
+T_H_Wharton_GT_54	2	1
+T_H_Wharton_GT_55	1	1
+T_H_Wharton_GT_55	2	1
+T_H_Wharton_GT_56	1	1
+T_H_Wharton_GT_56	2	1
+V_H_Braunig_5	1	1
+V_H_Braunig_5	2	1
+V_H_Braunig_6	1	1
+V_H_Braunig_6	2	1
+V_H_Braunig_7	1	1
+V_H_Braunig_7	2	1
+V_H_Braunig_8	1	1
+V_H_Braunig_8	2	1
+W_A_Parish_Petra_Nova	1	1
+W_A_Parish_Petra_Nova	2	1
+W_A_Parish_T1	1	1
+W_A_Parish_T1	2	1
+Winchester_Power_Park_1	1	1
+Winchester_Power_Park_1	2	1
+Winchester_Power_Park_2	1	1
+Winchester_Power_Park_2	2	1
+Winchester_Power_Park_3	1	1
+Winchester_Power_Park_3	2	1
+Winchester_Power_Park_4	1	1
+Winchester_Power_Park_4	2	1
+Bayou_Cogen_Plant	1	1
+Bayou_Cogen_Plant	2	1
+BP_Chemicals_Green_Lake_Plant	1	1
+BP_Chemicals_Green_Lake_Plant	2	1
+Equistar_Corpus_Christi	1	1
+Equistar_Corpus_Christi	2	1
+ExxonMobil_Baytown_Refinery	1	1
+ExxonMobil_Baytown_Refinery	2	1
+Sweeny_Cogen_Facility	1	1
+Sweeny_Cogen_Facility	2	1
+Texas_Gulf_Sulphur_(New_Gulf)	1	1
+Texas_Gulf_Sulphur_(New_Gulf)	2	1
+Victoria_Texas_Plant	1	1
+Victoria_Texas_Plant	2	1
+B_M_Davis_1	1	1
+B_M_Davis_1	2	1
+Cedar_Bayou_1	1	1
+Cedar_Bayou_1	2	1
+Cedar_Bayou_2	1	1
+Cedar_Bayou_2	2	1
+Dansby_1	1	1
+Dansby_1	2	1
+Decker_Creek_1	1	1
+Decker_Creek_1	2	1
+Decker_Creek_2	1	1
+Decker_Creek_2	2	1
+Graham_1	1	1
+Graham_1	2	1
+Graham_2	1	1
+Graham_2	2	1
+Greens_Bayou_5	1	1
+Greens_Bayou_5	2	1
+Handley_3	1	1
+Handley_3	2	1
+Handley_4	1	1
+Handley_4	2	1
+Handley_5	1	1
+Handley_5	2	1
+Lake_Hubbard_1	1	1
+Lake_Hubbard_1	2	1
+Lake_Hubbard_2	1	1
+Lake_Hubbard_2	2	1
+Mountain_Creek_6	1	1
+Mountain_Creek_6	2	1
+Mountain_Creek_7	1	1
+Mountain_Creek_7	2	1
+Mountain_Creek_8	1	1
+Mountain_Creek_8	2	1
+O_W_Sommers_1	1	1
+O_W_Sommers_1	2	1
+O_W_Sommers_2	1	1
+O_W_Sommers_2	2	1
+Pearsall_1	1	1
+Pearsall_1	2	1
+Pearsall_2	1	1
+Pearsall_2	2	1
+Pearsall_3	1	1
+Pearsall_3	2	1
+Powerlane_Plant_1	1	1
+Powerlane_Plant_1	2	1
+Powerlane_Plant_2	1	1
+Powerlane_Plant_2	2	1
+Powerlane_Plant_3	1	1
+Powerlane_Plant_3	2	1
+R_W_Miller_1	1	1
+R_W_Miller_1	2	1
+R_W_Miller_2	1	1
+R_W_Miller_2	2	1
+R_W_Miller_3	1	1
+R_W_Miller_3	2	1
+Ray_Olinger_1	1	1
+Ray_Olinger_1	2	1
+Ray_Olinger_2	1	1
+Ray_Olinger_2	2	1
+Ray_Olinger_3	1	1
+Ray_Olinger_3	2	1
+Sim_Gideon_1	1	1
+Sim_Gideon_1	2	1
+Sim_Gideon_2	1	1
+Sim_Gideon_2	2	1
+Sim_Gideon_3	1	1
+Sim_Gideon_3	2	1
+Spencer_4	1	1
+Spencer_4	2	1
+Spencer_5	1	1
+Spencer_5	2	1
+Stryker_Creek_1	1	1
+Stryker_Creek_1	2	1
+Stryker_Creek_2	1	1
+Stryker_Creek_2	2	1
+Trinidad_6	1	1
+Trinidad_6	2	1
+V_H_Braunig_1	1	1
+V_H_Braunig_1	2	1
+V_H_Braunig_2	1	1
+V_H_Braunig_2	2	1
+V_H_Braunig_3	1	1
+V_H_Braunig_3	2	1
+W_A_Parish_1	1	1
+W_A_Parish_1	2	1
+W_A_Parish_2	1	1
+W_A_Parish_2	2	1
+W_A_Parish_3	1	1
+W_A_Parish_3	2	1
+W_A_Parish_4	1	1
+W_A_Parish_4	2	1
+Acacia_Solar	1	1
+Acacia_Solar	2	1
+Barilla_Solar_(FS,_Pecos)	1	1
+Barilla_Solar_(FS,_Pecos)	2	1
+Blue_Wing_1_Solar	1	1
+Blue_Wing_1_Solar	2	1
+Blue_Wing_2_Solar	1	1
+Blue_Wing_2_Solar	2	1
+Downie_Ranch_Solar_(OCI_Alamo_5)	1	1
+Downie_Ranch_Solar_(OCI_Alamo_5)	2	1
+OCI_Alamo_1_Solar	1	1
+OCI_Alamo_1_Solar	2	1
+OCI_Alamo_2-St._Hedwig_Solar	1	1
+OCI_Alamo_2-St._Hedwig_Solar	2	1
+OCI_Alamo_3-Walzem_Solar	1	1
+OCI_Alamo_3-Walzem_Solar	2	1
+OCI_Alamo_4_Solar_(Bracketville)	1	1
+OCI_Alamo_4_Solar_(Bracketville)	2	1
+Renewable_Energy_Alternatives_CCS1	1	1
+Renewable_Energy_Alternatives_CCS1	2	1
+SunEdison_CPS3_Somerset_1_Solar	1	1
+SunEdison_CPS3_Somerset_1_Solar	2	1
+SunEdison_Rabel_Road_Solar	1	1
+SunEdison_Rabel_Road_Solar	2	1
+SunEdison_Somerset_2_Solar	1	1
+SunEdison_Somerset_2_Solar	2	1
+SunEdison_Valley_Road_Solar	1	1
+SunEdison_Valley_Road_Solar	2	1
+Webberville_Solar	1	1
+Webberville_Solar	2	1
+Notrees_Battery_Facility	1	1
+Notrees_Battery_Facility	2	1
+Comanche_Peak_U1	1	1
+Comanche_Peak_U1	2	1
+Comanche_Peak_U2	1	1
+Comanche_Peak_U2	2	1
+South_Texas_U1	1	1
+South_Texas_U1	2	1
+South_Texas_U2	1	1
+South_Texas_U2	2	1
+Anacacho_Wind	1	1
+Anacacho_Wind	2	1
+Barton_Chapel_Wind	1	1
+Barton_Chapel_Wind	2	1
+Blue_Summit_Wind_5	1	1
+Blue_Summit_Wind_5	2	1
+Blue_Summit_Wind_6	1	1
+Blue_Summit_Wind_6	2	1
+Bobcat_Bluff_Wind	1	1
+Bobcat_Bluff_Wind	2	1
+Briscoe_Wind_Farm	1	1
+Briscoe_Wind_Farm	2	1
+Buffalo_Gap_Wind_Farm_1	1	1
+Buffalo_Gap_Wind_Farm_1	2	1
+Buffalo_Gap_Wind_Farm_2_1	1	1
+Buffalo_Gap_Wind_Farm_2_1	2	1
+Buffalo_Gap_Wind_Farm_2_2	1	1
+Buffalo_Gap_Wind_Farm_2_2	2	1
+Buffalo_Gap_Wind_Farm_3	1	1
+Buffalo_Gap_Wind_Farm_3	2	1
+Bull_Creek_Wind_Plant_U1	1	1
+Bull_Creek_Wind_Plant_U1	2	1
+Bull_Creek_Wind_Plant_U2	1	1
+Bull_Creek_Wind_Plant_U2	2	1
+Callahan_Wind	1	1
+Callahan_Wind	2	1
+Camp_Springs_Wind_1	1	1
+Camp_Springs_Wind_1	2	1
+Camp_Springs_Wind_2	1	1
+Camp_Springs_Wind_2	2	1
+Capricorn_Ridge_Wind_1	1	1
+Capricorn_Ridge_Wind_1	2	1
+Capricorn_Ridge_Wind_2	1	1
+Capricorn_Ridge_Wind_2	2	1
+Capricorn_Ridge_Wind_3	1	1
+Capricorn_Ridge_Wind_3	2	1
+Capricorn_Ridge_Wind_4	1	1
+Capricorn_Ridge_Wind_4	2	1
+Cedro_Hill_Wind_1	1	1
+Cedro_Hill_Wind_1	2	1
+Cedro_Hill_Wind_2	1	1
+Cedro_Hill_Wind_2	2	1
+Champion_Wind_Farm	1	1
+Champion_Wind_Farm	2	1
+Desert_Sky_Wind_Farm_1	1	1
+Desert_Sky_Wind_Farm_1	2	1
+Desert_Sky_Wind_Farm_2	1	1
+Desert_Sky_Wind_Farm_2	2	1
+Elbow_Creek_Wind	1	1
+Elbow_Creek_Wind	2	1
+Forest_Creek_Wind_Farm	1	1
+Forest_Creek_Wind_Farm	2	1
+Goat_Wind	1	1
+Goat_Wind	2	1
+Goat_Wind_2	1	1
+Goat_Wind_2	2	1
+Goldthwaite_Wind_1	1	1
+Goldthwaite_Wind_1	2	1
+Grandview_1_(Conway)_GV1A	1	1
+Grandview_1_(Conway)_GV1A	2	1
+Grandview_1_(Conway)_GV1B	1	1
+Grandview_1_(Conway)_GV1B	2	1
+Green_Mountain_Wind_(Brazos)_U1	1	1
+Green_Mountain_Wind_(Brazos)_U1	2	1
+Green_Mountain_Wind_(Brazos)_U2	1	1
+Green_Mountain_Wind_(Brazos)_U2	2	1
+Green_Pastures_Wind_1	1	1
+Green_Pastures_Wind_1	2	1
+Green_Pastures_Wind_2	1	1
+Green_Pastures_Wind_2	2	1
+Hackberry_Wind_Farm	1	1
+Hackberry_Wind_Farm	2	1
+Hereford_Wind_G	1	1
+Hereford_Wind_G	2	1
+Hereford_Wind_V	1	1
+Hereford_Wind_V	2	1
+Horse_Hollow_Wind_1	1	1
+Horse_Hollow_Wind_1	2	1
+Horse_Hollow_Wind_2	1	1
+Horse_Hollow_Wind_2	2	1
+Horse_Hollow_Wind_3	1	1
+Horse_Hollow_Wind_3	2	1
+Horse_Hollow_Wind_4	1	1
+Horse_Hollow_Wind_4	2	1
+Inadale_Wind	1	1
+Inadale_Wind	2	1
+Indian_Mesa_Wind_Farm	1	1
+Indian_Mesa_Wind_Farm	2	1
+Javelina_Wind_Energy	1	1
+Javelina_Wind_Energy	2	1
+Jumbo_Road_Wind_1	1	1
+Jumbo_Road_Wind_1	2	1
+Jumbo_Road_Wind_2	1	1
+Jumbo_Road_Wind_2	2	1
+Keechi_Wind_138_KV_Joplin	1	1
+Keechi_Wind_138_KV_Joplin	2	1
+King_Mountain_Wind_NE	1	1
+King_Mountain_Wind_NE	2	1
+King_Mountain_Wind_NW	1	1
+King_Mountain_Wind_NW	2	1
+King_Mountain_Wind_SE	1	1
+King_Mountain_Wind_SE	2	1
+King_Mountain_Wind_SW	1	1
+King_Mountain_Wind_SW	2	1
+Langford_Wind_Power	1	1
+Langford_Wind_Power	2	1
+Logan's_Gap_Wind_I_U1	1	1
+Logan's_Gap_Wind_I_U1	2	1
+Logan's_Gap_Wind_I_U2	1	1
+Logan's_Gap_Wind_I_U2	2	1
+Lone_Star_Wind_1_(Mesquite)	1	1
+Lone_Star_Wind_1_(Mesquite)	2	1
+Lone_Star_Wind_2_(Post_Oak)_U1	1	1
+Lone_Star_Wind_2_(Post_Oak)_U1	2	1
+Lone_Star_Wind_2_(Post_Oak)_U2	1	1
+Lone_Star_Wind_2_(Post_Oak)_U2	2	1
+Longhorn_Wind_North_U1	1	1
+Longhorn_Wind_North_U1	2	1
+Longhorn_Wind_North_U2	1	1
+Longhorn_Wind_North_U2	2	1
+Loraine_Windpark_I	1	1
+Loraine_Windpark_I	2	1
+Loraine_Windpark_II	1	1
+Loraine_Windpark_II	2	1
+Loraine_Windpark_III	1	1
+Loraine_Windpark_III	2	1
+Loraine_Windpark_IV	1	1
+Loraine_Windpark_IV	2	1
+Los_Vientos_Wind_III	1	1
+Los_Vientos_Wind_III	2	1
+McAdoo_Wind_Farm	1	1
+McAdoo_Wind_Farm	2	1
+Mesquite_Creek_Wind_1	1	1
+Mesquite_Creek_Wind_1	2	1
+Mesquite_Creek_Wind_2	1	1
+Mesquite_Creek_Wind_2	2	1
+Miami_Wind_G1	1	1
+Miami_Wind_G1	2	1
+Miami_Wind_G2	1	1
+Miami_Wind_G2	2	1
+Notrees_Wind_Farm_1	1	1
+Notrees_Wind_Farm_1	2	1
+Notrees_Wind_Farm_2	1	1
+Notrees_Wind_Farm_2	2	1
+Ocotillo_Wind_Farm	1	1
+Ocotillo_Wind_Farm	2	1
+Panhandle_Wind_1_U1	1	1
+Panhandle_Wind_1_U1	2	1
+Panhandle_Wind_1_U2	1	1
+Panhandle_Wind_1_U2	2	1
+Panhandle_Wind_2_U1	1	1
+Panhandle_Wind_2_U1	2	1
+Panhandle_Wind_2_U2	1	1
+Panhandle_Wind_2_U2	2	1
+Panther_Creek_1	1	1
+Panther_Creek_1	2	1
+Panther_Creek_2	1	1
+Panther_Creek_2	2	1
+Panther_Creek_3	1	1
+Panther_Creek_3	2	1
+Pecos_Wind_(Woodward_1)	1	1
+Pecos_Wind_(Woodward_1)	2	1
+Pecos_Wind_(Woodward_2)	1	1
+Pecos_Wind_(Woodward_2)	2	1
+Pyron_Wind_Farm	1	1
+Pyron_Wind_Farm	2	1
+Rattlesnake_Den_Wind_1_G1	1	1
+Rattlesnake_Den_Wind_1_G1	2	1
+Rattlesnake_Den_Wind_1_G2	1	1
+Rattlesnake_Den_Wind_1_G2	2	1
+Red_Canyon_Wind	1	1
+Red_Canyon_Wind	2	1
+Roscoe_Wind_Farm	1	1
+Roscoe_Wind_Farm	2	1
+Route_66_Wind	1	1
+Route_66_Wind	2	1
+Sand_Bluff_Wind_Farm	1	1
+Sand_Bluff_Wind_Farm	2	1
+Senate_Wind	1	1
+Senate_Wind	2	1
+Shannon_Wind	1	1
+Shannon_Wind	2	1
+Sherbino_1_Wind	1	1
+Sherbino_1_Wind	2	1
+Sherbino_2_Wind	1	1
+Sherbino_2_Wind	2	1
+Silver_Star_Wind	1	1
+Silver_Star_Wind	2	1
+Snyder_Wind_Farm	1	1
+Snyder_Wind_Farm	2	1
+South_Plains_Wind_1	1	1
+South_Plains_Wind_1	2	1
+South_Plains_Wind_2	1	1
+South_Plains_Wind_2	2	1
+South_Trent_Wind_Farm	1	1
+South_Trent_Wind_Farm	2	1
+Spinning_Spur_3_Wind_1	1	1
+Spinning_Spur_3_Wind_1	2	1
+Spinning_Spur_3_Wind_2	1	1
+Spinning_Spur_3_Wind_2	2	1
+Spinning_Spur_Wind_Two	1	1
+Spinning_Spur_Wind_Two	2	1
+Stanton_Wind_Energy	1	1
+Stanton_Wind_Energy	2	1
+Stephens_Ranch_Wind_1	1	1
+Stephens_Ranch_Wind_1	2	1
+Stephens_Ranch_Wind_2	1	1
+Stephens_Ranch_Wind_2	2	1
+Sweetwater_Wind_1	1	1
+Sweetwater_Wind_1	2	1
+Sweetwater_Wind_2A	1	1
+Sweetwater_Wind_2A	2	1
+Sweetwater_Wind_2B	1	1
+Sweetwater_Wind_2B	2	1
+Sweetwater_Wind_3A	1	1
+Sweetwater_Wind_3A	2	1
+Sweetwater_Wind_3B	1	1
+Sweetwater_Wind_3B	2	1
+Sweetwater_Wind_4-4A	1	1
+Sweetwater_Wind_4-4A	2	1
+Sweetwater_Wind_4-4B	1	1
+Sweetwater_Wind_4-4B	2	1
+Sweetwater_Wind_4-5	1	1
+Sweetwater_Wind_4-5	2	1
+Texas_Big_Spring_Wind_A	1	1
+Texas_Big_Spring_Wind_A	2	1
+Texas_Big_Spring_Wind_B	1	1
+Texas_Big_Spring_Wind_B	2	1
+Trent_Wind_Farm	1	1
+Trent_Wind_Farm	2	1
+Trinity_Hills_Wind_1	1	1
+Trinity_Hills_Wind_1	2	1
+Trinity_Hills_Wind_2	1	1
+Trinity_Hills_Wind_2	2	1
+TSTC_West_Texas_Wind	1	1
+TSTC_West_Texas_Wind	2	1
+Turkey_Track_Wind_Energy_Center	1	1
+Turkey_Track_Wind_Energy_Center	2	1
+West_Texas_Wind_Energy	1	1
+West_Texas_Wind_Energy	2	1
+Whirlwind_Energy	1	1
+Whirlwind_Energy	2	1
+Whitetail_Wind_Energy	1	1
+Whitetail_Wind_Energy	2	1
+Windthorst_2	1	1
+Windthorst_2	2	1
+WKN_Mozart_Wind	1	1
+WKN_Mozart_Wind	2	1
+Wolf_Flats_Wind_(Wind_Mgt)	1	1
+Wolf_Flats_Wind_(Wind_Mgt)	2	1
+Wolf_Ridge_Wind	1	1
+Wolf_Ridge_Wind	2	1
+Cameron_Wind	1	1
+Cameron_Wind	2	1
+Gulf_Wind_I	1	1
+Gulf_Wind_I	2	1
+Gulf_Wind_II	1	1
+Gulf_Wind_II	2	1
+Harbor_Wind	1	1
+Harbor_Wind	2	1
+Los_Vientos_Wind_I	1	1
+Los_Vientos_Wind_I	2	1
+Los_Vientos_Wind_II	1	1
+Los_Vientos_Wind_II	2	1
+Magic_Valley_Wind_(Redfish)_1A	1	1
+Magic_Valley_Wind_(Redfish)_1A	2	1
+Magic_Valley_Wind_(Redfish)_1B	1	1
+Magic_Valley_Wind_(Redfish)_1B	2	1
+Papalote_Creek_Wind_Farm	1	1
+Papalote_Creek_Wind_Farm	2	1
+Papalote_Creek_Wind_Farm_II	1	1
+Papalote_Creek_Wind_Farm_II	2	1
+Penascal_Wind_1	1	1
+Penascal_Wind_1	2	1
+Penascal_Wind_2	1	1
+Penascal_Wind_2	2	1
+Penascal_Wind_3	1	1
+Penascal_Wind_3	2	1
