@@ -1,0 +1,10 @@
+
+=======================================================================
+SWITCH model created in 0.02 s.
+Arguments:
+verbose=True, outputs_dir='outputs', logs_dir='logs', solver='glpk', inputs_dir='inputs', solver_manager='serial', log_run_to_file=True, suffixes=['rc', 'dual', 'slack']
+Modules:
+switch_model, switch_model.timescales, switch_model.financials, switch_model.balancing.load_zones, switch_model.energy_sources.properties, switch_model.generators.core.build, switch_model.generators.core.dispatch, switch_model.reporting, switch_model.solve
+=======================================================================
+
+Loading inputs...
