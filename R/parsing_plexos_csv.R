@@ -212,8 +212,10 @@ for(k in 1:length(fce_gen_info$GENERATION_PROJECT)){ # loop through load zones
     fce_cfs$gen_max_capacity_factor[row_count] <- 1 # setting all cap at 1 for now
   }
 }
+fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
+
 # Export .tab
-write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
+# write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
 
 
 
