@@ -1,0 +1,18 @@
+
+
+How to set up a github collaboration
+
+
+1. Person 1: 
+	> creates repo on github.com
+
+2. Person 2:
+	> forks repo on github.com
+	> clones repo (e.g. by downloading zip)
+	> In terminal:
+		cd ~/RepoFilepath
+		git init
+		git remote add upstream git@github.com:Person1Username/RepoName.git
+	> Edit something in the repo
+	> In terminal:
+		
