@@ -32,14 +32,26 @@ Person 1:
 		git pull origin master
 
 	10. change stuff
-	11. In Terminal:
-
-		git add .
-		git commit -m "message"
-		git push origin master
+	11. In Terminal: add, commit, push
 
 Person 2:
 	12. In Terminal:
 
 		git remote add upstream git@github.com:Person1Username/RepoName.git
+		git fetch upstream
+		git merge upstream/master
+	
+	13. Change stuff
+	14. In Terminal:
+
+		git add .
+		git commit -m "message"
+		git push -u origin master 
+
+	15. Pull request on github.com
+
+Person 1:
+	Repeat from 8.
+
+
 
