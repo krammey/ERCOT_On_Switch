@@ -4,7 +4,7 @@ load("./20190218.RData")
 # This code was written to help transferring PLEXOS FCe Data to .tab format for SWITCH
 # List of switch core modules' required input files and required columns is in 'modules.txt'
 gen_info <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/generation_projects_info.tab", header = T, sep = "\t")
-fce_file = '../FCe_data_2015.csv' # Import FCe Plexos Data from /Users/trins/Box/Energy Storage/Archive/FCe dispatch modeling/Reports/
+fce_file = './FCe_data_2015.csv' # Import FCe Plexos Data from /Users/trins/Box/Energy Storage/Archive/FCe dispatch modeling/Reports/
 fce_data <- read.csv(file = fce_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
 dot <- gen_info[dim(gen_info)[1],dim(gen_info)[2]]
 
@@ -64,9 +64,10 @@ fce_gen_info$gen_energy_source <- fce_data$Fuel
 fce_gen_info$gen_load_zone <- fce_data$Load.Zone
 fce_gen_info$gen_is_baseload <- 0 # not in fce data. so set for zero...
 fce_gen_info$gen_variable_om <- fce_data$Variable.O.M.Charge.USD.per.MWh  # Need to make sure the units are right
+fce_gen_info$gen_variable_om[is.na(fce_gen_info$gen_variable_om)] <- 0
 #
-fce_gen_info$gen_full_load_heat_rate <- as.numeric(fce_data$Average.Heat.Rate.Btu.per.kWh)/1000 # MMBTU/MWh
-fce_gen_info$gen_full_load_heat_rate[is.na(fce_gen_info$gen_full_load_heat_rate)==TRUE] <- 10
+fce_gen_info$gen_full_load_heat_rate <- as.character(as.numeric(fce_data$Average.Heat.Rate.Btu.per.kWh)/1000) # MMBTU/MWh
+fce_gen_info$gen_full_load_heat_rate[is.na(fce_gen_info$gen_full_load_heat_rate)==TRUE] <- dot
 #
 fce_gen_info$gen_is_variable <- 0
 fce_gen_info$gen_is_variable[fce_gen_info$gen_energy_source %in% c("Solar","Wind","Wind-C")] <- 1
