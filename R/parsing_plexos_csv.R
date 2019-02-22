@@ -77,7 +77,7 @@ for(k in 1:dim(fce_tech_list)[1]){fce_tech_list$gen_tech[k] <- paste(fce_tech_li
 fce_gen_info$gen_tech <- fce_tech_list$gen_tech # NOTE: gen_tech can be anything but must be consistent for generation_projects_info.tab, gen_build_costs.tab, and gen_build_predetermined.tab
 
 # Export .tab
-write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
+# write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
 
 
 
@@ -101,8 +101,10 @@ fce_build$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_build$GENERATION_PROJ
 fce_build$build_year <- fce_data$Online
 fce_build$gen_overnight_cost <- 100 # test value
 fce_build$gen_fixed_om <- fce_data$Fixed.OM.Charge.USD.per.kWyr
+fce_build$gen_fixed_om[is.na(fce_build$gen_fixed_om)] <- 0
+
 # Export .tab
-# write.table(fce_build,"../../FCe_Model/inputs/gen_build_costs.tab",sep="\t",row.names = F, quote = F)
+# write.table(fce_build,"../FCe_Model/inputs/gen_build_costs.tab",sep="\t",row.names = F, quote = F)
 
 
 
