@@ -3,16 +3,31 @@
 How to set up a github collaboration
 
 
-1. Person 1: 
-	> creates repo on github.com
+Person 1: 
+	1. creates repo on github.com
 
-2. Person 2:
-	> forks repo on github.com
-	> clones repo (e.g. by downloading zip)
-	> In terminal:
-		cd ~/RepoFilepath
-		git init
-		git remote add upstream git@github.com:Person1Username/RepoName.git
-	> Edit something in the repo
-	> In terminal:
-		
+Person 2:
+	2. forks repo on github.com
+	3. clones repo (e.g. by downloading zip)
+	4. In terminal:
+
+		cd ~/FilePathWhereYouWantToPutRepoFolder
+		git clone https://github.com/Person1Username/RepoName.git
+
+	  NOTE: the latter command creates folder with name "RepoName", containing all contents
+
+	5. Edit something in the repo
+	6. In terminal:
+
+		git add .
+		git commit -m "message"
+		git push origin master
+
+	7. Click "New pull request" on github.com
+
+Person 1:
+	8. Navigate to repo pull requests on github and confirm merge
+	9. In Terminal:
+
+		git pull origin master
+
