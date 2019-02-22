@@ -57,7 +57,7 @@ fce_gen_info <- fce_data[,1:10] # Copy data frame to get the right size set up. 
 names(fce_gen_info) <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","gen_connect_cost_per_mw","gen_full_load_heat_rate","gen_variable_om","gen_max_age","gen_is_variable","gen_is_baseload","gen_energy_source") # Rename columns - for now, mandatory columns only
 
 # mandatory columns
-fce_gen_info$gen_connect_cost_per_mw <- dot # cost of grid upgrades to support a new project, in $/peakMW --- possibly from https://energy.utexas.edu/sites/default/files/UTAustin_FCe_Exe_Summary_2018.pdf   NOTE: maybe we can leave this blank since we're not building new transmission? just storage?
+fce_gen_info$gen_connect_cost_per_mw <- 0 # cost of grid upgrades to support a new project, in $/peakMW --- possibly from https://energy.utexas.edu/sites/default/files/UTAustin_FCe_Exe_Summary_2018.pdf   NOTE: maybe we can leave this blank since we're not building new transmission? just storage? PULL these from other switch examples
 fce_gen_info$gen_max_age <- 100  # this is max lifetime of plant ---NOT in fce_data?
 fce_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_data$Generator)) # projects that exist or could be built, gsub replaces spaces with underscores
 fce_gen_info$gen_energy_source <- fce_data$Fuel
