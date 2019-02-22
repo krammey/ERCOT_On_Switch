@@ -66,8 +66,8 @@ fce_gen_info$gen_is_baseload <- 0 # not in fce data. so set for zero...
 fce_gen_info$gen_variable_om <- fce_data$Variable.O.M.Charge.USD.per.MWh  # Need to make sure the units are right
 fce_gen_info$gen_variable_om[is.na(fce_gen_info$gen_variable_om)] <- 0
 #
-fce_gen_info$gen_full_load_heat_rate <- as.character(as.numeric(fce_data$Average.Heat.Rate.Btu.per.kWh)/1000) # MMBTU/MWh
-fce_gen_info$gen_full_load_heat_rate[is.na(fce_gen_info$gen_full_load_heat_rate)==TRUE] <- dot
+fce_gen_info$gen_full_load_heat_rate <- as.numeric(fce_data$Average.Heat.Rate.Btu.per.kWh)/1000 # MMBTU/MWh
+fce_gen_info$gen_full_load_heat_rate[is.na(fce_gen_info$gen_full_load_heat_rate)==TRUE] <- '.'
 #
 fce_gen_info$gen_is_variable <- 0
 fce_gen_info$gen_is_variable[fce_gen_info$gen_energy_source %in% c("Solar","Wind","Wind-C")] <- 1
@@ -77,7 +77,7 @@ for(k in 1:dim(fce_tech_list)[1]){fce_tech_list$gen_tech[k] <- paste(fce_tech_li
 fce_gen_info$gen_tech <- fce_tech_list$gen_tech # NOTE: gen_tech can be anything but must be consistent for generation_projects_info.tab, gen_build_costs.tab, and gen_build_predetermined.tab
 
 # Export .tab
-# write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
 
 
 
