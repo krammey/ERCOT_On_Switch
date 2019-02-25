@@ -199,15 +199,18 @@ fce_fuels <- fce_fuels[!(fce_fuels$fuel %in% fce_non_fuels),]
 
 # variable_capacity_factors.tab -------------------------------------------DONE
 var_cfs <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/variable_capacity_factors.tab", header = T, sep = "\t")
-cf_rows <- length(fce_gen_info$GENERATION_PROJECT)*dim(t_points)[1]
+test <- gen_info[gen_info$gen_is_variable==1,]
+
+fce_var_gens <- fce_gen_info$GENERATION_PROJECT[fce_gen_info$gen_is_variable==1] # isolate list of variable generators
+cf_rows <- length(fce_var_gens)*dim(t_points)[1]
 fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the right size set up.
 names(fce_cfs) <- names(var_cfs)
 # loop through GENERATION_PROJECT and tps to create cfs
 row_count = 0
-for(k in 1:length(fce_gen_info$GENERATION_PROJECT)){ # loop through load zones
+for(k in 1:length(fce_var_gens)){ # loop through variable generators
   for(j in 1:dim(t_points)[1]){ # loop through timepoints
     row_count = row_count+1
-    fce_cfs$GENERATION_PROJECT[row_count] <- as.character.factor(fce_gen_info$GENERATION_PROJECT[k])
+    fce_cfs$GENERATION_PROJECT[row_count] <- as.character.factor(fce_var_gens[k])
     fce_cfs$timepoint[row_count] <- t_points[j,1]
     fce_cfs$gen_max_capacity_factor[row_count] <- 0.50 # setting all cap at 1 for now
   }
@@ -215,7 +218,7 @@ for(k in 1:length(fce_gen_info$GENERATION_PROJECT)){ # loop through load zones
 fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
 
 # Export .tab
-# write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
 
 
 
