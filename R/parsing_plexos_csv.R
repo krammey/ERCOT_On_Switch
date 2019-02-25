@@ -61,6 +61,7 @@ fce_gen_info$gen_connect_cost_per_mw <- 0 # cost of grid upgrades to support a n
 fce_gen_info$gen_max_age <- 100  # this is max lifetime of plant ---NOT in fce_data?
 fce_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_data$Generator)) # projects that exist or could be built, gsub replaces spaces with underscores
 fce_gen_info$gen_energy_source <- fce_data$Fuel
+fce_gen_info$gen_energy_source[fce_gen_info$gen_energy_source=="Hydro"] <- "Water"
 fce_gen_info$gen_load_zone <- fce_data$Load.Zone
 fce_gen_info$gen_is_baseload <- 0 # not in fce data. so set for zero...
 fce_gen_info$gen_variable_om <- fce_data$Variable.O.M.Charge.USD.per.MWh  # Need to make sure the units are right
@@ -77,7 +78,7 @@ for(k in 1:dim(fce_tech_list)[1]){fce_tech_list$gen_tech[k] <- paste(fce_tech_li
 fce_gen_info$gen_tech <- fce_tech_list$gen_tech # NOTE: gen_tech can be anything but must be consistent for generation_projects_info.tab, gen_build_costs.tab, and gen_build_predetermined.tab
 
 # Export .tab
-# write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
 
 
 

@@ -38,7 +38,7 @@ Hereford_Wind_G	2020	Wind_WT	West	Wind	99.9	700.107	2619.38
 T_H_Wharton_4	2020	NG_CCGT	Houston	NG	332	2326.68	8392.96
 Mountain_Creek_6	2020	NG_ST	North	NG	122	854.985	3084.16
 Panther_Creek_1	2020	Wind_WT	West	Wind	142.5	998.651	3736.35
-Hydro_LCRA_LZ	2020	Hydro_HYDRO	LCRA	Hydro	280	1962.26	5513.2
+Hydro_LCRA_LZ	2020	Hydro_HYDRO	LCRA	Water	280	1962.26	5513.2
 Pearsall_IC_Engine_Plant_B	2020	NG_IC	South	NG	50.6	354.609	1279.17
 T_H_Wharton_GT_51	2020	NG_OCGT	Houston	NG	57	399.46	966.15
 Permian_Basin_4	2020	NG_OCGT	West	NG	69	483.557	1744.32
@@ -133,7 +133,7 @@ Midlothian_1	2020	NG_CCGT	North	NG	940	6587.59	23763.2
 Winchester_Power_Park_1	2020	NG_OCGT	LCRA	NG	44	308.355	745.8
 Hackberry_Wind_Farm	2020	Wind_WT	West	Wind	163.5	1145.82	4286.97
 Roscoe_Wind_Farm	2020	Wind_WT	West	Wind	209	1464.69	5479.98
-Hydro_South_LZ	2020	Hydro_HYDRO	South	Hydro	67.7	474.447	1333.01
+Hydro_South_LZ	2020	Hydro_HYDRO	South	Water	67.7	474.447	1333.01
 King_Mountain_Wind_SE	2020	Wind_WT	West	Wind	40.3	282.425	1056.67
 Twin_Oaks_2	2020	Coal-Lig_ST	North	Coal-Lig	156	1093.26	6795.36
 Bryan_Atkins_7	2020	NG_OCGT	North	NG	18	126.145	305.1
@@ -177,7 +177,7 @@ DeCordova_1	2020	NG_OCGT	North	NG	71	497.573	1203.45
 OCI_Alamo_3-Walzem_Solar	2020	Solar_PV	South	Solar	5.5	38.5444	121.715
 Camp_Springs_Wind_2	2020	Wind_WT	West	Wind	120	840.969	3146.4
 Trent_Wind_Farm	2020	Wind_WT	West	Wind	150	1051.21	3933
-Hydro_West_LZ	2020	Hydro_HYDRO	West	Hydro	75.8	531.212	1492.5
+Hydro_West_LZ	2020	Hydro_HYDRO	West	Water	75.8	531.212	1492.5
 W_A_Parish_5	2020	Coal-Sub_ST	Houston	Coal-Sub	659	4618.32	28706
 Longhorn_Wind_North_U2	2020	Wind_WT	West	Wind	100	700.808	2622
 Tenaska_Kiamichi_Station_1	2020	NG_CCGT	North	NG	623	4366.03	15749.4
@@ -299,7 +299,7 @@ King_Mountain_Wind_NW	2020	Wind_WT	West	Wind	79.3	555.74	2079.25
 San_Jacinto_SES_CTG_2	2020	NG_OCGT	Houston	NG	81	567.654	2047.68
 Trinity_Hills_Wind_2	2020	Wind_WT	North	Wind	107.5	753.368	2818.65
 Graham_2	2020	NG_ST	West	NG	390	2733.15	9859.2
-Hydro_RCEC_LZ	2020	Hydro_HYDRO	RCEC	Hydro	80	560.646	1575.2
+Hydro_RCEC_LZ	2020	Hydro_HYDRO	RCEC	Water	80	560.646	1575.2
 Elbow_Creek_Wind	2020	Wind_WT	West	Wind	118.7	831.859	3112.31
 Blue_Summit_Wind_5	2020	Wind_WT	West	Wind	9	63.0727	235.98
 Morgan_Creek_6	2020	NG_OCGT	West	NG	67	469.541	1135.65
@@ -311,7 +311,7 @@ Panda_Temple_II_STG	2020	NG_CCGT	North	NG	334.7	2345.6	8461.22
 Sim_Gideon_3	2020	NG_ST	LCRA	NG	336	2354.71	8494.08
 Martin_Lake_3	2020	Coal-Sub_ST	North	Coal-Sub	805	5641.5	35065.8
 WKN_Mozart_Wind	2020	Wind_WT	West	Wind	30	210.242	786.6
-Hydro_North_LZ	2020	Hydro_HYDRO	North	Hydro	51.6	361.617	1016
+Hydro_North_LZ	2020	Hydro_HYDRO	North	Water	51.6	361.617	1016
 Pearsall_3	2020	NG_ST	South	NG	20	140.162	505.6
 Winchester_Power_Park_3	2020	NG_OCGT	LCRA	NG	44	308.355	745.8
 Bull_Creek_Wind_Plant_U2	2020	Wind_WT	West	Wind	90	630.727	2359.8

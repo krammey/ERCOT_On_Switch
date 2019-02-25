@@ -37,11 +37,11 @@ Martin_Lake_3	Coal-Sub_ST	North	0	11.0769	6.33	100	0	0	Coal-Sub
 Monticello_U1	Coal-Sub_ST	North	0	10.92604	6.33	100	0	0	Coal-Sub
 Monticello_U3	Coal-Sub_ST	North	0	10.93577	6.33	100	0	0	Coal-Sub
 Sandy_Creek_1	Coal-Sub_ST	North	0	9.33484	6.33	100	0	0	Coal-Sub
-Hydro_LCRA_LZ	Hydro_HYDRO	LCRA	0	.	1.74	100	0	0	Hydro
-Hydro_North_LZ	Hydro_HYDRO	North	0	.	1.74	100	0	0	Hydro
-Hydro_RCEC_LZ	Hydro_HYDRO	RCEC	0	.	1.74	100	0	0	Hydro
-Hydro_South_LZ	Hydro_HYDRO	South	0	.	1.74	100	0	0	Hydro
-Hydro_West_LZ	Hydro_HYDRO	West	0	.	1.74	100	0	0	Hydro
+Hydro_LCRA_LZ	Hydro_HYDRO	LCRA	0	.	1.74	100	0	0	Water
+Hydro_North_LZ	Hydro_HYDRO	North	0	.	1.74	100	0	0	Water
+Hydro_RCEC_LZ	Hydro_HYDRO	RCEC	0	.	1.74	100	0	0	Water
+Hydro_South_LZ	Hydro_HYDRO	South	0	.	1.74	100	0	0	Water
+Hydro_West_LZ	Hydro_HYDRO	West	0	.	1.74	100	0	0	Water
 Arthur_Von_Rosenberg_1	NG_CCGT	South	0	8.01705	4.73	100	0	0	NG
 B_M_Davis_3	NG_CCGT	South	0	8.31813	4.73	100	0	0	NG
 Bastrop_Energy_Center_1	NG_CCGT	South	0	8.06623	4.73	100	0	0	NG
