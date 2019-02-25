@@ -1,5 +1,5 @@
 setwd("~/GoogleDrive/1UT/0_Research/3_Switch/Test_Model/R/")
-load("./20190218.RData")
+load("./20190222.RData")
 
 # This code was written to help transferring PLEXOS FCe Data to .tab format for SWITCH
 # List of switch core modules' required input files and required columns is in 'modules.txt'
@@ -209,7 +209,7 @@ for(k in 1:length(fce_gen_info$GENERATION_PROJECT)){ # loop through load zones
     row_count = row_count+1
     fce_cfs$GENERATION_PROJECT[row_count] <- as.character.factor(fce_gen_info$GENERATION_PROJECT[k])
     fce_cfs$timepoint[row_count] <- t_points[j,1]
-    fce_cfs$gen_max_capacity_factor[row_count] <- 1 # setting all cap at 1 for now
+    fce_cfs$gen_max_capacity_factor[row_count] <- 0.50 # setting all cap at 1 for now
   }
 }
 fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
