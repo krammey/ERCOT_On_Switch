@@ -1,5 +1,5 @@
 setwd("~/GoogleDrive/1UT/0_Research/3_Switch/Test_Model/R/")
-load("./20190222.RData")
+load("./20190225.RData")
 
 # This code was written to help transferring PLEXOS FCe Data to .tab format for SWITCH
 # List of switch core modules' required input files and required columns is in 'modules.txt'
@@ -189,7 +189,7 @@ fce_fuels$upstream_co2_intensity[fce_fuels$fuel == "NG"] <- 24.69/1000 # tCO2/MM
 fce_fuels <- fce_fuels[!(fce_fuels$fuel %in% c(fce_non_fuels,"Hydro")),]
 
 # Export .tab
-write.table(fce_fuels,"../FCe_Model/inputs/fuels.tab",sep="\t",row.names = F, quote = F)
+# write.table(fce_fuels,"../FCe_Model/inputs/fuels.tab",sep="\t",row.names = F, quote = F)
 
 
 
@@ -201,8 +201,6 @@ write.table(fce_fuels,"../FCe_Model/inputs/fuels.tab",sep="\t",row.names = F, qu
 
 # variable_capacity_factors.tab -------------------------------------------DONE
 var_cfs <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/variable_capacity_factors.tab", header = T, sep = "\t")
-test <- gen_info[gen_info$gen_is_variable==1,]
-
 fce_var_gens <- fce_gen_info$GENERATION_PROJECT[fce_gen_info$gen_is_variable==1] # isolate list of variable generators
 cf_rows <- length(fce_var_gens)*dim(t_points)[1]
 fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the right size set up.

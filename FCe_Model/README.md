@@ -2,6 +2,10 @@ SYNOPSIS
 	switch solve --verbose --log-run
 
 
+Basic model of ERCOT using 2015 data from Full Cost of Electricity project.
+> 1 period, 2 timpoints 
+
+
 
 To read results in Terminal type:
 
