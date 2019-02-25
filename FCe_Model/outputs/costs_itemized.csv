@@ -1,0 +1,3 @@
+PERIOD,Component,AnnualCost_NPV,AnnualCost_Real,Component_type
+2020,TotalGenFixedCosts,24709675.9557,3528017.7306,annual
+2020,GenVariableOMCostsInTP,1230719015.17,175720576.615,timepoint

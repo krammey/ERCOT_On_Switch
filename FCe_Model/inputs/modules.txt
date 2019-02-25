@@ -39,4 +39,7 @@ switch_model.generators.core.dispatch
 # 	variable_capacity_factors.tab 	(GENERATION_PROJECT, timepoint, gen_max_capacity_factor)  NOTE: can be skipped if no variable renewables considered
 
 
+switch_model.generators.core.no_commit
+# This *maybe* is mandatory if you aren't doing commitment
+
 switch_model.reporting 
