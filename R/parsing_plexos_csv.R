@@ -185,9 +185,10 @@ fce_fuels$upstream_co2_intensity[fce_fuels$fuel == "Coal-Lig"] <- 13.02/1000 # t
 fce_fuels$upstream_co2_intensity[fce_fuels$fuel == "Coal-Sub"] <- 13.02/1000 # tCO2/MMBTU
 fce_fuels$upstream_co2_intensity[fce_fuels$fuel == "NG"] <- 24.69/1000 # tCO2/MMBTU
 # TAKE OUT NON-FUELS
-fce_fuels <- fce_fuels[!(fce_fuels$fuel %in% fce_non_fuels),]
+fce_fuels <- fce_fuels[!(fce_fuels$fuel %in% c(fce_non_fuels,"Hydro")),]
+
 # Export .tab
-# write.table(fce_fuels,"../FCe_Model/inputs/fuels.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_fuels,"../FCe_Model/inputs/fuels.tab",sep="\t",row.names = F, quote = F)
 
 
 
