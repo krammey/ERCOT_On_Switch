@@ -218,7 +218,7 @@ for(k in 1:length(fce_var_gens)){ # loop through variable generators
 fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
 
 # Export .tab
-write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
+# write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
 
 
 
