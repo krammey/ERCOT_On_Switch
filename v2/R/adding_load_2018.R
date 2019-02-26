@@ -1,5 +1,5 @@
-setwd("~/GoogleDrive/1UT/0_Research/3_Switch/Test_Model_v2/R/")
-load("./20190225.RData")
+setwd("~/GoogleDrive/1UT/0_Research/3_Switch/Test_Model/v2/R/")
+load("./20190225_87600tps.RData")
 
 # This code was written to expand timescales for initial test model based on Fce Data
 
@@ -47,57 +47,59 @@ Z4_data <- Z4_data[1:8760,]
 
 
 # periods.tab ----------------------------------------------------------------------------------------- 
-periods
-# if we want to look at multiple investment periods, the code below will need another loop that depends on periods.tab
-# We can leave this as is for now:  1 investment period from 2017 to 2026
+old_periods <- periods
+periods$INVESTMENT_PERIOD <- 2018
+periods$period_start <- 2018
+periods$period_end <- 2018
+write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
 # timeseries.tab ---------------------------------------------------------------------------------------
-# Let 1 time series equal 1 year => 8784 tps per series and 10 series per period
+# Let 1 time series equal 1 year => 8784 tps per series and 1 series per period
 # Blocks of consecutive timepoints within a period.
-old_ts <- t_series 
-new_ts <- as.data.frame(old_ts[1:10,], row.names = 1:10) # redefine new dataframe of with correct size
-new_ts$ts_period = 2020
-new_ts$ts_num_tps = dim(Z1_data)[1]  # number of timepoints in a series
-new_ts$ts_duration_of_tp = 1 # duration, in hours, of each timepoint within a timeseries
-new_ts$ts_scale_to_period = 10
-for(k in 2017:2026){
-  new_ts$TIMESERIES[k-2016] <- paste(c(k,"_all"),collapse = "")
-}
-write.table(new_ts, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+old_ts <- t_series
+
+t_series$ts_period = 2018
+t_series$ts_num_tps = dim(Z1_data)[1]  # number of timepoints in a series
+t_series$ts_duration_of_tp = 1 # duration, in hours, of each timepoint within a timeseries
+t_series$ts_scale_to_period = 1 # number of timeseries per period
+t_series$TIMESERIES <- '2018_all'
+
+# write.table(t_series, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 # timepoints.tab ---------------------------------------------------------------------------------------
 old_tps <- t_points # this is the original 
 
-years = 2017:2026
+years = 2018
 months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12))
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
 num_days = c(31,28,31,30,31,30,31,31,30,31,30,31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
 
-number_tps = dim(Z1_data)[1]*dim(new_ts)[1]
+number_tps = dim(Z1_data)[1]*dim(t_series)[1]
   
 new_tps <- as.data.frame(t_points[1:number_tps,], row.names = 1:number_tps) # redefine new dataframe of with correct size
 new_tps$timepoint_id <- 1:number_tps
 
-levels(new_tps$timeseries) <- new_ts$TIMESERIES
+levels(new_tps$timeseries) <- t_series$TIMESERIES
 
 count = 0
-for(y in 1:length(new_ts$TIMESERIES)){
+for(y in 1:length(t_series$TIMESERIES)){
   for(m in 1:12){
     for(d in 1:num_days[m]){
       for(h in 1:length(hours)){
         count = count + 1
-        new_tps$timeseries[count] <- new_ts$TIMESERIES[y]
+        new_tps$timeseries[count] <- t_series$TIMESERIES[y]
         new_tps$timestamp[count] <- paste(c(years[y],as.character(months[m]),as.character(days_max[d]),as.character(hours[h])), collapse = "")
       }
+      print(count)
     }
   }
-  print(count)
+  
 }
-write.table(new_tps, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+# write.table(new_tps, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
