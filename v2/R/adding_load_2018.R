@@ -1,5 +1,5 @@
 setwd("~/GoogleDrive/1UT/0_Research/3_Switch/Test_Model/v2/R/")
-load("./20190225_87600tps.RData")
+load("./Latest.RData")
 
 # This code was written to expand timescales for initial test model based on Fce Data
 
@@ -48,6 +48,7 @@ Z4_data <- Z4_data[1:8760,]
 
 # periods.tab ----------------------------------------------------------------------------------------- 
 old_periods <- periods
+
 periods$INVESTMENT_PERIOD <- 2018
 periods$period_start <- 2018
 periods$period_end <- 2018
@@ -75,31 +76,32 @@ old_tps <- t_points # this is the original
 years = 2018
 months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12))
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
-num_days = c(31,28,31,30,31,30,31,31,30,31,30,31)
+num_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
+# num_days = c(1:31, 1:28, 1:31, 1:30, 1:31, 1:30, 1:31, 1:31, 1:30, 1:31, 1:30, 1:31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
 
 number_tps = dim(Z1_data)[1]*dim(t_series)[1]
   
-new_tps <- as.data.frame(t_points[1:number_tps,], row.names = 1:number_tps) # redefine new dataframe of with correct size
-new_tps$timepoint_id <- 1:number_tps
-
-levels(new_tps$timeseries) <- t_series$TIMESERIES
-
+t_points <- as.data.frame(old_tps[1:number_tps,], row.names = 1:number_tps) # redefine new dataframe of with correct size
+t_points$timepoint_id <- 1:number_tps
+levels(t_points$timeseries) <- t_series$TIMESERIES # have to redefine levels in order to input new timeseries, in next row
+t_points$timeseries <- t_series$TIMESERIES[1]
+# t_points$yr <- "2018"
+# t_points$mth <- rep.row(nu)
+# t_points$day <- c(days_max[c])
+# 
 count = 0
-for(y in 1:length(t_series$TIMESERIES)){
-  for(m in 1:12){
-    for(d in 1:num_days[m]){
-      for(h in 1:length(hours)){
-        count = count + 1
-        new_tps$timeseries[count] <- t_series$TIMESERIES[y]
-        new_tps$timestamp[count] <- paste(c(years[y],as.character(months[m]),as.character(days_max[d]),as.character(hours[h])), collapse = "")
-      }
-      print(count)
+for(m in 1:12){
+  for(d in 1:num_days[m]){
+    for(h in 1:length(hours)){
+      count = count + 1
+      t_points$timestamp[count] <- paste(c(years[y],as.character(months[m]),as.character(days_max[d]),as.character(hours[h])), collapse = "")
     }
   }
-  
 }
-# write.table(new_tps, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+
+
+# write.table(t_points, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -108,11 +110,9 @@ for(y in 1:length(t_series$TIMESERIES)){
 ########################################################################################################
 
 # This is only included because load zones may need to be changed
-# generation_projects_info.tab -------------------------------------------------------------------------
-fce_gen_info$gen_load_zone <- fce_data$Load.Zone
-
+# See changed below under 'load_zones.tab'
 # Export .tab
-write.table(fce_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+# write.table(fce_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -122,33 +122,56 @@ write.table(fce_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collap
 
 
 # load_zones.tab --------------------------------------------------------------------------------------
-# Note this is left here since it may need to be changed to match data provided
+
+# Importing Sam's PLEXOS Data
+# Zones are derived from zones depicted on: http://www.ercot.com/about/weather
+PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5])
+PLEXOS_zones <- c("Northeast","West","Coastal","South")
+names(PLEXOS_zone_data)[5:8] <- PLEXOS_zones
+# ERCOT_load_zones <- c("North","Houston","South","West")
+archive_zones <- fce_load_zones[ !(fce_load_zones$LOAD_ZONE  %in%  PLEXOS_zones) ,] # AEN, North, Houston, CPS, LCRA, RCEC
+archive_gen_zones <- fce_gen_info[ fce_gen_info$gen_load_zone %in% archive_zones , c(1,3) ] # Saving original FCe zone designations
+
+
+# Re-designating zones to match sam's PLEXOS Data
+old_load_zones <- fce_load_zones  # saving old zones
+fce_load_zones$LOAD_ZONE <- PLEXOS_zones
+fce_load_zones <- as.data.frame(fce_load_zones[1:4,])
+names(fce_load_zones) <- names(old_load_zones)
+
+
+# editing gen info 
+old_gen_info <- fce_gen_info
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "AEN"] <- "South" # (16 gens) Austin Energy North
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "North"] <- "Northeast" 
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "Houston"] <- "Coastal"
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "CPS"] <- "South" # (5 gens) CPS Energy load zone (San Antonio area)
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "LCRA"] <- "South" # (17 gens) Lower Colorado River Authority load zone 
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "RCEC"] <- "Northeast" # (1 gen - Hydro_RCEC_LZ) Rayburn Country Electric Cooperative load zone
+
 
 # Export .tab
-write.table(fce_load_zones2, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+# write.table(fce_load_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+# write.table(fce_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+
+
+
+
+
 
 
 # loads.tab -------------------------------------------------------------------------------------------
-loads <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/loads.tab", header = T, sep = "\t")
 load_rows = dim(fce_load_zones)[1]*dim(t_points)[1]
-fce_loads <- fce_data[1:load_rows,1:length(loads)] # Copy data frame to get the right size set up.
-names(fce_loads) <- names(loads)
-# sum generator capacities over loadzones to get totalled capacity per zone
-gen_zones <- fce_gen_info[c(1,3)] # get GENERATION_PROJECT and gen_load_zone columns
-gen_caps <- fce_predetermined[c(1,3)] # get GENERATION_PROJECT and gen_predetermined_cap columns
-gen_zone_caps <- merge(gen_zones, gen_caps, by = "GENERATION_PROJECT") # merge the two dataframes to get GENERATION_PROJECT, gen_load_zone, gen_predetermined_cap
-zone_caps <- gen_zone_caps[c(2,3)] # delete GENERATION_PROJECT column
-zone_caps2 <- aggregate(as.numeric(zone_caps$gen_predetermined_cap), FUN = sum, by = list(zone_caps$gen_load_zone))
-names(zone_caps2) <- c("LOAD_ZONE","zone_capacity")
-zone_caps3 <- zone_caps2[order(match(zone_caps2$LOAD_ZONE,fce_load_zones$LOAD_ZONE)),]
+old_fce_loads <- fce_loads
+fce_loads <- old_fce_loads[1:load_rows,1:length(old_fce_loads)] # Copy data frame to get the right size set up.
 # loop through zones and tps to create loads
 row_count = 0
 for(k in 1:dim(fce_load_zones)[1]){ # loop through load zones
   for(j in 1:dim(t_points)[1]){ # loop through timepoints
     row_count = row_count+1
-    fce_loads$LOAD_ZONE[row_count] <- fce_load_zones[k,1]
-    fce_loads$TIMEPOINT[row_count] <- t_points[j,1]
-    fce_loads$zone_demand_mw[row_count] <- (0.5/j)*zone_caps3$zone_capacity[k] # each zone is at half capacity in first timepoint and decreases 50% each subesequent timepoint
+    fce_loads$LOAD_ZONE[row_count] <- as.character(fce_load_zones$LOAD_ZONE[k])
+    fce_loads$TIMEPOINT[row_count] <- t_points$timepoint_id[j]
+    fce_loads$zone_demand_mw[row_count] <- PLEXOS_zone_data[j,k+4]
   }
 }
 # Export .tab
@@ -163,24 +186,19 @@ for(k in 1:dim(fce_load_zones)[1]){ # loop through load zones
 
 
 # variable_capacity_factors.tab ------------------------------------------------------------------------
+var_cfs <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/variable_capacity_factors.tab", header = T, sep = "\t")
+
 fce_var_gens <- fce_gen_info$GENERATION_PROJECT[fce_gen_info$gen_is_variable==1] # isolate list of variable generators
 cf_rows <- length(fce_var_gens)*dim(t_points)[1]
 fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the right size set up.
 names(fce_cfs) <- names(var_cfs)
-# loop through GENERATION_PROJECT and tps to create cfs
-row_count = 0
-for(k in 1:length(fce_var_gens)){ # loop through variable generators
-  for(j in 1:dim(t_points)[1]){ # loop through timepoints
-    row_count = row_count+1
-    fce_cfs$GENERATION_PROJECT[row_count] <- as.character.factor(fce_var_gens[k])
-    fce_cfs$timepoint[row_count] <- t_points[j,1]
-    fce_cfs$gen_max_capacity_factor[row_count] <- 0.50 # setting all cap at 1 for now
-  }
-}
-fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
+fce_cfs_gens_only <- rep(fce_var_gens, each = dim(t_points)[1]) # make list of generator names, each repeated 8760 times
+fce_cfs$GENERATION_PROJECT <- as.data.frame(fce_cfs_gens_only)
+fce_cfs$gen_max_capacity_factor <- 0.50 # setting all cap at 1 for now
+fce_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(fce_var_gens)) )
 
 # Export .tab
-# write.table(fce_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+write.table(fce_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
