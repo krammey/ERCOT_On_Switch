@@ -206,66 +206,25 @@ cf_rows <- length(fce_var_gens)*dim(t_points)[1]
 fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the right size set up.
 names(fce_cfs) <- names(var_cfs)
 # loop through GENERATION_PROJECT and tps to create cfs
+cf_gens <- fce_var_gens[ rep(seq_len(nrow(fce_var_gens)), each = length(t_points$timepoint_id)) ,]
+
 row_count = 0
 for(k in 1:length(fce_var_gens)){ # loop through variable generators
   for(j in 1:dim(t_points)[1]){ # loop through timepoints
     row_count = row_count+1
     fce_cfs$GENERATION_PROJECT[row_count] <- as.character.factor(fce_var_gens[k])
     fce_cfs$timepoint[row_count] <- t_points[j,1]
-    fce_cfs$gen_max_capacity_factor[row_count] <- 0.50 # setting all cap at 1 for now
+    
   }
 }
+
+fce_cfs$GENERATION_PROJECT <- rep(fce_var_gens, dim(t_points)[1])
+fce_cfs$gen_max_capacity_factor <- 0.50 # setting all cap at 0.5 for now
 fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
+
 
 # Export .tab
 # write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
-
-
-
-
-
-#*******************************************************************************************************
-#*******************************************************************************************************
-#*******************************************************************************************************
-
-#                                     Extensions from core module - not really developed yet
-
-#*******************************************************************************************************
-#*******************************************************************************************************
-#*******************************************************************************************************
-
-
-
-
-#######################################################################################################
-#                   Creating inputs for switch_model.generators.extensions.storage
-########################################################################################################
-
-
-# generation_projects_info.tab ----------------------------------------------------------Need to add storage projects
-# fce_gen_info$gen_storage_efficiency <- dot
-# fce_gen_info$gen_store_to_release_ratio <- dot
-
-
-# gen_build_costs.tab ---------------------------------------------------------------Need to add storage projects
-# fce_build$gen_storage_energy_overnight_cost <- dot
-
-
-
-#######################################################################################################
-#                   Creating inputs for switch_model.transmission.local_td
-########################################################################################################
-
-
-# load_zones.tab ----------------------------------------------------------Need to add storage projects
-# fce_load_zones$existing_local_td <- dot # local T&D capacity in MW that has already been built.
-
-
-
-
-# Our plexos model will have:
-# hourly load (possibly split up by zone), pre-determined wind & solar power output,
-
 
 
 
