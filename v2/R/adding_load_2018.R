@@ -1,4 +1,4 @@
-setwd("~/GoogleDrive/1UT/0_Research/3_Switch/Test_Model/v2/R/")
+setwd("~/GoogleDrive/1UT/2_Research/3_Switch/Test_Model/v2/R/")
 load("./Latest.RData")
 
 # This code was written to expand timescales for initial test model based on Fce Data
@@ -84,12 +84,9 @@ number_tps = dim(Z1_data)[1]*dim(t_series)[1]
   
 t_points <- as.data.frame(old_tps[1:number_tps,], row.names = 1:number_tps) # redefine new dataframe of with correct size
 t_points$timepoint_id <- 1:number_tps
-levels(t_points$timeseries) <- t_series$TIMESERIES # have to redefine levels in order to input new timeseries, in next row
+levels(t_points$timeseries) <- t_series$TIMESERIES # have to redefine levels to put new timeseries
 t_points$timeseries <- t_series$TIMESERIES[1]
-# t_points$yr <- "2018"
-# t_points$mth <- rep.row(nu)
-# t_points$day <- c(days_max[c])
-# 
+
 count = 0
 for(m in 1:12){
   for(d in 1:num_days[m]){
@@ -128,7 +125,6 @@ for(m in 1:12){
 PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5])
 PLEXOS_zones <- c("Northeast","West","Coastal","South")
 names(PLEXOS_zone_data)[5:8] <- PLEXOS_zones
-# ERCOT_load_zones <- c("North","Houston","South","West")
 archive_zones <- fce_load_zones[ !(fce_load_zones$LOAD_ZONE  %in%  PLEXOS_zones) ,] # AEN, North, Houston, CPS, LCRA, RCEC
 archive_gen_zones <- fce_gen_info[ fce_gen_info$gen_load_zone %in% archive_zones , c(1,3) ] # Saving original FCe zone designations
 
