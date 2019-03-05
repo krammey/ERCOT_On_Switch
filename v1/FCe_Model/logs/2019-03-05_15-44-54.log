@@ -1,0 +1,19 @@
+
+=======================================================================
+SWITCH model created in 0.02 s.
+Arguments:
+verbose=True, interact=True, outputs_dir='outputs', logs_dir='logs', solver='glpk', inputs_dir='inputs', solver_manager='serial', log_run_to_file=True, suffixes=['rc', 'dual', 'slack']
+Modules:
+switch_model, switch_model.timescales, switch_model.financials, switch_model.balancing.load_zones, switch_model.energy_sources.properties, switch_model.generators.core.build, switch_model.generators.core.dispatch, switch_model.generators.core.no_commit, switch_model.reporting, switch_model.solve
+=======================================================================
+
+Loading inputs...
+Inputs loaded in 0.56 s.
+
+
+Solving model...
+Solved model. Total time spent in solver: 0.498493 s.
+Optimization termination condition was optimal.
+
+Executing post solve functions...
+Post solve processing completed in 0.28 s.
