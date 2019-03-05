@@ -189,14 +189,15 @@ cf_rows <- length(fce_var_gens)*dim(t_points)[1]
 fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the right size set up.
 names(fce_cfs) <- names(var_cfs)
 fce_cfs_gens_only <- rep(fce_var_gens, each = dim(t_points)[1]) # make list of generator names, each repeated 8760 times
-fce_cfs$GENERATION_PROJECT <- as.data.frame(fce_cfs_gens_only)
+fce_cfs$GENERATION_PROJECT <- fce_cfs_gens_only
 fce_cfs$gen_max_capacity_factor <- 0.50 # setting all cap at 1 for now
 fce_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(fce_var_gens)) )
 
+# rename columns and rows
+names(fce_cfs) <- names(var_cfs)
+row.names(fce_cfs) <- 1:dim(fce_cfs)[1]
+
 # Export .tab
 write.table(fce_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-
-
-
 
 
