@@ -192,7 +192,7 @@ fce_build$gen_fixed_om <- fce_data$Fixed.OM.Charge.USD.per.kWyr
 fce_build$gen_fixed_om[is.na(fce_build$gen_fixed_om)] <- 0
 
 # Export .tab
-write.table(fce_predetermined, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+write.table(fce_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
