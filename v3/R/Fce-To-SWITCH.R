@@ -124,28 +124,27 @@ file.copy(ExampleFinancials, SaveTo)
 ExampleGenInfo = paste(c(ExampleFiles,"generation_projects_info.tab"), collapse = "")
 
 gen_info <- read.delim(file = ExampleGenInfo, header = T, sep = "\t")
+num_gens <- length(fce_data$Generator)
+mandatory_gen_info_cols <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","gen_connect_cost_per_mw","gen_full_load_heat_rate","gen_variable_om","gen_max_age","gen_is_variable","gen_is_baseload","gen_energy_source")
+fce_gen_info <- gen_info[1:num_gens, names(gen_info) %in% mandatory_gen_info_cols]
+# NOTE: if there's a bug, try naming columns in order of 'mandatory_gen_info_cols'
 
-########################################################################################################
-########################################################################################################
-########################################################################################################
-#                     Continue cleaning/merging code from here - March 5, 2019
-########################################################################################################
-########################################################################################################
-########################################################################################################
-########################################################################################################
-
-
-
-fce_gen_info <- fce_data[,1:10] # Copy data frame to get the right size set up. 10 = number of mandatory columns
-names(fce_gen_info) <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","gen_connect_cost_per_mw","gen_full_load_heat_rate","gen_variable_om","gen_max_age","gen_is_variable","gen_is_baseload","gen_energy_source") # Rename columns - for now, mandatory columns only
-
-# mandatory columns
 fce_gen_info$gen_connect_cost_per_mw <- 0 # cost of grid upgrades to support a new project, in $/peakMW --- possibly from https://energy.utexas.edu/sites/default/files/UTAustin_FCe_Exe_Summary_2018.pdf   NOTE: maybe we can leave this blank since we're not building new transmission? just storage? PULL these from other switch examples
-fce_gen_info$gen_max_age <- 100  # this is max lifetime of plant ---NOT in fce_data?
-fce_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_data$Generator)) # projects that exist or could be built, gsub replaces spaces with underscores
+fce_gen_info$gen_max_age <- 100  # NOT in fce_data
+fce_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_data$Generator)) # replaces spaces with underscores
 fce_gen_info$gen_energy_source <- fce_data$Fuel
 fce_gen_info$gen_energy_source[fce_gen_info$gen_energy_source=="Hydro"] <- "Water"
+#
 fce_gen_info$gen_load_zone <- fce_data$Load.Zone
+# Need to edit FCe zones (2015) to match Sam's Plexos data
+fce_zones_archive <- fce_gen_info$gen_load_zone
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "AEN"] <- "South" # (16 gens) Austin Energy North
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "North"] <- "Northeast" 
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "Houston"] <- "Coastal"
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "CPS"] <- "South" # (5 gens) (San Antonio area)
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "LCRA"] <- "South" # (17 gens) Lower Colorado River Authority
+fce_gen_info$gen_load_zone[ fce_gen_info$gen_load_zone == "RCEC"] <- "Northeast" # (1 gen) Rayburn County Electric Cooperative load zone
+#
 fce_gen_info$gen_is_baseload <- 0 # not in fce data. so set for zero...
 fce_gen_info$gen_variable_om <- fce_data$Variable.O.M.Charge.USD.per.MWh  # Need to make sure the units are right
 fce_gen_info$gen_variable_om[is.na(fce_gen_info$gen_variable_om)] <- 0
@@ -157,28 +156,33 @@ fce_gen_info$gen_is_variable <- 0
 fce_gen_info$gen_is_variable[fce_gen_info$gen_energy_source %in% c("Solar","Wind","Wind-C")] <- 1
 #
 fce_tech_list <- fce_data[,c("Generator","Fuel","Prime.Mover")]
-for(k in 1:dim(fce_tech_list)[1]){fce_tech_list$gen_tech[k] <- paste(fce_tech_list$Fuel[k],fce_tech_list$Prime.Mover[k],sep="_")}
+for(k in 1:dim(fce_tech_list)[1]){
+  fce_tech_list$gen_tech[k] <- paste(fce_tech_list$Fuel[k],fce_tech_list$Prime.Mover[k],sep="_")
+  }
 fce_gen_info$gen_tech <- fce_tech_list$gen_tech # NOTE: gen_tech can be anything but must be consistent for generation_projects_info.tab, gen_build_costs.tab, and gen_build_predetermined.tab
 
 # Export .tab
-write.table(fce_gen_info,"../FCe_Model/inputs/generation_projects_info.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
+# gen_build_predetermined.tab ---------------------------------------------
+ExampleBuild = paste(c(ExampleFiles,"gen_build_predetermined.tab"), collapse = "")
 
-# gen_build_predetermined.tab ---------------------------------------------DONE
-gen_predetermined <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/gen_build_predetermined.tab", header = T, sep = "\t")
+gen_predetermined <- read.delim(file = ExampleBuild, header = T, sep = "\t")
 fce_predetermined <- fce_data[,1:length(gen_predetermined)] # Copy data frame to get the right size set up
 names(fce_predetermined) <- names(gen_predetermined)
 fce_predetermined$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_predetermined$GENERATION_PROJECT)) # projects that exist or could be built, gsub replaces spaces with underscores
 fce_predetermined$build_year <- fce_data$Online
 fce_predetermined$gen_predetermined_cap <- fce_data$Net.Capacity.MW # how much capacity was built, or is planned to be built
 # Export .tab
-# write.table(fce_predetermined,"../../FCe_Model/inputs/gen_build_predetermined.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_predetermined,paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
-# gen_build_costs.tab -----------------------------------------------------DONE
-gen_build <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/gen_build_costs.tab", header = T, sep = "\t")
+# gen_build_costs.tab -----------------------------------------------------
+ExampleCosts = paste(c(ExampleFiles,"gen_build_costs.tab"), collapse = "")
+
+gen_build <- read.delim(file = ExampleCosts, header = T, sep = "\t")
 fce_build <- fce_data[,1:length(gen_build)] # Copy data frame to get the right size set up.
 names(fce_build) <- names(gen_build)
 fce_build$GENERATION_PROJECT <- as.factor(gsub(' ','_',fce_build$GENERATION_PROJECT)) # replace spaces with underscores
@@ -188,7 +192,7 @@ fce_build$gen_fixed_om <- fce_data$Fixed.OM.Charge.USD.per.kWyr
 fce_build$gen_fixed_om[is.na(fce_build$gen_fixed_om)] <- 0
 
 # Export .tab
-# write.table(fce_build,"../FCe_Model/inputs/gen_build_costs.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_predetermined, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -197,46 +201,34 @@ fce_build$gen_fixed_om[is.na(fce_build$gen_fixed_om)] <- 0
 ########################################################################################################
 
 
-# load_zones.tab ----------------------------------------------------------DONE
-
-load_zones <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/load_zones.tab", header = T, sep = "\t")
-fce_load_zones <- fce_data[1:length(unique(fce_data$Load.Zone)),1:length(load_zones)]
-names(fce_load_zones) <- names(load_zones)
-fce_load_zones$LOAD_ZONE <- unique(fce_data$Load.Zone)
-fce_load_zones[,2:length(fce_load_zones)] <- dot
-fce_load_zones2 <- as.data.frame(fce_load_zones$LOAD_ZONE)
-names(fce_load_zones2) <- names(load_zones)[1]
+# load_zones.tab ----------------------------------------------------------
+ExampleZones = paste(c(ExampleFiles,"load_zones.tab"), collapse = "")
+load_zones <- read.delim(file = ExampleZones, header = T, sep = "\t")
+fce_load_zones <- as.data.frame(unique(fce_gen_info$gen_load_zone))
+names(fce_load_zones) <- names(load_zones)[1]
 # Export .tab
-write.table(fce_load_zones2,"../FCe_Model/inputs/load_zones.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_load_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
-# loads.tab ---------------------------------------------------------------DONE
-
-loads <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/loads.tab", header = T, sep = "\t")
+# loads.tab ---------------------------------------------------------------
+ExampleLoads = paste(c(ExampleFiles,"loads.tab"), collapse = "")
+PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5])
+loads <- read.delim(file = ExampleLoads, header = T, sep = "\t")
 load_rows = dim(fce_load_zones)[1]*dim(t_points)[1]
 fce_loads <- fce_data[1:load_rows,1:length(loads)] # Copy data frame to get the right size set up.
 names(fce_loads) <- names(loads)
-# sum generator capacities over loadzones to get totalled capacity per zone
-gen_zones <- fce_gen_info[c(1,3)] # get GENERATION_PROJECT and gen_load_zone columns
-gen_caps <- fce_predetermined[c(1,3)] # get GENERATION_PROJECT and gen_predetermined_cap columns
-gen_zone_caps <- merge(gen_zones, gen_caps, by = "GENERATION_PROJECT") # merge the two dataframes to get GENERATION_PROJECT, gen_load_zone, gen_predetermined_cap
-zone_caps <- gen_zone_caps[c(2,3)] # delete GENERATION_PROJECT column
-zone_caps2 <- aggregate(as.numeric(zone_caps$gen_predetermined_cap), FUN = sum, by = list(zone_caps$gen_load_zone))
-names(zone_caps2) <- c("LOAD_ZONE","zone_capacity")
-zone_caps3 <- zone_caps2[order(match(zone_caps2$LOAD_ZONE,fce_load_zones$LOAD_ZONE)),]
 # loop through zones and tps to create loads
 row_count = 0
 for(k in 1:dim(fce_load_zones)[1]){ # loop through load zones
   for(j in 1:dim(t_points)[1]){ # loop through timepoints
     row_count = row_count+1
-    fce_loads$LOAD_ZONE[row_count] <- fce_load_zones[k,1]
-    fce_loads$TIMEPOINT[row_count] <- t_points[j,1]
-    fce_loads$zone_demand_mw[row_count] <- (0.5/j)*zone_caps3$zone_capacity[k] # each zone is at half capacity in first timepoint and decreases 50% each subesequent timepoint
+    fce_loads$LOAD_ZONE[row_count] <- as.character(fce_load_zones$LOAD_ZONE[k])
+    fce_loads$TIMEPOINT[row_count] <- t_points$timepoint_id[j]
+    fce_loads$zone_demand_mw[row_count] <- PLEXOS_zone_data[j,k+4]
   }
 }
 # Export .tab
-# write.table(fce_loads,"../../FCe_Model/inputs/loads.tab",sep="\t",row.names = F, quote = F)
-
+write.table(fce_loads, paste(c(SaveTo,"loads.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -245,19 +237,24 @@ for(k in 1:dim(fce_load_zones)[1]){ # loop through load zones
 ########################################################################################################
 
 # non_fuel_energy_sources.tab ---------------------------------------------DONE
-
-non_fuels <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/non_fuel_energy_sources.tab", header = T, sep = "\t")
+ExampleNonFuels = paste(c(ExampleFiles,"non_fuel_energy_sources.tab"), collapse = "")
+non_fuels <- read.delim(file = ExampleNonFuels, header = T, sep = "\t")
 fce_non_fuels <- c("Wind","Wind-C","Solar","Geothermal","Water","Storage","Electricity")
-# easier to just edit the .tab from the example
+fce_non_fuels2 <- as.data.frame(non_fuels[1:length(fce_non_fuels),])
+names(fce_non_fuels2) <- names(non_fuels)
+fce_non_fuels2$energy_source <- fce_non_fuels
+# Export .tab
+write.table(fce_non_fuels2, paste(c(SaveTo,"non_fuel_energy_sources.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 # fuels.tab ---------------------------------------------------------------Neal will send biogas CO2 info
-
-fuels <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/fuels.tab", header = T, sep = "\t")
-fce_fuels <- fce_data[1:(3+length(unique(fce_data$Fuel))),1:length(fuels)]
-names(fce_fuels) <- names(fuels)
-fce_fuels$fuel <- unique(c(fce_data$Fuel,"Electricity","Water","Geothermal"))
+ExampleFuels = paste(c(ExampleFiles,"fuels.tab"), collapse = "")
+fuels <- read.delim(file = ExampleFuels, header = T, sep = "\t")
+fce_fuel_list <- unique(c(fce_gen_info$gen_energy_source,"Electricity","Geothermal"))
+fce_fuels <- fuels[1:length(fce_fuel_list),]
+row.names(fce_fuels) <- 1:length(fce_fuel_list)
 #
+fce_fuels$fuel <- fce_fuel_list
 fce_fuels$co2_intensity <- 0 # metric tonnes CO2 per MMBtu - SOURCE https://www.eia.gov/environment/emissions/co2_vol_mass.php
 fce_fuels$co2_intensity[fce_fuels$fuel == "Coal-Lig"] <- 215.40/2204.62 # tCO2/MMBTU NOTE: converting lb to tonne
 fce_fuels$co2_intensity[fce_fuels$fuel == "Coal-Sub"] <- 214.30/2204.62 # tCO2/MMBTU 
@@ -272,7 +269,7 @@ fce_fuels$upstream_co2_intensity[fce_fuels$fuel == "NG"] <- 24.69/1000 # tCO2/MM
 fce_fuels <- fce_fuels[!(fce_fuels$fuel %in% c(fce_non_fuels,"Hydro")),]
 
 # Export .tab
-# write.table(fce_fuels,"../FCe_Model/inputs/fuels.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -283,31 +280,24 @@ fce_fuels <- fce_fuels[!(fce_fuels$fuel %in% c(fce_non_fuels,"Hydro")),]
 
 
 # variable_capacity_factors.tab -------------------------------------------DONE
-var_cfs <- read.delim(file = "/Users/trins/switch/examples/3zone_toy/inputs/variable_capacity_factors.tab", header = T, sep = "\t")
+ExampleVarCfs = paste(c(ExampleFiles,"variable_capacity_factors.tab"), collapse = "")
+var_cfs <- read.delim(file = ExampleVarCfs, header = T, sep = "\t")
+
 fce_var_gens <- fce_gen_info$GENERATION_PROJECT[fce_gen_info$gen_is_variable==1] # isolate list of variable generators
 cf_rows <- length(fce_var_gens)*dim(t_points)[1]
 fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the right size set up.
 names(fce_cfs) <- names(var_cfs)
-# loop through GENERATION_PROJECT and tps to create cfs
-cf_gens <- fce_var_gens[ rep(seq_len(nrow(fce_var_gens)), each = length(t_points$timepoint_id)) ,]
-
-row_count = 0
-for(k in 1:length(fce_var_gens)){ # loop through variable generators
-  for(j in 1:dim(t_points)[1]){ # loop through timepoints
-    row_count = row_count+1
-    fce_cfs$GENERATION_PROJECT[row_count] <- as.character.factor(fce_var_gens[k])
-    fce_cfs$timepoint[row_count] <- t_points[j,1]
-    
-  }
-}
-
-fce_cfs$GENERATION_PROJECT <- rep(fce_var_gens, dim(t_points)[1])
-fce_cfs$gen_max_capacity_factor <- 0.50 # setting all cap at 0.5 for now
-fce_cfs$timepoint <- as.integer(fce_cfs$timepoint)
-
+fce_cfs_gens_only <- rep(fce_var_gens, each = dim(t_points)[1]) # make list of generator names, each repeated 8760 times
+fce_cfs$GENERATION_PROJECT <- fce_cfs_gens_only
+fce_cfs$gen_max_capacity_factor <- 0.50 # setting all cap at 1 for now
+fce_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(fce_var_gens)) )
+# rename columns and rows
+names(fce_cfs) <- names(var_cfs)
+row.names(fce_cfs) <- 1:dim(fce_cfs)[1]
 
 # Export .tab
-# write.table(fce_cfs,"../FCe_Model/inputs/variable_capacity_factors.tab",sep="\t",row.names = F, quote = F)
+write.table(fce_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+
 
 
 
