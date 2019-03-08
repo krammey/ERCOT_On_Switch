@@ -291,7 +291,7 @@ fce_cfs <- fce_data[1:cf_rows,1:length(var_cfs)] # Copy data frame to get the ri
 names(fce_cfs) <- names(var_cfs)
 fce_cfs_gens_only <- rep(fce_var_gens, each = dim(t_points)[1]) # make list of generator names, each repeated tp times
 fce_cfs$GENERATION_PROJECT <- fce_cfs_gens_only
-fce_cfs$gen_max_capacity_factor <- 0.50 # setting all cap at 1 for now
+fce_cfs$gen_max_capacity_factor <- 1 # setting all cap at 1 for now
 fce_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(fce_var_gens)) )
 # rename columns and rows
 names(fce_cfs) <- names(var_cfs)
