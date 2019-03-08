@@ -1,5 +1,5 @@
-setwd("~/GoogleDrive/1UT/2_Research/3_Switch/Fce_R_Development/v4/R/")
-load(".RData")
+# setwd("~/GoogleDrive/1UT/2_Research/3_Switch/Fce_R_Development/v4/R/")
+# load(".RData")
 
 # Author: Katrina Ramirez-Meyers
 # This code was written to help transferring PLEXOS FCe Data to .tab format for SWITCH
@@ -63,7 +63,7 @@ t_series <- read.delim(file = ExampleTimeseries, header = T, sep = "\t")
 t_series$ts_period = 2018
 t_series$ts_num_tps = dim(Z1_data)[1]  # number of timepoints in a series
 t_series$ts_duration_of_tp = 1 # duration, in hours, of each timepoint within a timeseries
-t_series$ts_scale_to_period = 1 # number of timeseries per period
+t_series$ts_scale_to_period = 8760/12 # number of timeseries per period
 t_series$TIMESERIES <- '2018_all'
 
 write.table(t_series, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
