@@ -1,0 +1,5 @@
+
+--verbose 
+--log-run 
+--solver cplex
+#--solver-options-string

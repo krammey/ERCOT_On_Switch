@@ -44,7 +44,6 @@ PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5]
 #######################################################################################################
 #                   Creating inputs for switch_model.timescales
 ########################################################################################################
-# Need to see what Neal has come up with for this
 
 
 # periods.tab ------------------------------------------------------------- 
@@ -249,7 +248,7 @@ fce_non_fuels2$energy_source <- fce_non_fuels
 write.table(fce_non_fuels2, paste(c(SaveTo,"non_fuel_energy_sources.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
-# fuels.tab ---------------------------------------------------------------Neal will send biogas CO2 info
+# fuels.tab ---------------------------------------------------------------
 ExampleFuels = paste(c(ExampleFiles,"fuels.tab"), collapse = "")
 fuels <- read.delim(file = ExampleFuels, header = T, sep = "\t")
 fce_fuel_list <- unique(c(fce_gen_info$gen_energy_source,"Electricity","Geothermal"))

@@ -1,0 +1,1 @@
+This model will take annual (8760) ERCOT model and break it into 12 hourly models.
