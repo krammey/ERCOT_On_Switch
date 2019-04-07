@@ -5,127 +5,106 @@
 
 
 # Define useful paths
-AnnualModel = "../../v5/FCe_Model/inputs/"
-SaveTo = "../FCe_Model/inputs/" # Later code can make this a variable in a for-loop to make a new lave to location for each monthly model
+AnnualModel = "../v5/FCe_Model/inputs/"
 
 # Define useful time arrays
 num_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
 years = 2018
-months = as.character(c("01"))#,"02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
+months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
 
-
-# timeseries.tab ---------------------------------------------------------- 
-AnnualTimeseries = paste(c(AnnualModel,"timeseries.tab"), collapse = "")
-t_series <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
-# Unchanged columns in this .tab are:
-# ts_period = 2018
-# ts_duration_of_tp = 1     duration, in hours, of each timepoint within a timeseries
-# ts_scale_to_period = 1    number of timeseries per period
 for(m in 1:length(months)){ 
+  SaveTo <- paste(c("./2018_",months[m],"/inputs/"), collapse = "")
+  dir.create(paste(c("2018_",months[m]), collapse = ""))
+  dir.create(SaveTo)
+  
+  # timeseries.tab ---------------------------------------------------------- 
+  AnnualTimeseries = paste(c(AnnualModel,"timeseries.tab"), collapse = "")
+  t_series <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
+  # Unchanged columns in this .tab are:
+  # ts_period = 2018
+  # ts_duration_of_tp = 1     duration, in hours, of each timepoint within a timeseries
+  # ts_scale_to_period = 1    number of timeseries per period
   t_series$TIMESERIES <- paste(c("2018_",months[m]), collapse = "")
   t_series$ts_num_tps <- 24*num_days[m] # number of timepoints in a series
   t_series$ts_scale_to_period <- 8766/(24*num_days[m])
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
   write.table(t_series, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-}
-
-
-# timepoints.tab ---------------------------------------------------------- 
-AnnualTimepoints = paste(c(AnnualModel,"timepoints.tab"), collapse = "")
-annual_tps <- read.delim(file = AnnualTimepoints, header = T, sep = "\t")
-for(m in 1:length(months)){   
+  
+  
+  
+  # timepoints.tab ---------------------------------------------------------- 
+  AnnualTimepoints = paste(c(AnnualModel,"timepoints.tab"), collapse = "")
+  annual_tps <- read.delim(file = AnnualTimepoints, header = T, sep = "\t")
   tp_start <- 24*sum(num_days[1:m-1]) + 1 # skip all previous months
   tp_end <- tp_start + 24*num_days[m] - 1
   t_points <- as.data.frame(annual_tps[tp_start:tp_end,])
   t_points$timeseries <- t_series$TIMESERIES
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
   write.table(t_points, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-}
-
-# loads.tab ---------------------------------------------------------------
-AnnualLoads = paste(c(AnnualModel,"loads.tab"), collapse = "")
-annual_loads <- read.delim(file = AnnualLoads, header = T, sep = "\t")
-for(m in 1:length(months)){   
+  
+  
+  # loads.tab ---------------------------------------------------------------
+  AnnualLoads = paste(c(AnnualModel,"loads.tab"), collapse = "")
+  annual_loads <- read.delim(file = AnnualLoads, header = T, sep = "\t")
   loads <- annual_loads[annual_loads$TIMEPOINT %in% t_points$timepoint_id,]
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
   write.table(loads, paste(c(SaveTo,"loads.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-}
-
-# variable_capacity_factors.tab -------------------------------------------
-AnnualCFs = paste(c(AnnualModel,"variable_capacity_factors.tab"), collapse = "")
-annual_cfs <- read.delim(file = AnnualCFs, header = T, sep = "\t")
-for(m in 1:length(months)){   
+  
+  # variable_capacity_factors.tab -------------------------------------------
+  AnnualCFs = paste(c(AnnualModel,"variable_capacity_factors.tab"), collapse = "")
+  annual_cfs <- read.delim(file = AnnualCFs, header = T, sep = "\t")
   cfs <- annual_cfs[annual_cfs$timepoint %in% t_points$timepoint_id,]
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
   write.table(cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-}
-
-
-
-
-
-
-
-# periods.tab -------------------------------------------------------------UNCHANGED
-AnnualPeriods = paste(c(AnnualModel,"periods.tab"), collapse = "")
-periods <- read.delim(file = AnnualPeriods, header = T, sep = "\t")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  
+  
+  
+  
+  
+  # modules.txt ----------------------------------------------------------UNCHANGED
+  modules = paste(c(AnnualModel,"modules.txt"), collapse = "")
+  file.copy(modules, SaveTo)
+  
+  # switch_inputs_version.txt ----------------------------------------------------------UNCHANGED
+  version = paste(c(AnnualModel,"switch_inputs_version.txt"), collapse = "")
+  file.copy(version, SaveTo)
+  
+  # periods.tab -------------------------------------------------------------UNCHANGED
+  AnnualPeriods = paste(c(AnnualModel,"periods.tab"), collapse = "")
+  periods <- read.delim(file = AnnualPeriods, header = T, sep = "\t")
   file.copy(AnnualPeriods, SaveTo)
-}
-
-# financials.dat ----------------------------------------------------------UNCHANGED
-AnnualFinancials = paste(c(AnnualModel,"financials.dat"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+    
+  # financials.dat ----------------------------------------------------------UNCHANGED
+  AnnualFinancials = paste(c(AnnualModel,"financials.dat"), collapse = "")
   file.copy(AnnualFinancials, SaveTo)
-}
-
-# generation_projects_info.tab --------------------------------------------UNCHANGED
-AnnualGenInfo = paste(c(AnnualModel,"generation_projects_info.tab"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  # generation_projects_info.tab --------------------------------------------UNCHANGED
+  AnnualGenInfo = paste(c(AnnualModel,"generation_projects_info.tab"), collapse = "")
   file.copy(AnnualGenInfo, SaveTo)
-}
-
-
-# gen_build_predetermined.tab ---------------------------------------------UNCHANGED
-AnnualPredet = paste(c(AnnualModel,"gen_build_predetermined.tab"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  
+  # gen_build_predetermined.tab ---------------------------------------------UNCHANGED
+  AnnualPredet = paste(c(AnnualModel,"gen_build_predetermined.tab"), collapse = "")
   file.copy(AnnualPredet, SaveTo)
-}
-
-
-# gen_build_costs.tab -----------------------------------------------------UNCHANGED
-AnnualBuild = paste(c(AnnualModel,"gen_build_costs.tab"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  
+  # gen_build_costs.tab -----------------------------------------------------UNCHANGED
+  AnnualBuild = paste(c(AnnualModel,"gen_build_costs.tab"), collapse = "")
   file.copy(AnnualBuild, SaveTo)
-}
-
-
-# load_zones.tab ----------------------------------------------------------UNCHANGED
-AnnualZones = paste(c(AnnualModel,"load_zones.tab"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  
+  # load_zones.tab ----------------------------------------------------------UNCHANGED
+  AnnualZones = paste(c(AnnualModel,"load_zones.tab"), collapse = "")
   file.copy(AnnualZones, SaveTo)
-}
-
-
-# non_fuel_energy_sources.tab ---------------------------------------------UNCHANGED
-AnnualNonFuels = paste(c(AnnualModel,"non_fuel_energy_sources.tab"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  
+  # non_fuel_energy_sources.tab ---------------------------------------------UNCHANGED
+  AnnualNonFuels = paste(c(AnnualModel,"non_fuel_energy_sources.tab"), collapse = "")
   file.copy(AnnualNonFuels, SaveTo)
-}
-
-
-# fuels.tab ---------------------------------------------------------------UNCHANGED
-AnnualFuels = paste(c(AnnualModel,"fuels.tab"), collapse = "")
-for(m in 1:length(months)){   
-  SaveTo <- paste(c("../2018_",months[m],"/inputs/"), collapse = "")
+  
+  
+  # fuels.tab ---------------------------------------------------------------UNCHANGED
+  AnnualFuels = paste(c(AnnualModel,"fuels.tab"), collapse = "")
   file.copy(AnnualFuels, SaveTo)
+
 }

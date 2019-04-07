@@ -1,0 +1,17 @@
+
+=======================================================================
+SWITCH model created in 0.03 s.
+Arguments:
+verbose=True, outputs_dir='outputs', logs_dir='logs', solver='cplex', inputs_dir='inputs', solver_manager='serial', log_run_to_file=True, suffixes=['rc', 'dual', 'slack']
+Modules:
+switch_model, switch_model.timescales, switch_model.financials, switch_model.balancing.load_zones, switch_model.energy_sources.properties, switch_model.generators.core.build, switch_model.generators.core.dispatch, switch_model.generators.core.no_commit, switch_model.reporting, switch_model.solve
+=======================================================================
+
+Loading inputs...
+Inputs loaded in 81.84 s.
+
+
+Solving model...
+Solved model. Total time spent in solver: 84.007757 s.
+Model was infeasible; if the solver can generate an irreducible infeasible set,
+more information may be available by calling this script with --suffixes iis ...
