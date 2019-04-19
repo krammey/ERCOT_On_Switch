@@ -252,6 +252,7 @@ write.table(fce_non_fuels2, paste(c(SaveTo,"non_fuel_energy_sources.tab"), colla
 ExampleFuels = paste(c(ExampleFiles,"fuels.tab"), collapse = "")
 fuels <- read.delim(file = ExampleFuels, header = T, sep = "\t")
 fce_fuel_list <- unique(c(fce_gen_info$gen_energy_source,"Electricity","Geothermal"))
+
 fce_fuels <- fuels[1:length(fce_fuel_list),]
 row.names(fce_fuels) <- 1:length(fce_fuel_list)
 #
