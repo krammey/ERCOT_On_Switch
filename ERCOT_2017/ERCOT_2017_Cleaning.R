@@ -100,7 +100,7 @@ ercot_build <- fce_build[1:dim(ercot_data)[1],]
 ercot_build$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
 ercot_build$build_year <- ercot_data$Build.Year
 ercot_build$gen_overnight_cost <- 100 # test value
-ercot_build$gen_fixed_om <- 0 # test value
+ercot_build$gen_fixed_om <- 0 # test value. Actual values are in SCJ database
 write.table(ercot_build, paste(c("./2017_01/inputs/","gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
