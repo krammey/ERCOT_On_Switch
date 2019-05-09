@@ -1,76 +1,40 @@
 
 
 # Author: Katrina Ramirez-Meyers
-# This code was written to convert a full-year 8760 model to 12 hourly models
+# This code was written to import 2017 powerplant and load data into 12* hourly models
+# *one for each month
 
 
 # Define useful paths
 AnnualModel2015 = "../Fce_R_Development/v5/FCe_Model/inputs/"
 ERCOT2017_file = "../../2017_Master_Gen_Fleet.csv"
 
-# Import ERCOT data
+# Import ERCOT power plant data
 ercot_data_orig <- read.csv(file = ERCOT2017_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
-# Take out unneeded columns
-# "Plant.Name"                            "Plant.Type"                            "Generator.SubType..for.lookup."        "Transmission.Zone"                    
-# [5] "County"                                "In.Service.Year"                       "Rated.Capacity..MW."                   "Modeled.Max.Capacity..MW."           
-# [9] "X..Generic...Min.Capacity.Fraction"    "Min.Stable.Level..MW."                 "X..Generic...Min.Up.Time..hr."         "X..Generic...Min.Down.Time..hr."     
-# [13] "X..Generic...Max.Ramp.Up.Dn.Fraction"  "Max.Ramp.Up.Dn.Rate..MW.min."          "X..Generic...Reserves.VOM.Cost....MW." "Poly.Heat.Rate...Base..MMBtu.hr."   
-# [17] "CO2..lb.MMBtu."                        "CO2...MaxCap..lb.MWh."                 "X2014.VOM.Cost....MWh."                "X2014.Startup.Cost....start."
+# Extract only the necessary columns
 ercot_data <- ercot_data_orig[,(names(ercot_data_orig) %in% c(
-                                    #                                   List of unecesaary columns
-                                    "Plant.Name",
-                                    "Plant.Type",
-                                    "Generator.SubType..for.lookup.",
-                                    "Transmission.Zone",
-                                    "County",
-                                    "In.Service.Year",
-                                    "Rated.Capacity..MW.",
-                                    "Modeled.Max.Capacity..MW.",
-                                    "X..Generic...Min.Capacity.Fraction",
-                                    "Min.Stable.Level..MW.",
-                                    "X..Generic...Min.Up.Time..hr.",
-                                    "X..Generic...Min.Down.Time..hr.",
-                                    "X..Generic...Max.Ramp.Up.Dn.Fraction",
-                                    "Max.Ramp.Up.Dn.Rate..MW.min.",
-                                    "X..Generic...Reserves.VOM.Cost....MW.",
-                                    "Poly.Heat.Rate...Base..MMBtu.hr.",
-                                    "CO2..lb.MMBtu.",
-                                    "CO2...MaxCap..lb.MWh.",
-                                    "X2014.VOM.Cost....MWh.",
-                                    "X2014.Startup.Cost....start."))]
+#                       List of necessary columns
+                        "Plant.Name",
+                        "Plant.Type",
+                        "Generator.SubType..for.lookup.",
+                        "Transmission.Zone",
+                        "County",
+                        "In.Service.Year",
+                        "Rated.Capacity..MW.",
+                        "Modeled.Max.Capacity..MW.",
+                        "X..Generic...Min.Capacity.Fraction",
+                        "Min.Stable.Level..MW.",
+                        "X..Generic...Min.Up.Time..hr.",
+                        "X..Generic...Min.Down.Time..hr.",
+                        "X..Generic...Max.Ramp.Up.Dn.Fraction",
+                        "Max.Ramp.Up.Dn.Rate..MW.min.",
+                        "X..Generic...Reserves.VOM.Cost....MW.",
+                        "Poly.Heat.Rate...Base..MMBtu.hr.",
+                        "CO2..lb.MMBtu.",
+                        "CO2...MaxCap..lb.MWh.",
+                        "X2014.VOM.Cost....MWh.",
+                        "X2014.Startup.Cost....start."))]
 
-# ercot_data <- ercot_data_orig[,!(names(ercot_data_orig) %in% c(
-  #                                   List of unnecesaary columns
-                                     # "ORIS..",
-                                     # "Plant.List..",
-                                     # "Cooling.Type.Name",
-                                     # "CHP.Flag",
-                                     # "Exist.2014.Flag",
-                                     # "X.For.CHP..2009.eGrid.Capacity..MW.",
-                                     # "X.For.CHP..Capacity.Participation.Fraction",
-                                     # "Rounded.Modeled.Max.Capacity..MW.",
-                                     # "Rounded.Min.Stable.Level..MW.",
-                                     # "X..Generic...2011.VOM.Cost....MWh.",
-                                     # "X..Generic...2011.Startup.Cost....MW.start.",
-                                     # "X2011.Startup.Cost....start.",
-                                     # "PLEXOS.AHRs..MMBtu.MWh.",
-                                     # "Poly.Heat.Rate...Incr..BTU.kWh.",
-                                     # "Poly.Heat.Rate...Incr2..BTU.kWh.2..",
-                                     # "Polynomial.HR.Example.Calc..at.MaxCap.for.1.hr.",
-                                     # "Polynomial.HR.Example.Calc..at.MinCap.for.1.hr.",
-                                     # "SO2..lb.MMBtu.",
-                                     # "NOx..lb.MMBtu.",
-                                     # "SO2...MaxCap..lb.MWh.",
-                                     # "NOx...MaxCap..lb.MWh.",
-                                     # "Water.Consumption..lb.MWh."  ,
-                                     # "Water.Withdrawal..lb.MWh.",
-                                     # "Water.Consumption..gal.MWh.",
-                                     # "Water.Withdrawal..gal.MWh.",
-                                     # "X",
-                                     # "X2010.VOM.Cost....MWh.",
-                                     # "X2010.Startup.Cost....start.",
-                                     # "X2020.VOM.Cost....MWh.",
-                                     # "X2020.Startup.Cost....start."))]
 names(ercot_data) <- c('Name','Fuel',
                        'Tech','Zone',
                        'County','Build.Year',
@@ -82,7 +46,30 @@ names(ercot_data) <- c('Name','Fuel',
                        'CO2.lb.MMBtu','CO2.Max.Cap.lb.MWh',
                        'VOM.MWh','StartupCost.start')
 
+# Import load data (from Sam Johnson)
+folder = ("../../2017 ERCOT Load/")
+tp <- 8760
 
+Z1_file <- paste(c(folder,"ERCOT\ 2017\ Hourly\ Load\ Z1NE.csv"), collapse = "")
+Z1_data <- read.csv(file = Z1_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
+Z1_data <- Z1_data[1:tp,]
+
+Z2_file <- paste(c(folder,"ERCOT\ 2017\ Hourly\ Load\ Z2W.csv"), collapse = "")
+Z2_data <- read.csv(file = Z2_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
+Z2_data <- Z2_data[1:tp,]
+
+Z3_file <- paste(c(folder,"ERCOT\ 2017\ Hourly\ Load\ Z3C.csv"), collapse = "")
+Z3_data <- read.csv(file = Z3_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
+Z3_data <- Z3_data[1:tp,]
+
+Z4_file <- paste(c(folder,"ERCOT\ 2017\ Hourly\ Load\ Z4S.csv"), collapse = "")
+Z4_data <- read.csv(file = Z4_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
+Z4_data <- Z4_data[1:tp,]
+
+PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5])
+
+###############
+SaveTo <- "./2017_01/inputs/" # Save to January model for now
 
 
 ############################ These reference FCe data in '../Fce_R_Development/20190405_Fce-To-SWITCH.R/
@@ -91,18 +78,18 @@ FCeGenInfoTab = paste(c(AnnualModel2015,"generation_projects_info.tab"), collaps
 fce_gen_info <- read.delim(file = FCeGenInfoTab, header = T, sep = "\t")
 
 ercot_gen_info <- fce_gen_info[1:dim(ercot_data)[1],]
-ercot_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',ercot_data$Name))
-ercot_gen_info$gen_tech <- ercot_data$Tech #ercot_data
+ercot_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',ercot_data$Name)) #Replace spaces with underscores
+ercot_gen_info$gen_tech <- ercot_data$Tech
 ercot_gen_info$gen_load_zone <- ercot_data$Zone
 ercot_gen_info$gen_connect_cost_per_mw <- 0
 ercot_gen_info$gen_variable_om <- ercot_data$VOM.MWh # Need to make sure the units are right
 ercot_gen_info$gen_max_age <- 100
-ercot_gen_info$gen_is_variable <- 0#[fce_gen_info$gen_energy_source %in% c("Solar","Wind","Wind-C")] <- 1
+ercot_gen_info$gen_is_variable <- 0 # need to add consolidated renewables back in
 ercot_gen_info$gen_is_baseload <- 0
-ercot_gen_info$gen_energy_source <- ercot_data$Fuel # where are the non-fuels?
+ercot_gen_info$gen_energy_source <- ercot_data$Fuel # where are the non-fuels in the ERCOT data?
 ercot_gen_info$gen_full_load_heat_rate <- ercot_data$Poly.Heat.Rate.MMBtu.hr # these units are supposed to be in MMBTU/MWh
-# Save to January model for now
-write.table(ercot_gen_info, paste(c("./2017_01/inputs/","generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+
+write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -111,11 +98,11 @@ write.table(ercot_gen_info, paste(c("./2017_01/inputs/","generation_projects_inf
 FCePredetTab = paste(c(AnnualModel2015,"gen_build_predetermined.tab"), collapse = "")
 fce_predet <- read.delim(file = FCePredetTab, header = T, sep = "\t")
 
-ercot_predet <- fce_predet[1:dim(ercot_data)[1],]
+ercot_predet <- fce_predet[1:dim(ercot_data)[1],] 
 ercot_predet$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
 ercot_predet$build_year <- ercot_data$Build.Year
 ercot_predet$gen_predetermined_cap <- ercot_data$Max.Cap.MW
-write.table(ercot_predet, paste(c("./2017_01/inputs/","gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -130,17 +117,21 @@ ercot_build$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
 ercot_build$build_year <- ercot_data$Build.Year
 ercot_build$gen_overnight_cost <- 100 # test value
 ercot_build$gen_fixed_om <- 0 # test value. Actual values are in SCJ database
-write.table(ercot_build, paste(c("./2017_01/inputs/","gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 ############################ These reference generation_projects_info
-# load_zones.tab ----------------------------------------------------------***
-FCeZonesTab = paste(c(AnnualModel2015,"load_zones.tab"), collapse = "")
-fce_zones <- read.delim(file = FCeZonesTab, header = T, sep = "\t")
 
-ercot_zones <- as.data.frame(unique(ercot_gen_info$gen_load_zone))
-names(ercot_zones) <- names(fce_zones)[1]
-write.table(ercot_zones, paste(c("./2017_01/inputs/","load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+# load_zones.tab ----------------------------------------------------------***
+# ercot_zones <- as.data.frame(unique(ercot_gen_info$gen_load_zone))
+ercot_zones <- data.frame(matrix(ncol = 1, nrow = 4))
+colnames(ercot_zones) <- "LOAD_ZONE"
+ercot_zones$LOAD_ZONE <- c("Northeast", "South", "Coast", "West") # Not including Panhandle for now
+
+write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+
+
+
 
 # fuels.tab ---------------------------------------------------------------***
 FCeFuelsTab = paste(c(AnnualModel2015,"fuels.tab"), collapse = "")
@@ -153,19 +144,18 @@ for(i in 1:dim(ercot_fuels)[1]){
   ercot_fuels$co2_intensity[i] <- mean(ercot_data$CO2.lb.MMBtu[ercot_data$Fuel == ercot_fuels$fuel[i]])/2204.62
   ercot_fuels$upstream_co2_intensity[i] <- ercot_fuels$co2_intensity[i]/10 # this is just an estimate base on trend in fce data
 }
-write.table(ercot_fuels, paste(c("./2017_01/inputs/","fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 # file.copy(AnnualFuels, SaveTo)
 
 
-# variable_capacity_factors.tab ------------------------------------------- # NEED TO SAVE ANNUAL CFS, THEN RUN LOOP
-AnnualCFs = paste(c(AnnualModel2015,"variable_capacity_factors.tab"), collapse = "")
-annual_cfs <- read.delim(file = AnnualCFs, header = T, sep = "\t")
-cfs <- annual_cfs[annual_cfs$timepoint %in% t_points$timepoint_id,]
-
-write.table(cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
-
+# periods.tab -------------------------------------------------------------UNCHANGED
+AnnualPeriods = paste(c(AnnualModel2015,"periods.tab"), collapse = "")
+periods <- data.frame(matrix(ncol = 3, nrow = 1))
+names(periods) <- c("INVESTMENT_PERIOD","period_start","period_end")
+periods[1,] <- 2017
+write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
@@ -174,11 +164,15 @@ write.table(cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = "")
 # Define useful time arrays
 num_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
-years = 2018
-months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
+years = 2017
+months = as.character(c("01"))#,"02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
 
+
+
+
 for(m in 1:length(months)){
+  
   
   
   # create directories for each month
@@ -186,34 +180,15 @@ for(m in 1:length(months)){
   # dir.create(paste(c("2017_",months[m]), collapse = ""))
   # dir.create(SaveTo)############################ Already ran this. Doing it again will output an error
   
-  # timeseries.tab ---------------------------------------------------------- 
-  AnnualTimeseries = paste(c(AnnualModel2015,"timeseries.tab"), collapse = "")
-  t_series <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
-  # Unchanged columns in this .tab are:
-  # ts_period = 2018
-  # ts_duration_of_tp = 1     duration, in hours, of each timepoint within a timeseries
-  t_series$TIMESERIES <- paste(c("2017_",months[m]), collapse = "")
-  t_series$ts_num_tps <- 24*num_days[m] # number of timepoints in a series
-  t_series$ts_scale_to_period <- 8766/(24*num_days[m])
-  write.table(t_series, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
   
   
-  
-  # timepoints.tab ---------------------------------------------------------- 
-  AnnualTimepoints = paste(c(AnnualModel2015,"timepoints.tab"), collapse = "")
-  annual_tps <- read.delim(file = AnnualTimepoints, header = T, sep = "\t")
-  tp_start <- 24*sum(num_days[1:m-1]) + 1 # skip all previous months
-  tp_end <- tp_start + 24*num_days[m] - 1
-  t_points <- as.data.frame(annual_tps[tp_start:tp_end,])
-  t_points$timeseries <- t_series$TIMESERIES
-  write.table(t_points, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  
-  
-  # loads.tab ---------------------------------------------------------------
-  AnnualLoads = paste(c(AnnualModel2015,"loads.tab"), collapse = "")
-  annual_loads <- read.delim(file = AnnualLoads, header = T, sep = "\t")
-  loads <- annual_loads[annual_loads$TIMEPOINT %in% t_points$timepoint_id,]
-  write.table(loads, paste(c(SaveTo,"loads.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # Copy the .tabs generated for January model above
+  write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
   
   
   ############################ NEED TO CONFIRM if these remain unchanged
@@ -225,11 +200,6 @@ for(m in 1:length(months)){
   version = paste(c(AnnualModel2015,"switch_inputs_version.txt"), collapse = "")
   file.copy(version, SaveTo)
   
-  # periods.tab -------------------------------------------------------------UNCHANGED
-  AnnualPeriods = paste(c(AnnualModel2015,"periods.tab"), collapse = "")
-  periods <- read.delim(file = AnnualPeriods, header = T, sep = "\t")
-  file.copy(AnnualPeriods, SaveTo)
-  
   # financials.dat ----------------------------------------------------------UNCHANGED
   AnnualFinancials = paste(c(AnnualModel2015,"financials.dat"), collapse = "")
   file.copy(AnnualFinancials, SaveTo)
@@ -238,6 +208,69 @@ for(m in 1:length(months)){
   # non_fuel_energy_sources.tab ---------------------------------------------UNCHANGED
   AnnualNonFuels = paste(c(AnnualModel2015,"non_fuel_energy_sources.tab"), collapse = "")
   file.copy(AnnualNonFuels, SaveTo)
+  
+  
+  
+  
+  # timeseries.tab ---------------------------------------------------------- 
+  AnnualTimeseries = paste(c(AnnualModel2015,"timeseries.tab"), collapse = "")
+  t_series <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
+  # Unchanged columns in this .tab are:
+  # ts_duration_of_tp = 1     duration, in hours, of each timepoint within a timeseries
+  t_series$TIMESERIES <- paste(c("2017_",months[m]), collapse = "")
+  t_series$ts_period <- 2017
+  t_series$ts_num_tps <- 24*num_days[m] # number of timepoints in a series
+  t_series$ts_scale_to_period <- 8766/(24*num_days[m])
+  write.table(t_series, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  
+  
+  
+  # timepoints.tab ---------------------------------------------------------- 
+  t_points <- data.frame(matrix(ncol = 3, nrow = num_days[m]*length(hours)))
+  colnames(t_points) <- c("timepoint_id","timestamp","timeseries")
+  t_points$timeseries <- t_series$TIMESERIES
+  tp_start <- 24*sum(num_days[1:m-1]) + 1 # skip all previous months
+  tp_end <- tp_start + 24*num_days[m] - 1
+  t_points$timepoint_id <- tp_start:tp_end
+  count = 0
+  for(d in 1:num_days[m]){
+    for(h in 1:length(hours)){
+      count = count + 1
+      t_points$timestamp[count] <- paste(c(2017, as.character(months[m]), as.character(days_max[d]), as.character(hours[h])), collapse = "")
+    }
+  }
+  write.table(t_points, paste(c(SaveTo,"timepoints.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  
+  
+  
+  # loads.tab ---------------------------------------------------------------
+  ercot_loads <- data.frame(matrix(ncol = 3, nrow = dim(ercot_zones)[1]*dim(t_points)[1]))
+  colnames(ercot_loads) <- c("LOAD_ZONE","TIMEPOINT","zone_demand_mw")
+  
+  row_count = 0
+  for(k in 1:dim(ercot_zones)[1]){ # loop through load zones
+    for(j in 1:dim(t_points)[1]){ # loop through timepoints
+      row_count = row_count+1
+      ercot_loads$LOAD_ZONE[row_count] <- as.character(ercot_zones$LOAD_ZONE[k])
+      ercot_loads$TIMEPOINT[row_count] <- t_points$timepoint_id[j]
+      ercot_loads$zone_demand_mw[row_count] <- as.numeric(PLEXOS_zone_data[j,k+4])
+    }
+  }
+  # Export .tab
+  write.table(ercot_loads, paste(c(SaveTo,"loads.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  
+  
+  # variable_capacity_factors.tab ------------------------------------------- # NEED TO SAVE ANNUAL CFS, THEN RUN LOOP
+  ercot_var_gens <- ercot_gen_info$GENERATION_PROJECT[ercot_gen_info$gen_is_variable==1] # isolate list of variable generators
+  ercot_cfs <- data.frame(matrix(ncol = 3, nrow = length(ercot_var_gens)*dim(t_points)[1]))
+  colnames(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
+  ercot_cfs$GENERATION_PROJECT <- rep(ercot_var_gens, each = dim(t_points)[1])
+  ercot_cfs$gen_max_capacity_factor <- 1 # setting all cap at 1 for now
+  ercot_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(ercot_var_gens)) )
+  # rename columns and rows
+  names(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
+  row.names(ercot_cfs) <- 1:dim(ercot_cfs)[1]
+  write.table(ercot_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
   
   }
 
