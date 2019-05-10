@@ -68,6 +68,9 @@ ercot_gen_info$gen_is_baseload <- as.integer(0)
 ercot_gen_info$gen_energy_source <- as.factor(ercot_data$Fuel) # where are the non-fuels in the ERCOT data?
 ercot_gen_info$gen_full_load_heat_rate <- as.factor(ercot_data$PLEXOS.AHRs..MMBtu.MWh.)
 ercot_gen_info$gen_full_load_heat_rate[is.na(ercot_gen_info$gen_full_load_heat_rate)] <- levels(ercot_gen_info$gen_full_load_heat_rate)[20]
+ercot_gen_info$gen_full_load_heat_rate[ercot_gen_info$gen_full_load_heat_rate == 0] <- levels(ercot_gen_info$gen_full_load_heat_rate)[20]
+
+
 write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
@@ -155,13 +158,13 @@ write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row
 num_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
 years = 2017
-months = as.character(c("01"))#,"02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
+months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
 
 
 
 
-for(m in 1:length(months)){
+for(m in 2:length(months)){
   
   
   
@@ -169,17 +172,16 @@ for(m in 1:length(months)){
   SaveTo <- paste(c("./2017_",months[m],"/inputs/"), collapse = "")
   # dir.create(paste(c("2017_",months[m]), collapse = ""))
   # dir.create(SaveTo)############################ Already ran this. Doing it again will output an error
-  
-  
+  print(SaveTo)
   
   # Copy the .tabs generated for January model above
-  # write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  # write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  # write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  # write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  # write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  # write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  
+  write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+
   
   ############################ NEED TO CONFIRM if these remain unchanged
   # modules.txt ----------------------------------------------------------UNCHANGED
@@ -200,12 +202,20 @@ for(m in 1:length(months)){
   file.copy(AnnualNonFuels, SaveTo)
   
   
+}
+
+
+for(m in 2:length(months)){
   
+  
+  
+  # create directories for each month
+  SaveTo <- paste(c("./2017_",months[m],"/inputs/"), collapse = "")
   
   # timeseries.tab ---------------------------------------------------------- 
   # AnnualTimeseries = paste(c(AnnualModel2015,"timeseries.tab"), collapse = "")
   # fce_tseries <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
-  View(rbind.data.frame(lapply(fce_tseries, class),lapply(t_series, class)))
+  # View(rbind.data.frame(lapply(fce_tseries, class),lapply(t_series, class)))
   
   t_series <- data.frame(matrix(ncol = 5, nrow = 1))
   names(t_series) <- c("TIMESERIES","ts_period","ts_duration_of_tp","ts_num_tps","ts_scale_to_period")
@@ -258,17 +268,18 @@ for(m in 1:length(months)){
   
   
   # variable_capacity_factors.tab ------------------------------------------- # NEED TO SAVE ANNUAL CFS, THEN RUN LOOP
-  ercot_var_gens <- ercot_gen_info$GENERATION_PROJECT[ercot_gen_info$gen_is_variable==1] # isolate list of variable generators
-  ercot_cfs <- data.frame(matrix(ncol = 3, nrow = length(ercot_var_gens)*dim(t_points)[1]))
-  colnames(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
-  ercot_cfs$GENERATION_PROJECT <- rep(ercot_var_gens, each = dim(t_points)[1])
-  ercot_cfs$gen_max_capacity_factor <- 1 # setting all cap at 1 for now
-  ercot_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(ercot_var_gens)) )
-  # rename columns and rows
-  names(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
-  row.names(ercot_cfs) <- 1:dim(ercot_cfs)[1]
-  write.table(ercot_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  
+  # ercot_var_gens <- ercot_gen_info$GENERATION_PROJECT[ercot_gen_info$gen_is_variable==1] # isolate list of variable generators
+  # ercot_cfs <- data.frame(matrix(ncol = 3, nrow = length(ercot_var_gens)*dim(t_points)[1]))
+  # colnames(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
+  # ercot_cfs$GENERATION_PROJECT <- rep(ercot_var_gens, each = dim(t_points)[1])
+  # ercot_cfs$gen_max_capacity_factor <- 1 # setting all cap at 1 for now
+  # ercot_cfs$timepoint <- as.integer( rep(1:dim(t_points)[1], length(ercot_var_gens)) )
+  # # rename columns and rows
+  # names(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
+  # row.names(ercot_cfs) <- 1:dim(ercot_cfs)[1]
+  # write.table(ercot_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  file.copy("./2017_01/inputs/variable_capacity_factors.tab", SaveTo)
+
   }
 
 
