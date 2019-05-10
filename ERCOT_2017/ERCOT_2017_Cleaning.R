@@ -61,13 +61,13 @@ ercot_gen_info$gen_load_zone <- as.factor(ercot_data$Zone)
 ercot_gen_info$gen_load_zone[is.na(ercot_gen_info$gen_load_zone)] <- "Panhandle"
 
 ercot_gen_info$gen_connect_cost_per_mw <- as.integer(0)
-ercot_gen_info$gen_variable_om <- ercot_data$VOM.MWh # Need to make sure the units are right
+ercot_gen_info$gen_variable_om <- 0#ercot_data$VOM.MWh # Need to make sure the units are right # Round(GENERIC_VOM_Cost_USD_per_MWh / (1 + GENERIC_CPI_Inflation_Rate_2010-2011))
 ercot_gen_info$gen_max_age <- as.integer(100)
 ercot_gen_info$gen_is_variable <- as.integer(0) # need to add consolidated renewables back in
 ercot_gen_info$gen_is_baseload <- as.integer(0)
 ercot_gen_info$gen_energy_source <- as.factor(ercot_data$Fuel) # where are the non-fuels in the ERCOT data?
 ercot_gen_info$gen_full_load_heat_rate <- as.factor(ercot_data$PLEXOS.AHRs..MMBtu.MWh.)
-
+ercot_gen_info$gen_full_load_heat_rate[is.na(ercot_gen_info$gen_full_load_heat_rate)] <- levels(ercot_gen_info$gen_full_load_heat_rate)[20]
 write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
@@ -79,10 +79,10 @@ write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), coll
 View(rbind.data.frame(lapply(fce_predet, class),lapply(ercot_predet, class)))
 ercot_predet <- data.frame(matrix(ncol = 3, nrow = dim(ercot_data)[1]))
 colnames(ercot_predet) <- c("GENERATION_PROJECT","build_year","gen_predetermined_cap")
-
-# ercot_predet <- fce_predet[1:dim(ercot_data)[1],] 
 ercot_predet$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
 ercot_predet$build_year <- as.integer(ercot_data$Build.Year)
+# For now setting empty years as 2017
+ercot_predet$build_year[is.na(ercot_predet$build_year)] <- as.integer(2017)
 ercot_predet$gen_predetermined_cap <- ercot_data$Max.Cap.MW
 write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
@@ -90,25 +90,29 @@ write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collaps
 
 
 # gen_build_costs.tab -----------------------------------------------------
-FCeBuildTab = paste(c(AnnualModel2015,"gen_build_costs.tab"), collapse = "")
-fce_build <- read.delim(file = FCeBuildTab, header = T, sep = "\t")
+# FCeBuildTab = paste(c(AnnualModel2015,"gen_build_costs.tab"), collapse = "")
+# fce_build <- read.delim(file = FCeBuildTab, header = T, sep = "\t")
 
+# View(rbind.data.frame(lapply(fce_build, class),lapply(ercot_build, class)))
 
 ercot_build <- fce_build[1:dim(ercot_data)[1],]
 ercot_build$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
-ercot_build$build_year <- ercot_data$Build.Year
-ercot_build$gen_overnight_cost <- 100 # test value
+ercot_build$build_year <- as.integer(ercot_data$Build.Year)
+# for now setting this year as build year for those without an entry
+ercot_build$build_year[is.na(ercot_build$build_year)] <- as.integer(2017)
+ercot_build$gen_overnight_cost <- as.integer(100) # test value
 ercot_build$gen_fixed_om <- 0 # test value. Actual values are in SCJ database
 write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
-############################ These reference generation_projects_info
+  ############################ These reference generation_projects_info
 
 # load_zones.tab ----------------------------------------------------------***
 # ercot_zones <- as.data.frame(unique(ercot_gen_info$gen_load_zone))
+# View(rbind.data.frame(lapply(fce_zones, class),lapply(ercot_zones, class)))
 ercot_zones <- data.frame(matrix(ncol = 1, nrow = 5))
 colnames(ercot_zones) <- "LOAD_ZONE"
-ercot_zones$LOAD_ZONE <- c("Northeast", "South", "Coast", "West", "Panhandle") 
+ercot_zones$LOAD_ZONE <- as.factor(c("Northeast", "South", "Coast", "West", "Panhandle")) 
 
 write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
@@ -118,6 +122,7 @@ write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="
 # fuels.tab ---------------------------------------------------------------***
 FCeFuelsTab = paste(c(AnnualModel2015,"fuels.tab"), collapse = "")
 fce_fuels <- read.delim(file = FCeFuelsTab, header = T, sep = "\t")
+# View(rbind.data.frame(lapply(fce_fuels, class),lapply(ercot_fuels, class)))
 
 ercot_fuels <- fce_fuels[1:length(unique(ercot_gen_info$gen_energy_source))[1],]
 row.names(ercot_fuels) <- 1:dim(ercot_fuels)[1]
@@ -133,7 +138,10 @@ write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",r
 
 
 # periods.tab -------------------------------------------------------------UNCHANGED
-AnnualPeriods = paste(c(AnnualModel2015,"periods.tab"), collapse = "")
+# AnnualPeriods = paste(c(AnnualModel2015,"periods.tab"), collapse = "")
+# fce_periods <- read.delim(file = AnnualPeriods, header = T, sep = "\t")
+# View(rbind.data.frame(lapply(fce_periods, class),lapply(periods, class)))
+
 periods <- data.frame(matrix(ncol = 3, nrow = 1))
 names(periods) <- c("INVESTMENT_PERIOD","period_start","period_end")
 periods[1,] <- 2017
@@ -195,14 +203,19 @@ for(m in 1:length(months)){
   
   
   # timeseries.tab ---------------------------------------------------------- 
-  AnnualTimeseries = paste(c(AnnualModel2015,"timeseries.tab"), collapse = "")
-  t_series <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
+  # AnnualTimeseries = paste(c(AnnualModel2015,"timeseries.tab"), collapse = "")
+  # fce_tseries <- read.delim(file = AnnualTimeseries, header = T, sep = "\t")
+  View(rbind.data.frame(lapply(fce_tseries, class),lapply(t_series, class)))
+  
+  t_series <- data.frame(matrix(ncol = 5, nrow = 1))
+  names(t_series) <- c("TIMESERIES","ts_period","ts_duration_of_tp","ts_num_tps","ts_scale_to_period")
   # Unchanged columns in this .tab are:
-  # ts_duration_of_tp = 1     duration, in hours, of each timepoint within a timeseries
-  t_series$TIMESERIES <- paste(c("2017_",months[m]), collapse = "")
-  t_series$ts_period <- 2017
-  t_series$ts_num_tps <- 24*num_days[m] # number of timepoints in a series
+  t_series$ts_duration_of_tp <- as.integer(1)     # duration, in hours, of each timepoint within a timeseries
+  t_series$TIMESERIES <- as.factor(paste(c("2017_",months[m]), collapse = ""))
+  t_series$ts_period <- as.integer(2017)
+  t_series$ts_num_tps <- as.integer(24*num_days[m]) # number of timepoints in a series
   t_series$ts_scale_to_period <- 8766/(24*num_days[m])
+  
   write.table(t_series, paste(c(SaveTo,"timeseries.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
   
   
