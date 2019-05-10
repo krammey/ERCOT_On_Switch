@@ -162,8 +162,8 @@ write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row
 num_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
 years = 2017
-months = as.character(c("01"))
-# months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
+# months = as.character(c("01"))
+months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
 
 
@@ -280,6 +280,8 @@ for(m in 1:length(months)){
   # names(ercot_cfs) <- c("GENERATION_PROJECT","timepoint","gen_max_capacity_factor")
   # row.names(ercot_cfs) <- 1:dim(ercot_cfs)[1]
   # write.table(ercot_cfs, paste(c(SaveTo,"variable_capacity_factors.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  
+  # All variable capacity factor columns are empty so I'm just copying that into the other months
   file.copy("./2017_01/inputs/variable_capacity_factors.tab", SaveTo)
 
   }
