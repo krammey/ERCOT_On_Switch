@@ -38,7 +38,7 @@ Z4_data <- read.csv(file = Z4_file, stringsAsFactors = F, na.strings="NA",row.na
 Z4_data <- Z4_data[1:tp,]
 
 PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5])
-PLEXOS_zone_data$Panhandle <- 0
+# PLEXOS_zone_data$Panhandle <- 0
 
 ###############
 SaveTo <- "./2017_01/inputs/" # Save to January model for now
@@ -49,7 +49,7 @@ SaveTo <- "./2017_01/inputs/" # Save to January model for now
 # generation_projects_info.tab --------------------------------------------
 # FCeGenInfoTab = paste(c(AnnualModel2015,"generation_projects_info.tab"), collapse = "")
 # fce_gen_info <- read.delim(file = FCeGenInfoTab, header = T, sep = "\t")
-View(rbind.data.frame(lapply(fce_gen_info, class),lapply(ercot_gen_info, class)))
+# View(rbind.data.frame(lapply(fce_gen_info, class),lapply(ercot_gen_info, class)))
 ercot_gen_info <- data.frame(matrix(ncol = 10, nrow = dim(ercot_data)[1]))
 colnames(ercot_gen_info) <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","gen_connect_cost_per_mw","gen_variable_om","gen_max_age","gen_is_variable","gen_is_baseload","gen_energy_source","gen_full_load_heat_rate")
 
@@ -57,8 +57,7 @@ colnames(ercot_gen_info) <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","g
 ercot_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',ercot_data$Name)) #Replace spaces with underscores
 ercot_gen_info$gen_tech <- as.factor(gsub(' ','_',ercot_data$Tech))
 ercot_gen_info$gen_load_zone <- as.factor(ercot_data$Zone)
-# For now, I'm setting empty 'Zone' entries to Panhandle
-ercot_gen_info$gen_load_zone[is.na(ercot_gen_info$gen_load_zone)] <- "Panhandle"
+# For now, I'm deleting everything with zone entry that's empty or is Panhandle
 
 ercot_gen_info$gen_connect_cost_per_mw <- as.integer(0)
 ercot_gen_info$gen_variable_om <- 0#ercot_data$VOM.MWh # Need to make sure the units are right # Round(GENERIC_VOM_Cost_USD_per_MWh / (1 + GENERIC_CPI_Inflation_Rate_2010-2011))
@@ -67,7 +66,12 @@ ercot_gen_info$gen_is_variable <- as.integer(0) # need to add consolidated renew
 ercot_gen_info$gen_is_baseload <- as.integer(0)
 ercot_gen_info$gen_energy_source <- as.factor(ercot_data$Fuel) # where are the non-fuels in the ERCOT data?
 ercot_gen_info$gen_full_load_heat_rate <- as.factor(ercot_data$PLEXOS.AHRs..MMBtu.MWh.)
-ercot_gen_info$gen_full_load_heat_rate[is.na(ercot_gen_info$gen_full_load_heat_rate)] <- levels(ercot_gen_info$gen_full_load_heat_rate)[20]
+# ercot_gen_info$GENERATION_PROJECT[is.na(ercot_gen_info$gen_full_load_heat_rate)] <- levels(ercot_gen_info$gen_full_load_heat_rate)[20]
+# The plants below were given heat rates as similar plants nearby in the list
+# [1] Ferguson_Replacement
+# [2] Panda_Sherman       
+# [3] Panda_Temple_1      
+# [4] Panda_Temple_2  
 ercot_gen_info$gen_full_load_heat_rate[ercot_gen_info$gen_full_load_heat_rate == 0] <- levels(ercot_gen_info$gen_full_load_heat_rate)[20]
 
 
@@ -79,7 +83,7 @@ write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), coll
 # gen_build_predetermined.tab ---------------------------------------------
 # FCePredetTab = paste(c(AnnualModel2015,"gen_build_predetermined.tab"), collapse = "")
 # fce_predet <- read.delim(file = FCePredetTab, header = T, sep = "\t")
-View(rbind.data.frame(lapply(fce_predet, class),lapply(ercot_predet, class)))
+# View(rbind.data.frame(lapply(fce_predet, class),lapply(ercot_predet, class)))
 ercot_predet <- data.frame(matrix(ncol = 3, nrow = dim(ercot_data)[1]))
 colnames(ercot_predet) <- c("GENERATION_PROJECT","build_year","gen_predetermined_cap")
 ercot_predet$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
@@ -93,12 +97,10 @@ write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collaps
 
 
 # gen_build_costs.tab -----------------------------------------------------
-# FCeBuildTab = paste(c(AnnualModel2015,"gen_build_costs.tab"), collapse = "")
-# fce_build <- read.delim(file = FCeBuildTab, header = T, sep = "\t")
 
 # View(rbind.data.frame(lapply(fce_build, class),lapply(ercot_build, class)))
-
-ercot_build <- fce_build[1:dim(ercot_data)[1],]
+ercot_build <- data.frame(matrix(ncol = 4, nrow = dim(ercot_data)[1] ))
+colnames(ercot_build) <- c("GENERATION_PROJECT","build_year","gen_overnight_cost","gen_fixed_om")
 ercot_build$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
 ercot_build$build_year <- as.integer(ercot_data$Build.Year)
 # for now setting this year as build year for those without an entry
@@ -113,34 +115,36 @@ write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), 
 # load_zones.tab ----------------------------------------------------------***
 # ercot_zones <- as.data.frame(unique(ercot_gen_info$gen_load_zone))
 # View(rbind.data.frame(lapply(fce_zones, class),lapply(ercot_zones, class)))
-ercot_zones <- data.frame(matrix(ncol = 1, nrow = 5))
+ercot_zones <- data.frame(matrix(ncol = 1, nrow = 4))
 colnames(ercot_zones) <- "LOAD_ZONE"
-ercot_zones$LOAD_ZONE <- as.factor(c("Northeast", "South", "Coast", "West", "Panhandle")) 
-
+ercot_zones$LOAD_ZONE <- as.factor(c("Northeast", "South", "Coast", "West")) 
 write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
 
 
 
 # fuels.tab ---------------------------------------------------------------***
-FCeFuelsTab = paste(c(AnnualModel2015,"fuels.tab"), collapse = "")
-fce_fuels <- read.delim(file = FCeFuelsTab, header = T, sep = "\t")
+# FCeFuelsTab = paste(c(AnnualModel2015,"fuels.tab"), collapse = "")
+# fce_fuels <- read.delim(file = FCeFuelsTab, header = T, sep = "\t")
 # View(rbind.data.frame(lapply(fce_fuels, class),lapply(ercot_fuels, class)))
+fuels <- unique(ercot_gen_info$gen_energy_source[!(ercot_gen_info$gen_energy_source %in%c('Hydro'))])
+ercot_fuels <- data.frame(matrix(ncol = 3, nrow = length(fuels)))
+colnames(ercot_fuels) <- c("fuel","co2_intensity","upstream_co2_intensity")
+ercot_fuels$fuel <- fuels
 
-ercot_fuels <- fce_fuels[1:length(unique(ercot_gen_info$gen_energy_source))[1],]
-row.names(ercot_fuels) <- 1:dim(ercot_fuels)[1]
-ercot_fuels$fuel <- unique(ercot_gen_info$gen_energy_source)
 for(i in 1:dim(ercot_fuels)[1]){
   ercot_fuels$co2_intensity[i] <- mean(ercot_data$CO2.lb.MMBtu[ercot_data$Fuel == ercot_fuels$fuel[i]])/2204.62
   ercot_fuels$upstream_co2_intensity[i] <- ercot_fuels$co2_intensity[i]/10 # this is just an estimate base on trend in fce data
 }
+
+
 write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-# file.copy(AnnualFuels, SaveTo)
 
 
 
 
 # periods.tab -------------------------------------------------------------UNCHANGED
+
 # AnnualPeriods = paste(c(AnnualModel2015,"periods.tab"), collapse = "")
 # fce_periods <- read.delim(file = AnnualPeriods, header = T, sep = "\t")
 # View(rbind.data.frame(lapply(fce_periods, class),lapply(periods, class)))
@@ -158,13 +162,14 @@ write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row
 num_days = c(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
 hours = as.character(c("00","01","02","03","04","05","06","07","08","09",10:23))
 years = 2017
-months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
+months = as.character(c("01"))
+# months = as.character(c("01","02","03","04","05","06","07","08","09",10,11,12)) # to expand the for-loops to do all twelve months, remove ))#
 days_max = as.character(c("01","02","03","04","05","06","07","08","09",10:31))
 
 
 
 
-for(m in 2:length(months)){
+for(m in 1:length(months)){
   
   
   
@@ -198,19 +203,16 @@ for(m in 2:length(months)){
   
   
   # non_fuel_energy_sources.tab ---------------------------------------------UNCHANGED
-  AnnualNonFuels = paste(c(AnnualModel2015,"non_fuel_energy_sources.tab"), collapse = "")
-  file.copy(AnnualNonFuels, SaveTo)
+  
+  nonfuels <- unique(ercot_gen_info$gen_energy_source[!(ercot_gen_info$gen_energy_source %in% fuels )])
+  ercot_nonfuels <- data.frame(matrix(ncol = 1, nrow = length(nonfuels)))
+  colnames(ercot_nonfuels) <- c("energy_source")
+  ercot_nonfuels$energy_source <- nonfuels
   
   
-}
+  write.table(ercot_nonfuels, paste(c(SaveTo,"non_fuel_energy_sources.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
-
-for(m in 2:length(months)){
-  
-  
-  
   # create directories for each month
-  SaveTo <- paste(c("./2017_",months[m],"/inputs/"), collapse = "")
   
   # timeseries.tab ---------------------------------------------------------- 
   # AnnualTimeseries = paste(c(AnnualModel2015,"timeseries.tab"), collapse = "")
@@ -258,7 +260,7 @@ for(m in 2:length(months)){
       row_count = row_count+1
       ercot_loads$LOAD_ZONE[row_count] <- as.character(ercot_zones$LOAD_ZONE[k])
       ercot_loads$TIMEPOINT[row_count] <- t_points$timepoint_id[j]
-      ercot_loads$zone_demand_mw[row_count] <- as.numeric(PLEXOS_zone_data[j,k+4])
+      ercot_loads$zone_demand_mw[row_count] <- as.numeric(.2*PLEXOS_zone_data[j,k+4])
     }
   }
 
