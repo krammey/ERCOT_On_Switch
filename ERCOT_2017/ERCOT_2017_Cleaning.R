@@ -29,7 +29,7 @@ ercot_data <- ercot_data_orig[,(names(ercot_data_orig) %in% c(
                         "X..Generic...Max.Ramp.Up.Dn.Fraction",
                         "Max.Ramp.Up.Dn.Rate..MW.min.",
                         "X..Generic...Reserves.VOM.Cost....MW.",
-                        "Poly.Heat.Rate...Base..MMBtu.hr.",
+                        "PLEXOS.AHRs..MMBtu.MWh.",
                         "CO2..lb.MMBtu.",
                         "CO2...MaxCap..lb.MWh.",
                         "X2014.VOM.Cost....MWh.",
@@ -42,7 +42,7 @@ names(ercot_data) <- c('Name','Fuel',
                        'Min.Cap.Fraction','Min.Cap.MW',
                        'Min.Down.Time.hr','Min.Up.Time.hr',
                        'Max.Ramp.Rate.Fraction','Max.Ramp.Rate.MW.min',
-                       'Reserves.VOM.MW','Poly.Heat.Rate.MMBtu.hr',
+                       'Reserves.VOM.MW','PLEXOS.AHRs..MMBtu.MWh.',
                        'CO2.lb.MMBtu','CO2.Max.Cap.lb.MWh',
                        'VOM.MWh','StartupCost.start')
 
@@ -67,27 +67,32 @@ Z4_data <- read.csv(file = Z4_file, stringsAsFactors = F, na.strings="NA",row.na
 Z4_data <- Z4_data[1:tp,]
 
 PLEXOS_zone_data <- cbind.data.frame(Z1_data, Z2_data[5], Z3_data[5], Z4_data[5])
+PLEXOS_zone_data$Panhandle <- 0
 
 ###############
 SaveTo <- "./2017_01/inputs/" # Save to January model for now
 
 
 ############################ These reference FCe data in '../Fce_R_Development/20190405_Fce-To-SWITCH.R/
-# generation_projects_info.tab --------------------------------------------
-FCeGenInfoTab = paste(c(AnnualModel2015,"generation_projects_info.tab"), collapse = "")
-fce_gen_info <- read.delim(file = FCeGenInfoTab, header = T, sep = "\t")
 
-ercot_gen_info <- fce_gen_info[1:dim(ercot_data)[1],]
+# generation_projects_info.tab --------------------------------------------
+# FCeGenInfoTab = paste(c(AnnualModel2015,"generation_projects_info.tab"), collapse = "")
+# fce_gen_info <- read.delim(file = FCeGenInfoTab, header = T, sep = "\t")
+View(rbind.data.frame(lapply(fce_gen_info, class),lapply(ercot_gen_info, class)))
+ercot_gen_info <- data.frame(matrix(ncol = 10, nrow = dim(ercot_data)[1]))
+colnames(ercot_gen_info) <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","gen_connect_cost_per_mw","gen_variable_om","gen_max_age","gen_is_variable","gen_is_baseload","gen_energy_source","gen_full_load_heat_rate")
+
+
 ercot_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',ercot_data$Name)) #Replace spaces with underscores
-ercot_gen_info$gen_tech <- ercot_data$Tech
-ercot_gen_info$gen_load_zone <- ercot_data$Zone
-ercot_gen_info$gen_connect_cost_per_mw <- 0
+ercot_gen_info$gen_tech <- as.factor(gsub(' ','_',ercot_data$Tech))
+ercot_gen_info$gen_load_zone <- as.factor(ercot_data$Zone)
+ercot_gen_info$gen_connect_cost_per_mw <- as.integer(0)
 ercot_gen_info$gen_variable_om <- ercot_data$VOM.MWh # Need to make sure the units are right
-ercot_gen_info$gen_max_age <- 100
-ercot_gen_info$gen_is_variable <- 0 # need to add consolidated renewables back in
-ercot_gen_info$gen_is_baseload <- 0
-ercot_gen_info$gen_energy_source <- ercot_data$Fuel # where are the non-fuels in the ERCOT data?
-ercot_gen_info$gen_full_load_heat_rate <- ercot_data$Poly.Heat.Rate.MMBtu.hr # these units are supposed to be in MMBTU/MWh
+ercot_gen_info$gen_max_age <- as.integer(100)
+ercot_gen_info$gen_is_variable <- as.integer(0) # need to add consolidated renewables back in
+ercot_gen_info$gen_is_baseload <- as.integer(0)
+ercot_gen_info$gen_energy_source <- as.factor(ercot_data$Fuel) # where are the non-fuels in the ERCOT data?
+ercot_gen_info$gen_full_load_heat_rate <- as.factor(ercot_data$PLEXOS.AHRs..MMBtu.MWh.)
 
 write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
@@ -95,12 +100,15 @@ write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), coll
 
 
 # gen_build_predetermined.tab ---------------------------------------------
-FCePredetTab = paste(c(AnnualModel2015,"gen_build_predetermined.tab"), collapse = "")
-fce_predet <- read.delim(file = FCePredetTab, header = T, sep = "\t")
+# FCePredetTab = paste(c(AnnualModel2015,"gen_build_predetermined.tab"), collapse = "")
+# fce_predet <- read.delim(file = FCePredetTab, header = T, sep = "\t")
+View(rbind.data.frame(lapply(fce_predet, class),lapply(ercot_predet, class)))
+ercot_predet <- data.frame(matrix(ncol = 3, nrow = dim(ercot_data)[1]))
+colnames(ercot_predet) <- c("GENERATION_PROJECT","build_year","gen_predetermined_cap")
 
-ercot_predet <- fce_predet[1:dim(ercot_data)[1],] 
+# ercot_predet <- fce_predet[1:dim(ercot_data)[1],] 
 ercot_predet$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
-ercot_predet$build_year <- ercot_data$Build.Year
+ercot_predet$build_year <- as.integer(ercot_data$Build.Year)
 ercot_predet$gen_predetermined_cap <- ercot_data$Max.Cap.MW
 write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
@@ -111,8 +119,8 @@ write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collaps
 FCeBuildTab = paste(c(AnnualModel2015,"gen_build_costs.tab"), collapse = "")
 fce_build <- read.delim(file = FCeBuildTab, header = T, sep = "\t")
 
-ercot_build <- fce_build[1:dim(ercot_data)[1],]
 
+ercot_build <- fce_build[1:dim(ercot_data)[1],]
 ercot_build$GENERATION_PROJECT <- ercot_gen_info$GENERATION_PROJECT
 ercot_build$build_year <- ercot_data$Build.Year
 ercot_build$gen_overnight_cost <- 100 # test value
@@ -124,9 +132,9 @@ write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), 
 
 # load_zones.tab ----------------------------------------------------------***
 # ercot_zones <- as.data.frame(unique(ercot_gen_info$gen_load_zone))
-ercot_zones <- data.frame(matrix(ncol = 1, nrow = 4))
+ercot_zones <- data.frame(matrix(ncol = 1, nrow = 5))
 colnames(ercot_zones) <- "LOAD_ZONE"
-ercot_zones$LOAD_ZONE <- c("Northeast", "South", "Coast", "West") # Not including Panhandle for now
+ercot_zones$LOAD_ZONE <- c("Northeast", "South", "Coast", "West", "Panhandle") 
 
 write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
 
