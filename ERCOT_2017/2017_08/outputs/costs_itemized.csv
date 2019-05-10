@@ -1,0 +1,3 @@
+PERIOD,Component,AnnualCost_NPV,AnnualCost_Real,Component_type
+2017,TotalGenFixedCosts,481281.901275,557143.960964,annual
+2017,GenVariableOMCostsInTP,0.0,0.0,timepoint
