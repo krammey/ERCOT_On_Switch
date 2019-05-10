@@ -57,6 +57,9 @@ colnames(ercot_gen_info) <- c("GENERATION_PROJECT","gen_tech","gen_load_zone","g
 ercot_gen_info$GENERATION_PROJECT <- as.factor(gsub(' ','_',ercot_data$Name)) #Replace spaces with underscores
 ercot_gen_info$gen_tech <- as.factor(gsub(' ','_',ercot_data$Tech))
 ercot_gen_info$gen_load_zone <- as.factor(ercot_data$Zone)
+# For now, I'm setting empty 'Zone' entries to Panhandle
+ercot_gen_info$gen_load_zone[is.na(ercot_gen_info$gen_load_zone)] <- "Panhandle"
+
 ercot_gen_info$gen_connect_cost_per_mw <- as.integer(0)
 ercot_gen_info$gen_variable_om <- ercot_data$VOM.MWh # Need to make sure the units are right
 ercot_gen_info$gen_max_age <- as.integer(100)
@@ -235,6 +238,8 @@ for(m in 1:length(months)){
       ercot_loads$zone_demand_mw[row_count] <- as.numeric(PLEXOS_zone_data[j,k+4])
     }
   }
+
+  
   # Export .tab
   write.table(ercot_loads, paste(c(SaveTo,"loads.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
   
