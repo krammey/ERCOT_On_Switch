@@ -7,7 +7,9 @@
 
 # Define useful paths
 AnnualModel2015 = "../Fce_R_Development/v5/FCe_Model/inputs/"
-ERCOT2017_file = "../../2017_Master_Gen_Fleet.csv"
+# ERCOT2017_file = "../../2017_Master_Gen_Fleet.csv"
+ERCOT2017_file = "../2017_ERCOT_for_Switch.csv"
+test <- read.csv(file = ERCOT2017_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
 
 # Import ERCOT power plant data
 ercot_data_orig <- read.csv(file = ERCOT2017_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
