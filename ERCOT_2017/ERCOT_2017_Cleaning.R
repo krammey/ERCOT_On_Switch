@@ -1,6 +1,7 @@
 
 
 # Author: Katrina Ramirez-Meyers
+# Version control information available on Github
 # This code was written to import 2017 powerplant and load data into 12* hourly models
 # *one for each month
 
@@ -9,44 +10,12 @@
 AnnualModel2015 = "../Fce_R_Development/v5/FCe_Model/inputs/"
 # ERCOT2017_file = "../../2017_Master_Gen_Fleet.csv"
 ERCOT2017_file = "../2017_ERCOT_for_Switch.csv"
-test <- read.csv(file = ERCOT2017_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
 
-# Import ERCOT power plant data
-ercot_data_orig <- read.csv(file = ERCOT2017_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
-# Extract only the necessary columns
-ercot_data <- ercot_data_orig[,(names(ercot_data_orig) %in% c(
-#                       List of necessary columns
-                        "Plant.Name",
-                        "Plant.Type",
-                        "Generator.SubType..for.lookup.",
-                        "Transmission.Zone",
-                        "County",
-                        "In.Service.Year",
-                        "Rated.Capacity..MW.",
-                        "Modeled.Max.Capacity..MW.",
-                        "X..Generic...Min.Capacity.Fraction",
-                        "Min.Stable.Level..MW.",
-                        "X..Generic...Min.Up.Time..hr.",
-                        "X..Generic...Min.Down.Time..hr.",
-                        "X..Generic...Max.Ramp.Up.Dn.Fraction",
-                        "Max.Ramp.Up.Dn.Rate..MW.min.",
-                        "X..Generic...Reserves.VOM.Cost....MW.",
-                        "PLEXOS.AHRs..MMBtu.MWh.",
-                        "CO2..lb.MMBtu.",
-                        "CO2...MaxCap..lb.MWh.",
-                        "X2014.VOM.Cost....MWh.",
-                        "X2014.Startup.Cost....start."))]
 
-names(ercot_data) <- c('Name','Fuel',
-                       'Tech','Zone',
-                       'County','Build.Year',
-                       'Rated.Cap.MW','Max.Cap.MW',
-                       'Min.Cap.Fraction','Min.Cap.MW',
-                       'Min.Down.Time.hr','Min.Up.Time.hr',
-                       'Max.Ramp.Rate.Fraction','Max.Ramp.Rate.MW.min',
-                       'Reserves.VOM.MW','PLEXOS.AHRs..MMBtu.MWh.',
-                       'CO2.lb.MMBtu','CO2.Max.Cap.lb.MWh',
-                       'VOM.MWh','StartupCost.start')
+# Import Data ----------------------------------
+# ERCOT power plants (extracted from SCJ database + some cleaning recorded on Github)
+ercot_data <- read.csv(file = ERCOT2017_file, stringsAsFactors = F, na.strings="NA",row.names=NULL, header = T, sep = ",")
+names(ercot_data) <- c('Name','Fuel','Tech','Zone','Build.Year','Max.Cap.MW','PLEXOS.AHRs..MMBtu.MWh.', 'CO2.lb.MMBtu')
 
 # Import load data (from Sam Johnson)
 folder = ("../../2017 ERCOT Load/")
@@ -193,12 +162,12 @@ for(m in 1:length(months)){
   
   
   # Copy the .tabs generated for January model above
-  write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
-  write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # write.table(ercot_gen_info, paste(c(SaveTo,"generation_projects_info.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # write.table(ercot_predet, paste(c(SaveTo,"gen_build_predetermined.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # write.table(ercot_build, paste(c(SaveTo,"gen_build_costs.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # write.table(ercot_zones, paste(c(SaveTo,"load_zones.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # write.table(ercot_fuels, paste(c(SaveTo,"fuels.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
+  # write.table(periods, paste(c(SaveTo,"periods.tab"), collapse = ""), sep="\t",row.names = F, quote = F)
   
   
   ############################ NEED TO CONFIRM if these remain unchanged
