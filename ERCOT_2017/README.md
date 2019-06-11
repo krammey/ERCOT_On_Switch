@@ -1,4 +1,6 @@
-This model will take annual (8760) ERCOT model and break it into 12 hourly models (one for each month).
+This model will take annual (8760) ERCOT model and break it into 12 hourly models (one for each month). 
+
+This was run at 20% load (see line 263 in ERCOT_2017_Cleaning.R) to make everything feasible.
 
 Runtime (s) 
 TOTAL: 2813.051482 (47m)
